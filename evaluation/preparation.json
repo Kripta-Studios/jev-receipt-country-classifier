@@ -1,0 +1,9 @@
+{
+  "seed": 24092026,
+  "synthetic_revision": "ed46e02b9b1136f6b54847c1d4bce9e94d11e55c",
+  "real": 750,
+  "synthetic": 2000,
+  "synthetic_images": 200,
+  "download_failures": [],
+  "open_prices_sha256": "fe70ebf08e7a037b24c6e53f5979302b3cfaeac8b9b3754b784c2f1d2fd770f5"
+}

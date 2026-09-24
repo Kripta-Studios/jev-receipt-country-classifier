@@ -1,0 +1,1028 @@
+[
+  {
+    "id": "op-84026",
+    "expected": "ES",
+    "source_country": "ES",
+    "split": "test",
+    "group": "5300",
+    "source": "real",
+    "variant": "focused-v2",
+    "rules": "ES",
+    "status": "ok",
+    "response": {
+      "model": "jev-1.13.0",
+      "answers": {
+        "country": {
+          "type": "choice",
+          "choice": "ES",
+          "confidence": 1.0,
+          "probabilities": {
+            "UNKNOWN": 0.0,
+            "CA": 0.0,
+            "OTHER": 0.0,
+            "ES": 1.0,
+            "GB": 0.0,
+            "FR": 0.0,
+            "US": 0.0,
+            "IT": 0.0,
+            "DE": 0.0
+          }
+        },
+        "location_evidence": {
+          "type": "noul",
+          "noul": 0.97
+        }
+      },
+      "usage": {
+        "input_tokens": 1258,
+        "output_tokens": 100
+      }
+    },
+    "request_sha256": "b044f6608df8ddb3a627392918367e713c63babbbcd985c80633fa7069ff3026",
+    "cache_hit": false,
+    "network_attempts": 1,
+    "elapsed_s": 2.091854200000057,
+    "metadata_expected": "ES",
+    "review": {
+      "review_id": 16,
+      "country": "ES",
+      "evidence": "Madrid address and Spanish CIF A28090108.",
+      "certainty": "high",
+      "reviewer": "Codex assistant; not human annotation",
+      "basis": "image inspected before Jev predictions and source labels",
+      "date": "2026-09-24"
+    }
+  },
+  {
+    "id": "op-56032",
+    "expected": "ES",
+    "source_country": "ES",
+    "split": "test",
+    "group": "4466",
+    "source": "real",
+    "variant": "focused-v2",
+    "rules": "UNKNOWN",
+    "status": "ok",
+    "response": {
+      "model": "jev-1.13.0",
+      "answers": {
+        "country": {
+          "type": "choice",
+          "choice": "ES",
+          "confidence": 1.0,
+          "probabilities": {
+            "UNKNOWN": 0.0,
+            "IT": 0.0,
+            "CA": 0.0,
+            "FR": 0.0,
+            "ES": 1.0,
+            "OTHER": 0.0,
+            "DE": 0.0,
+            "US": 0.0,
+            "GB": 0.0
+          }
+        },
+        "location_evidence": {
+          "type": "noul",
+          "noul": 0.95
+        }
+      },
+      "usage": {
+        "input_tokens": 1213,
+        "output_tokens": 100
+      }
+    },
+    "request_sha256": "d95d996fa7f423aeaddf56a64475416e96de7d60a945b4d6274318121cc701e9",
+    "cache_hit": false,
+    "network_attempts": 1,
+    "elapsed_s": 0.8727733000000626,
+    "metadata_expected": "ES",
+    "review": {
+      "review_id": 9,
+      "country": "ES",
+      "evidence": "Barcelona and Guissona addresses, Spanish NIF and Catalan fiscal labels.",
+      "certainty": "high",
+      "reviewer": "Codex assistant; not human annotation",
+      "basis": "image inspected before Jev predictions and source labels",
+      "date": "2026-09-24"
+    }
+  },
+  {
+    "id": "op-8815",
+    "expected": "ES",
+    "source_country": "ES",
+    "split": "test",
+    "group": "975",
+    "source": "real",
+    "variant": "focused-v2",
+    "rules": "UNKNOWN",
+    "status": "ok",
+    "response": {
+      "model": "jev-1.13.0",
+      "answers": {
+        "country": {
+          "type": "choice",
+          "choice": "ES",
+          "confidence": 1.0,
+          "probabilities": {
+            "IT": 0.0,
+            "OTHER": 0.0,
+            "CA": 0.0,
+            "ES": 1.0,
+            "FR": 0.0,
+            "US": 0.0,
+            "UNKNOWN": 0.0,
+            "GB": 0.0,
+            "DE": 0.0
+          }
+        },
+        "location_evidence": {
+          "type": "noul",
+          "noul": 0.96
+        }
+      },
+      "usage": {
+        "input_tokens": 1114,
+        "output_tokens": 100
+      }
+    },
+    "request_sha256": "8db0e0e4ad336eba966ae9b8d01e8049344c7414303e810059d6704aa9738dc2",
+    "cache_hit": false,
+    "network_attempts": 1,
+    "elapsed_s": 0.6110317000000123,
+    "metadata_expected": "ES",
+    "review": {
+      "review_id": 31,
+      "country": "ES",
+      "evidence": "Granada street address, EUR and Spanish fiscal conventions.",
+      "certainty": "high",
+      "reviewer": "Codex assistant; not human annotation",
+      "basis": "image inspected before Jev predictions and source labels",
+      "date": "2026-09-24"
+    }
+  },
+  {
+    "id": "op-53583",
+    "expected": "ES",
+    "source_country": "ES",
+    "split": "test",
+    "group": "4373",
+    "source": "real",
+    "variant": "focused-v2",
+    "rules": "UNKNOWN",
+    "status": "ok",
+    "response": {
+      "model": "jev-1.13.0",
+      "answers": {
+        "country": {
+          "type": "choice",
+          "choice": "ES",
+          "confidence": 1.0,
+          "probabilities": {
+            "IT": 0.0,
+            "CA": 0.0,
+            "FR": 0.0,
+            "US": 0.0,
+            "GB": 0.0,
+            "DE": 0.0,
+            "ES": 1.0,
+            "OTHER": 0.0,
+            "UNKNOWN": 0.0
+          }
+        },
+        "location_evidence": {
+          "type": "noul",
+          "noul": 0.96
+        }
+      },
+      "usage": {
+        "input_tokens": 1023,
+        "output_tokens": 100
+      }
+    },
+    "request_sha256": "75c289f5bcadf7e92fbd69c3e1707619e13d931bf0288b8725988e683267444a",
+    "cache_hit": false,
+    "network_attempts": 1,
+    "elapsed_s": 0.6750763000000006,
+    "metadata_expected": "ES",
+    "review": {
+      "review_id": 11,
+      "country": "ES",
+      "evidence": "Valladolid/San Vicente del Palacio 47493, CIF and factura simplificada.",
+      "certainty": "high",
+      "reviewer": "Codex assistant; not human annotation",
+      "basis": "image inspected before Jev predictions and source labels",
+      "date": "2026-09-24"
+    }
+  },
+  {
+    "id": "op-78358",
+    "expected": "ES",
+    "source_country": "ES",
+    "split": "test",
+    "group": "5225",
+    "source": "real",
+    "variant": "focused-v2",
+    "rules": "UNKNOWN",
+    "status": "ok",
+    "response": {
+      "model": "jev-1.13.0",
+      "answers": {
+        "country": {
+          "type": "choice",
+          "choice": "ES",
+          "confidence": 1.0,
+          "probabilities": {
+            "US": 0.0,
+            "CA": 0.0,
+            "IT": 0.0,
+            "UNKNOWN": 0.0,
+            "GB": 0.0,
+            "ES": 1.0,
+            "FR": 0.0,
+            "DE": 0.0,
+            "OTHER": 0.0
+          }
+        },
+        "location_evidence": {
+          "type": "noul",
+          "noul": 0.96
+        }
+      },
+      "usage": {
+        "input_tokens": 1105,
+        "output_tokens": 100
+      }
+    },
+    "request_sha256": "9f11b0e19e64c2fc245231d0bc1fe86823552b4bcc2dba21b4d73b6806e1dfb5",
+    "cache_hit": false,
+    "network_attempts": 1,
+    "elapsed_s": 0.6510012999999617,
+    "metadata_expected": "ES",
+    "review": {
+      "review_id": 49,
+      "country": "ES",
+      "evidence": "18006 Granada and Spanish NIF.",
+      "certainty": "high",
+      "reviewer": "Codex assistant; not human annotation",
+      "basis": "image inspected before Jev predictions and source labels",
+      "date": "2026-09-24"
+    }
+  },
+  {
+    "id": "op-58957",
+    "expected": "ES",
+    "source_country": "ES",
+    "split": "test",
+    "group": "4674",
+    "source": "real",
+    "variant": "focused-v2",
+    "rules": "ES",
+    "status": "ok",
+    "response": {
+      "model": "jev-1.13.0",
+      "answers": {
+        "country": {
+          "type": "choice",
+          "choice": "ES",
+          "confidence": 1.0,
+          "probabilities": {
+            "CA": 0.0,
+            "IT": 0.0,
+            "UNKNOWN": 0.0,
+            "FR": 0.0,
+            "ES": 1.0,
+            "OTHER": 0.0,
+            "DE": 0.0,
+            "US": 0.0,
+            "GB": 0.0
+          }
+        },
+        "location_evidence": {
+          "type": "noul",
+          "noul": 0.96
+        }
+      },
+      "usage": {
+        "input_tokens": 1327,
+        "output_tokens": 100
+      }
+    },
+    "request_sha256": "07d0215b53e8fea13363356190fe12deb02756313fd386f15d6230284741068f",
+    "cache_hit": false,
+    "network_attempts": 1,
+    "elapsed_s": 0.7280155000000832,
+    "metadata_expected": "ES",
+    "review": {
+      "review_id": 25,
+      "country": "ES",
+      "evidence": "Lugo de Llanera/Pola de Siero addresses and CIF A33093097.",
+      "certainty": "high",
+      "reviewer": "Codex assistant; not human annotation",
+      "basis": "image inspected before Jev predictions and source labels",
+      "date": "2026-09-24"
+    }
+  },
+  {
+    "id": "op-51357",
+    "expected": "ES",
+    "source_country": "ES",
+    "split": "test",
+    "group": "4216",
+    "source": "real",
+    "variant": "focused-v2",
+    "rules": "UNKNOWN",
+    "status": "ok",
+    "response": {
+      "model": "jev-1.13.0",
+      "answers": {
+        "country": {
+          "type": "choice",
+          "choice": "ES",
+          "confidence": 0.99,
+          "probabilities": {
+            "ES": 0.99,
+            "UNKNOWN": 0.0,
+            "IT": 0.0,
+            "OTHER": 0.01,
+            "US": 0.0,
+            "DE": 0.0,
+            "FR": 0.0,
+            "CA": 0.0,
+            "GB": 0.0
+          }
+        },
+        "location_evidence": {
+          "type": "noul",
+          "noul": 0.93
+        }
+      },
+      "usage": {
+        "input_tokens": 1123,
+        "output_tokens": 100
+      }
+    },
+    "request_sha256": "2b0fa1f144a3e0bfef41fdfba44b9980fa6838e5505c89f80bfd56962378a47d",
+    "cache_hit": false,
+    "network_attempts": 1,
+    "elapsed_s": 0.7306045999999924,
+    "metadata_expected": "ES",
+    "review": {
+      "review_id": 5,
+      "country": "ES",
+      "evidence": "Spanish CIF B-95390761 and factura simplificada; Eroski Alfons el Magn header.",
+      "certainty": "high",
+      "reviewer": "Codex assistant; not human annotation",
+      "basis": "image inspected before Jev predictions and source labels",
+      "date": "2026-09-24"
+    }
+  },
+  {
+    "id": "op-28893",
+    "expected": "ES",
+    "source_country": "ES",
+    "split": "test",
+    "group": "2712",
+    "source": "real",
+    "variant": "focused-v2",
+    "rules": "UNKNOWN",
+    "status": "ok",
+    "response": {
+      "model": "jev-1.13.0",
+      "answers": {
+        "country": {
+          "type": "choice",
+          "choice": "ES",
+          "confidence": 1.0,
+          "probabilities": {
+            "GB": 0.0,
+            "DE": 0.0,
+            "US": 0.0,
+            "FR": 0.0,
+            "IT": 0.0,
+            "ES": 1.0,
+            "CA": 0.0,
+            "UNKNOWN": 0.0,
+            "OTHER": 0.0
+          }
+        },
+        "location_evidence": {
+          "type": "noul",
+          "noul": 0.96
+        }
+      },
+      "usage": {
+        "input_tokens": 1182,
+        "output_tokens": 100
+      }
+    },
+    "request_sha256": "3d2bb7eb5d69a26b9aeacefc9cda105b58165085610eb988a33bf1b7d1b4db26",
+    "cache_hit": false,
+    "network_attempts": 1,
+    "elapsed_s": 0.838126299999999,
+    "metadata_expected": "ES",
+    "review": {
+      "review_id": 42,
+      "country": "ES",
+      "evidence": "41704 Dos Hermanas, Spanish NIF and lidl.es.",
+      "certainty": "high",
+      "reviewer": "Codex assistant; not human annotation",
+      "basis": "image inspected before Jev predictions and source labels",
+      "date": "2026-09-24"
+    }
+  },
+  {
+    "id": "op-56143",
+    "expected": "ES",
+    "source_country": "ES",
+    "split": "test",
+    "group": "4474",
+    "source": "real",
+    "variant": "focused-v2",
+    "rules": "ES",
+    "status": "ok",
+    "response": {
+      "model": "jev-1.13.0",
+      "answers": {
+        "country": {
+          "type": "choice",
+          "choice": "ES",
+          "confidence": 0.99,
+          "probabilities": {
+            "CA": 0.0,
+            "GB": 0.0,
+            "FR": 0.0,
+            "DE": 0.0,
+            "IT": 0.0,
+            "US": 0.0,
+            "OTHER": 0.0,
+            "UNKNOWN": 0.0,
+            "ES": 1.0
+          }
+        },
+        "location_evidence": {
+          "type": "noul",
+          "noul": 0.94
+        }
+      },
+      "usage": {
+        "input_tokens": 1135,
+        "output_tokens": 100
+      }
+    },
+    "request_sha256": "c6bbf864eb95c3ccf897835ea6bfed4b0aba64620b171bf72b1687dfdefd946f",
+    "cache_hit": false,
+    "network_attempts": 1,
+    "elapsed_s": 0.7415955000000167,
+    "metadata_expected": "ES",
+    "review": {
+      "review_id": 57,
+      "country": "ES",
+      "evidence": "C/Sants 76 Barcelona and Spanish CIF.",
+      "certainty": "high",
+      "reviewer": "Codex assistant; not human annotation",
+      "basis": "image inspected before Jev predictions and source labels",
+      "date": "2026-09-24"
+    }
+  },
+  {
+    "id": "op-56158",
+    "expected": "ES",
+    "source_country": "ES",
+    "split": "test",
+    "group": "4476",
+    "source": "real",
+    "variant": "focused-v2",
+    "rules": "ES",
+    "status": "ok",
+    "response": {
+      "model": "jev-1.13.0",
+      "answers": {
+        "country": {
+          "type": "choice",
+          "choice": "ES",
+          "confidence": 1.0,
+          "probabilities": {
+            "GB": 0.0,
+            "DE": 0.0,
+            "CA": 0.0,
+            "FR": 0.0,
+            "OTHER": 0.0,
+            "IT": 0.0,
+            "US": 0.0,
+            "ES": 1.0,
+            "UNKNOWN": 0.0
+          }
+        },
+        "location_evidence": {
+          "type": "noul",
+          "noul": 0.97
+        }
+      },
+      "usage": {
+        "input_tokens": 1156,
+        "output_tokens": 100
+      }
+    },
+    "request_sha256": "34989c6d72d80380cb7ef85ca273b5700938dc5bc9800a0b6cae7661f11c7ef0",
+    "cache_hit": false,
+    "network_attempts": 1,
+    "elapsed_s": 0.6212959000000637,
+    "metadata_expected": "ES",
+    "review": {
+      "review_id": 1,
+      "country": "ES",
+      "evidence": "Barcelona, Spain, +34 and Spanish NIF printed in the header.",
+      "certainty": "high",
+      "reviewer": "Codex assistant; not human annotation",
+      "basis": "image inspected before Jev predictions and source labels",
+      "date": "2026-09-24"
+    }
+  },
+  {
+    "id": "op-24920",
+    "expected": "UNKNOWN",
+    "source_country": "FR",
+    "split": "test",
+    "group": "2397",
+    "source": "real",
+    "variant": "focused-v2",
+    "rules": "UNKNOWN",
+    "status": "ok",
+    "response": {
+      "model": "jev-1.13.0",
+      "answers": {
+        "country": {
+          "type": "choice",
+          "choice": "FR",
+          "confidence": 0.53,
+          "probabilities": {
+            "DE": 0.0,
+            "US": 0.0,
+            "ES": 0.01,
+            "FR": 0.6,
+            "UNKNOWN": 0.38,
+            "OTHER": 0.0,
+            "CA": 0.01,
+            "GB": 0.0,
+            "IT": 0.0
+          }
+        },
+        "location_evidence": {
+          "type": "noul",
+          "noul": 0.21
+        }
+      },
+      "usage": {
+        "input_tokens": 1060,
+        "output_tokens": 100
+      }
+    },
+    "request_sha256": "8f69ac6b7db06062ca8160164f809bf05e38613b6f1fc1bd588778cb6128959a",
+    "cache_hit": false,
+    "network_attempts": 1,
+    "elapsed_s": 0.67469559999995,
+    "metadata_expected": "FR",
+    "review": {
+      "review_id": 23,
+      "country": "UNKNOWN",
+      "evidence": "Cropped French product list and prices; country cannot be distinguished.",
+      "certainty": "not_determinable",
+      "reviewer": "Codex assistant; not human annotation",
+      "basis": "image inspected before Jev predictions and source labels",
+      "date": "2026-09-24"
+    }
+  },
+  {
+    "id": "op-118228",
+    "expected": "UNKNOWN",
+    "source_country": "FR",
+    "split": "test",
+    "group": "6331",
+    "source": "real",
+    "variant": "focused-v2",
+    "rules": "UNKNOWN",
+    "status": "ok",
+    "response": {
+      "model": "jev-1.13.0",
+      "answers": {
+        "country": {
+          "type": "choice",
+          "choice": "FR",
+          "confidence": 0.97,
+          "probabilities": {
+            "FR": 0.97,
+            "IT": 0.0,
+            "ES": 0.0,
+            "OTHER": 0.0,
+            "DE": 0.0,
+            "US": 0.0,
+            "GB": 0.0,
+            "UNKNOWN": 0.03,
+            "CA": 0.0
+          }
+        },
+        "location_evidence": {
+          "type": "noul",
+          "noul": 0.5
+        }
+      },
+      "usage": {
+        "input_tokens": 1071,
+        "output_tokens": 100
+      }
+    },
+    "request_sha256": "daccbb8f28560d55ab6f16f397adfcb03c7b75985beb01a045ff77b80667f90b",
+    "cache_hit": false,
+    "network_attempts": 1,
+    "elapsed_s": 0.6806503000000248,
+    "metadata_expected": "FR",
+    "review": {
+      "review_id": 15,
+      "country": "UNKNOWN",
+      "evidence": "Rotated cropped product list in French/English; no clear location or unique country identifier.",
+      "certainty": "not_determinable",
+      "reviewer": "Codex assistant; not human annotation",
+      "basis": "image inspected before Jev predictions and source labels",
+      "date": "2026-09-24"
+    }
+  },
+  {
+    "id": "op-52074",
+    "expected": "FR",
+    "source_country": "FR",
+    "split": "test",
+    "group": "47",
+    "source": "real",
+    "variant": "focused-v2",
+    "rules": "UNKNOWN",
+    "status": "ok",
+    "response": {
+      "model": "jev-1.13.0",
+      "answers": {
+        "country": {
+          "type": "choice",
+          "choice": "FR",
+          "confidence": 1.0,
+          "probabilities": {
+            "DE": 0.0,
+            "GB": 0.0,
+            "CA": 0.0,
+            "FR": 1.0,
+            "OTHER": 0.0,
+            "IT": 0.0,
+            "US": 0.0,
+            "UNKNOWN": 0.0,
+            "ES": 0.0
+          }
+        },
+        "location_evidence": {
+          "type": "noul",
+          "noul": 0.96
+        }
+      },
+      "usage": {
+        "input_tokens": 1221,
+        "output_tokens": 100
+      }
+    },
+    "request_sha256": "436ddc737b2188f176576cced9299b7e07066142e6fe27869e77c0572a9da4bb",
+    "cache_hit": false,
+    "network_attempts": 1,
+    "elapsed_s": 0.6485275000000001,
+    "metadata_expected": "FR",
+    "review": {
+      "review_id": 18,
+      "country": "FR",
+      "evidence": "93100 Montreuil address and French telephone number.",
+      "certainty": "high",
+      "reviewer": "Codex assistant; not human annotation",
+      "basis": "image inspected before Jev predictions and source labels",
+      "date": "2026-09-24"
+    }
+  },
+  {
+    "id": "op-8357",
+    "expected": "FR",
+    "source_country": "FR",
+    "split": "test",
+    "group": "140",
+    "source": "real",
+    "variant": "focused-v2",
+    "rules": "UNKNOWN",
+    "status": "ok",
+    "response": {
+      "model": "jev-1.13.0",
+      "answers": {
+        "country": {
+          "type": "choice",
+          "choice": "FR",
+          "confidence": 1.0,
+          "probabilities": {
+            "OTHER": 0.0,
+            "US": 0.0,
+            "DE": 0.0,
+            "IT": 0.0,
+            "GB": 0.0,
+            "FR": 1.0,
+            "UNKNOWN": 0.0,
+            "ES": 0.0,
+            "CA": 0.0
+          }
+        },
+        "location_evidence": {
+          "type": "noul",
+          "noul": 0.96
+        }
+      },
+      "usage": {
+        "input_tokens": 1450,
+        "output_tokens": 100
+      }
+    },
+    "request_sha256": "3fab86167fac3ece37e9aabffa47cbbf874be78b6395389ff4b5ab8817f1b160",
+    "cache_hit": false,
+    "network_attempts": 1,
+    "elapsed_s": 0.7378237999998873,
+    "metadata_expected": "FR",
+    "review": {
+      "review_id": 36,
+      "country": "FR",
+      "evidence": "69002 Lyon street address and French telephone format.",
+      "certainty": "high",
+      "reviewer": "Codex assistant; not human annotation",
+      "basis": "image inspected before Jev predictions and source labels",
+      "date": "2026-09-24"
+    }
+  },
+  {
+    "id": "op-111092",
+    "expected": "FR",
+    "source_country": "FR",
+    "split": "test",
+    "group": "1920",
+    "source": "real",
+    "variant": "focused-v2",
+    "rules": "UNKNOWN",
+    "status": "ok",
+    "response": {
+      "model": "jev-1.13.0",
+      "answers": {
+        "country": {
+          "type": "choice",
+          "choice": "FR",
+          "confidence": 1.0,
+          "probabilities": {
+            "OTHER": 0.0,
+            "IT": 0.0,
+            "UNKNOWN": 0.0,
+            "DE": 0.0,
+            "FR": 1.0,
+            "ES": 0.0,
+            "GB": 0.0,
+            "CA": 0.0,
+            "US": 0.0
+          }
+        },
+        "location_evidence": {
+          "type": "noul",
+          "noul": 0.95
+        }
+      },
+      "usage": {
+        "input_tokens": 1180,
+        "output_tokens": 100
+      }
+    },
+    "request_sha256": "0fbfcd47c531060d5edd346655a9e12d0a8f07b23585b0bcfbeee2c4f8772244",
+    "cache_hit": false,
+    "network_attempts": 1,
+    "elapsed_s": 0.6561812999998438,
+    "metadata_expected": "FR",
+    "review": {
+      "review_id": 46,
+      "country": "FR",
+      "evidence": "Clichy la Garenne and French telephone format.",
+      "certainty": "high",
+      "reviewer": "Codex assistant; not human annotation",
+      "basis": "image inspected before Jev predictions and source labels",
+      "date": "2026-09-24"
+    }
+  },
+  {
+    "id": "op-51522",
+    "expected": "FR",
+    "source_country": "FR",
+    "split": "test",
+    "group": "4239",
+    "source": "real",
+    "variant": "focused-v2",
+    "rules": "UNKNOWN",
+    "status": "ok",
+    "response": {
+      "model": "jev-1.13.0",
+      "answers": {
+        "country": {
+          "type": "choice",
+          "choice": "FR",
+          "confidence": 1.0,
+          "probabilities": {
+            "UNKNOWN": 0.0,
+            "IT": 0.0,
+            "FR": 1.0,
+            "GB": 0.0,
+            "DE": 0.0,
+            "US": 0.0,
+            "ES": 0.0,
+            "OTHER": 0.0,
+            "CA": 0.0
+          }
+        },
+        "location_evidence": {
+          "type": "noul",
+          "noul": 0.96
+        }
+      },
+      "usage": {
+        "input_tokens": 1111,
+        "output_tokens": 100
+      }
+    },
+    "request_sha256": "d084edc9fd25e3b143b5c7e046953ddb4e41b85e39dcbd353714ad8b9bc0d679",
+    "cache_hit": false,
+    "network_attempts": 1,
+    "elapsed_s": 0.6395248999999694,
+    "metadata_expected": "FR",
+    "review": {
+      "review_id": 8,
+      "country": "FR",
+      "evidence": "92110 Clichy address and French telephone format.",
+      "certainty": "high",
+      "reviewer": "Codex assistant; not human annotation",
+      "basis": "image inspected before Jev predictions and source labels",
+      "date": "2026-09-24"
+    }
+  },
+  {
+    "id": "op-7542",
+    "expected": "FR",
+    "source_country": "FR",
+    "split": "test",
+    "group": "34",
+    "source": "real",
+    "variant": "focused-v2",
+    "rules": "UNKNOWN",
+    "status": "ok",
+    "response": {
+      "model": "jev-1.13.0",
+      "answers": {
+        "country": {
+          "type": "choice",
+          "choice": "FR",
+          "confidence": 1.0,
+          "probabilities": {
+            "CA": 0.0,
+            "DE": 0.0,
+            "US": 0.0,
+            "ES": 0.0,
+            "IT": 0.0,
+            "FR": 1.0,
+            "OTHER": 0.0,
+            "GB": 0.0,
+            "UNKNOWN": 0.0
+          }
+        },
+        "location_evidence": {
+          "type": "noul",
+          "noul": 0.96
+        }
+      },
+      "usage": {
+        "input_tokens": 1279,
+        "output_tokens": 100
+      }
+    },
+    "request_sha256": "18b3ce3450040cf63796741a1b4ab3b3497357a4d23f74d586c8fda6e265c5a8",
+    "cache_hit": false,
+    "network_attempts": 1,
+    "elapsed_s": 0.6530804000001353,
+    "metadata_expected": "FR",
+    "review": {
+      "review_id": 17,
+      "country": "FR",
+      "evidence": "38320 Bresson address and French tax/telephone conventions.",
+      "certainty": "high",
+      "reviewer": "Codex assistant; not human annotation",
+      "basis": "image inspected before Jev predictions and source labels",
+      "date": "2026-09-24"
+    }
+  },
+  {
+    "id": "op-7607",
+    "expected": "UNKNOWN",
+    "source_country": "CA",
+    "split": "test",
+    "group": "604",
+    "source": "real",
+    "variant": "focused-v2",
+    "rules": "UNKNOWN",
+    "status": "ok",
+    "response": {
+      "model": "jev-1.13.0",
+      "answers": {
+        "country": {
+          "type": "choice",
+          "choice": "UNKNOWN",
+          "confidence": 0.88,
+          "probabilities": {
+            "IT": 0.0,
+            "FR": 0.0,
+            "UNKNOWN": 0.9,
+            "GB": 0.0,
+            "DE": 0.0,
+            "US": 0.08,
+            "OTHER": 0.01,
+            "CA": 0.01,
+            "ES": 0.0
+          }
+        },
+        "location_evidence": {
+          "type": "noul",
+          "noul": 0.15
+        }
+      },
+      "usage": {
+        "input_tokens": 909,
+        "output_tokens": 100
+      }
+    },
+    "request_sha256": "cb7611ea89b1767ae4a315b5b25fad049911716e5a8b5a7256f817a811a8af60",
+    "cache_hit": false,
+    "network_attempts": 1,
+    "elapsed_s": 0.9073032999999668,
+    "metadata_expected": "CA",
+    "review": {
+      "review_id": 70,
+      "country": "UNKNOWN",
+      "evidence": "Cropped English product lines and dollar prices only; no merchant location.",
+      "certainty": "not_determinable",
+      "reviewer": "Codex assistant; not human annotation",
+      "basis": "image inspected before Jev predictions and source labels",
+      "date": "2026-09-24"
+    }
+  },
+  {
+    "id": "op-7604",
+    "expected": "UNKNOWN",
+    "source_country": "CA",
+    "split": "test",
+    "group": "604",
+    "source": "real",
+    "variant": "focused-v2",
+    "rules": "UNKNOWN",
+    "status": "ok",
+    "response": {
+      "model": "jev-1.13.0",
+      "answers": {
+        "country": {
+          "type": "choice",
+          "choice": "UNKNOWN",
+          "confidence": 0.87,
+          "probabilities": {
+            "OTHER": 0.02,
+            "GB": 0.0,
+            "US": 0.08,
+            "FR": 0.0,
+            "ES": 0.0,
+            "IT": 0.0,
+            "DE": 0.01,
+            "UNKNOWN": 0.89,
+            "CA": 0.0
+          }
+        },
+        "location_evidence": {
+          "type": "noul",
+          "noul": 0.15
+        }
+      },
+      "usage": {
+        "input_tokens": 963,
+        "output_tokens": 100
+      }
+    },
+    "request_sha256": "5d5f2841e99e40fc12049835354af8cd72b78a0cda80ecbd293a938ab513fb93",
+    "cache_hit": false,
+    "network_attempts": 1,
+    "elapsed_s": 0.8742238000002089,
+    "metadata_expected": "CA",
+    "review": {
+      "review_id": 6,
+      "country": "UNKNOWN",
+      "evidence": "Only cropped English product lines and $ amounts; no merchant location survives.",
+      "certainty": "not_determinable",
+      "reviewer": "Codex assistant; not human annotation",
+      "basis": "image inspected before Jev predictions and source labels",
+      "date": "2026-09-24"
+    }
+  }
+]

@@ -1,0 +1,138 @@
+{
+  "dataset": "albertobarnabo/synthetic-receipts-ocr",
+  "revision": "ed46e02b9b1136f6b54847c1d4bce9e94d11e55c",
+  "split": "eval",
+  "selection": "first 5 per country among first 100 rows",
+  "samples": [
+    {
+      "id": "eval-000000",
+      "country": "GB",
+      "text": "GARCIA SUPERMARKET\n37 HIGH STREET\nVAT NO GB878076490\n------------------------------------------------\n23/07/2020                                 13:11\nRECEIPT 3-43024-218                     S. PATEL\n------------------------------------------------\nCOBI WRLD TANKS                           £24.99\nCEP WMN COMP RUN                          £24.99\nKB BOHO GREY FUZZY FAUX                   £79.96\n  2 x £39.98\nREV-A-SHELF 5WB                           £19.98\n  2 x £9.99\nCELLOT 40P 2.75                           £29.98\nAHOLTA STAIN RESI TURKI                    £4.99\n------------------------------------------------\nTOTAL                                    £184.89\nINCL VAT 20%                              £30.81\n \nMASTERCARD                               £184.89\nLOYALTY PTS +85\n \nPLEASE COME AGAIN",
+      "image": ".cache\\images\\eval-000000.jpg"
+    },
+    {
+      "id": "eval-000001",
+      "country": "FR",
+      "text": "MARCHE GARCIA\nBD SAINT-MICHEL 178\nTEL +33 3 84 79 32 98\nSIRET 25882052352331\n------------------------------------------\n19/10/2025                           09:39\nTICKET 3-45150-243                CAISSE 2\n------------------------------------------\nFUNNY AUTISM NOT YOUR             3,49 EUR\nLCFN DUAL                        25,98 EUR\nPILOT                             0,98 EUR\nREEBOK MENS FLASHF               19,99 EUR\nAMBERSHI AMBRSHN FULL SO          3,98 EUR\nCONT CONTÉ PRS SANGUI             7,99 EUR\n------------------------------------------\nTOTAL                            62,41 EUR\nDONT TVA 20%                     10,40 EUR\n \nSANS CONTACT                     62,41 EUR\nPOINTS FIDELITE +68\n \nCONSERVEZ VOTRE TICKET",
+      "image": ".cache\\images\\eval-000001.jpg"
+    },
+    {
+      "id": "eval-000002",
+      "country": "IT",
+      "text": "SUPERMERCATO GARCIA\nCORSO ITALIA 253\nTEL +39 08 9095055\n------------------------------------------------\n01/06/2022                                 12:39\nSCONTRINO 7-52654-712                      LUCIA\n------------------------------------------------\nAPPLE MACBOOK PRO                      12,99 EUR\nTIPOK CHAMPAGNE BRO CLNG                0,99 EUR\nCLVR CRE CHRIST PARTY                  11,98 EUR\n  2 x 5,99 EUR\nDORSANEE BOMB TWIST CROC                0,79 EUR\n------------------------------------------------\nTOTALE                                 26,75 EUR\nDI CUI IVA 22%                          4,82 EUR\n \nMASTERCARD                             26,75 EUR\n \nGRAZIE E ARRIVEDERCI",
+      "image": ".cache\\images\\eval-000002.jpg"
+    },
+    {
+      "id": "eval-000003",
+      "country": "FR",
+      "text": "COMPTOIR CREATIVE\nRUE DU MARCHE 174\nSIRET 58450151022351\n------------------------------------------\n23/06/2021                           18:58\nTICKET 8-29221-980                CAISSE 2\n------------------------------------------\nPRO NURSIN CNCPTS CHA             5,98 EUR\nT TAR TOILET                      1,29 EUR\n------------------------------------------\nTOTAL                             7,27 EUR\nDONT TVA 5,5%                     0,07 EUR\nDONT TVA 20%                      1,00 EUR\n \nVISA                              7,27 EUR\n \nCONSERVEZ VOTRE TICKET"
+    },
+    {
+      "id": "eval-000004",
+      "country": "US",
+      "text": "BROWN CORNER SHOP\n3 ELM AVE\n------------------------------------------------\n03/18/2021                                 15:18\nRECEIPT 4-28508-806                       REG 02\n------------------------------------------------\nVSQ WOM                                    $5.99\nPKBM HAPPY 14TH                            $9.99\nA CHRFL GIVER LAVEND                       $0.99\n------------------------------------------------\nSUBTOTAL                                  $16.97\nTAX                                        $1.23\nTOTAL                                     $18.20\n \nVISA CREDIT                               $18.20\nLOYALTY PTS +23\n \nTHANK YOU FOR SHOPPING WITH US",
+      "image": ".cache\\images\\eval-000004.jpg"
+    },
+    {
+      "id": "eval-000005",
+      "country": "US",
+      "text": "AMAZER'S MARKET\n289 BROADWAY\nTEL +1 (284) 661-6977\n--------------------------------\n08/17/2022                 16:54\nRECEIPT 9-35283-989       REG 02\n--------------------------------\n5MM SOCKE                  $5.99\nWUHOVILA WMNS PLSH HOODE  $14.99\nPORT CMPNY MEN             $2.58\nOSTER REPLACEMENT BLADE    $2.37\n  3 x $0.79\nKALA SLD SPRC TOP STRIPE   $5.16\n  2 x $2.58\n--------------------------------\nSUBTOTAL                  $31.09\nTAX 6%                     $1.87\nTOTAL                     $32.96\n \nMASTERCARD                $32.96\nLOYALTY PTS +72\n \nHAVE A NICE DAY"
+    },
+    {
+      "id": "eval-000006",
+      "country": "IT",
+      "text": "EMPORIO BOLT\nPIAZZA DANTE 198\nP.IVA 59272980312\n------------------------------------------------\n17/07/2019                                 17:13\nSCONTRINO 6-42655-206                      LUCIA\n------------------------------------------------\nYELLOW JAC PRMM                         0,98 EUR\nCREST TWIN PACK                         1,49 EUR\nHONG KONG EGG                           0,79 EUR\n------------------------------------------------\nTOTALE                                  3,26 EUR\nDI CUI IVA 22%                          0,59 EUR\n \nBANCOMAT                                3,26 EUR\nPUNTI +48\n \nGRAZIE E ARRIVEDERCI"
+    },
+    {
+      "id": "eval-000007",
+      "country": "FR",
+      "text": "MARCHE LARSEN\nRUE DU MARCHE 184\nTEL +33 4 88 52 71 42\n--------------------------------------\n08/01/2025                       15:10\nTICKET 8-37528-649            CAISSE 1\n--------------------------------------\nQBSM BULK CHR                 9,99 EUR\n--------------------------------------\nTOTAL                         9,99 EUR\nDONT TVA 20%                  1,66 EUR\n \nVISA                          9,99 EUR\n \nCONSERVEZ VOTRE TICKET"
+    },
+    {
+      "id": "eval-000008",
+      "country": "DE",
+      "text": "MARKT CREEPYPARTY\nBAHNHOFSTR. 189\nTEL +49 43 1999870\nUSt-IdNr DE564494683\n------------------------------------------\n26.01.2024                           18:16\nBELEG 4-64134-354                 S. WEBER\n------------------------------------------\nSUEROOM RFLLBL HNDMD TRA          6,98 EUR\nMILWAUKEE 48-22-8201 ULT         19,99 EUR\nTLN TRAVE BACKP                   0,79 EUR\nTHE CHRIST                       15,98 EUR\nDAWN WAR                          1,99 EUR\n2-P DECOAR DAZZ                   0,49 EUR\n------------------------------------------\nSUMME                            46,22 EUR\nENTH. MwSt 19%                    7,38 EUR\n \nEC-KARTE                         46,22 EUR\n \nBITTE BELEG AUFBEWAHREN",
+      "image": ".cache\\images\\eval-000008.jpg"
+    },
+    {
+      "id": "eval-000009",
+      "country": "GB",
+      "text": "BERRETTKOEHLER CORNER SHOP\n230 PARK LANE\nTEL +44 3535 432245\nVAT NO GB104662367\n------------------------------------------\n25/06/2019                           19:15\nRECEIPT 7-86598-522               S. PATEL\n------------------------------------------\nCASOFU BRRTS BLNKT GIANT             £9.98\nKECC CMPTBL WITH                     £4.99\nCLIC ADJUST FRONT CONN              £44.97\n  3 x £14.99\nCHILLY DOG BFFL PLA DOG              £9.99\nSIG FOOD FLAV                       £99.98\n  2 x £49.99\nREFLEC PRSNLZD                      £24.99\nBEARDED DRGNS MAKE HPPY             £12.99\nBUMKINS STARTER BIB BABY             £3.98\n------------------------------------------\nTOTAL                              £211.87\nINCL VAT 20%                        £35.31\n \nMAESTRO                            £211.87\nLOYALTY PTS +20\n \nKEEP RECEIPT FOR RETURNS"
+    },
+    {
+      "id": "eval-000010",
+      "country": "IT",
+      "text": "MERCATO GARCIA\nPIAZZA DANTE 113\nTEL +39 09 8217637\n--------------------------------\n06/09/2019                 21:14\nSCONTRINO 9-34912-166      LUCIA\n--------------------------------\nACME DOUGH EXTRUD      19,99 EUR\nDZ 2 PCS MOLE           9,98 EUR\nBENQ TH685 1080P        4,99 EUR\nINDEPEND CROCH FOR      4,99 EUR\nJACIYA 18 PACK SCRUNCHI 4,99 EUR\n--------------------------------\nTOTALE                 44,94 EUR\nDI CUI IVA 22%          8,10 EUR\n \nCARTA CONTACTLESS      44,94 EUR\nPUNTI +56\n \nGRAZIE E ARRIVEDERCI"
+    },
+    {
+      "id": "eval-000011",
+      "country": "US",
+      "text": "WEBER'S TRADING\n191 MAIN ST\nTEL +1 (386) 838-4945\n------------------------------------------------\n11/26/2020                                 12:16\nRECEIPT 9-68630-860                         ANNA\n------------------------------------------------\nNIKKO CRAW ECLPS 3.2                      $11.98\nOSPREY PACKS DAYL DAYP B                   $3.49\n------------------------------------------------\nSUBTOTAL                                  $15.47\nTAX 7.25%                                  $1.12\nTOTAL                                     $16.59\n \nCONTACTLESS                               $16.59\nLOYALTY PTS +60\n \nTHANK YOU FOR SHOPPING WITH US"
+    },
+    {
+      "id": "eval-000012",
+      "country": "DE",
+      "text": "SUPERMARKT BANORD\nBAHNHOFSTR. 12\nUSt-IdNr DE958999175\n------------------------------------------\n03.04.2025                           21:20\nBELEG 7-57783-886                  KASSE 2\n------------------------------------------\nREEBOK MENS QUESTION MID         19,98 EUR\nBULOVA ARCHIVE SRS MENS           9,99 EUR\nIHRTRVS FREAKY FSHNT              4,98 EUR\nBEL CHRISTMAS ROL                 2,49 EUR\n------------------------------------------\nSUMME                            37,44 EUR\nENTH. MwSt 7%                     0,16 EUR\nENTH. MwSt 19%                    5,58 EUR\n \nBAR                              40,00 EUR\nRUECKGELD                         2,56 EUR\nPUNKTE +60\n \nAUF WIEDERSEHEN"
+    },
+    {
+      "id": "eval-000013",
+      "country": "DE",
+      "text": "KAUFHAUS BECCA\nGARTENWEG 185\nTEL +49 45 8814511\nUSt-IdNr DE142757056\n------------------------------------------------\n09.04.2022                                 07:27\nBELEG 1-60922-558                        KASSE 1\n------------------------------------------------\nPRPÉT WOM                               1,49 EUR\nLA WHITE CAT                           12,99 EUR\nHVAC AND REFRI                          2,99 EUR\nPRN PRO PLAN                            4,99 EUR\nTOOTH REAL                             12,99 EUR\n------------------------------------------------\nSUMME                                  35,45 EUR\nENTH. MwSt 7%                           0,33 EUR\nENTH. MwSt 19%                          4,86 EUR\n \nKONTAKTLOS                             35,45 EUR\n \nAUF WIEDERSEHEN"
+    },
+    {
+      "id": "eval-000014",
+      "country": "US",
+      "text": "WEBER'S EXPRESS\n92 MAPLE DR\nTEL +1 (397) 926-8810\n--------------------------------\n03/20/2025                 21:49\nRECEIPT 9-94130-475      J.SMITH\n--------------------------------\nEASKEP CUTICL TRIM        $19.99\nMFLD SLCN TRAVEL           $6.98\nPAVOI 14K WHIT GOLD        $0.99\nLASERMAX CENTER LASER RE  $24.99\n--------------------------------\nSUBTOTAL                  $52.95\nTAX                        $4.37\nTOTAL                     $57.32\n \nMASTERCARD                $57.32\n \nPLEASE COME AGAIN"
+    },
+    {
+      "id": "eval-000015",
+      "country": "GB",
+      "text": "EMIMANHATTAN'S CORNER SHOP\n39 KING ST\n------------------------------------------\n19/02/2023                           12:00\nRECEIPT 9-89780-963                  OP-11\n------------------------------------------\nCHOIES WOMEN WHITE                   £1.29\nFLUOR RNBW                           £5.98\n------------------------------------------\nTOTAL                                £7.27\nINCL VAT 20%                         £1.21\n \nMAESTRO                              £7.27\nLOYALTY PTS +9\n \nTHANK YOU FOR SHOPPING WITH US"
+    },
+    {
+      "id": "eval-000016",
+      "country": "US",
+      "text": "BROWN'S STORES\n134 ELM AVE\nTEL +1 (307) 904-2641\n--------------------------------------\n06/28/2023                       07:28\nRECEIPT 5-13733-196             TILL 3\n--------------------------------------\nAW FASHIONS WRLDS GRE           $15.98\nFREYA'S RAINBOW TRIANG B         $4.99\nNYLO TRAINING DOG                $7.99\nURBST 8 PIN                      $5.99\nV-LINE 31242-SA QUICK AC         $0.79\n--------------------------------------\nSUBTOTAL                        $35.74\nTAX 6%                           $2.14\nTOTAL                           $37.88\n \nAPPLE PAY                       $37.88\n \nHAVE A NICE DAY"
+    },
+    {
+      "id": "eval-000018",
+      "country": "IT",
+      "text": "MERCERIA BUNCHO\nVIA GARIBALDI 55\nTEL +39 02 8874717\nP.IVA 51345747233\n--------------------------------\n25/05/2025                 18:59\nSCONTRINO 7-17648-788    CASSA 1\n--------------------------------\nDEPEND INCNTNNC PRO WI 11,98 EUR\nHOMRAIN PLUS SIZE LACE 15,98 EUR\n  2 x 7,99 EUR\nAVNGRS ASSEMB VOL.      2,58 EUR\n  2 x 1,29 EUR\nBANDWAGO WNDW CONDENSAT 2,49 EUR\nJOOVY CABOOSE ULTRA     6,98 EUR\nCSTM ACCESS            24,99 EUR\nSMARTEN DCRTV SILE WALL 4,99 EUR\nNEW BALANCE             1,29 EUR\nDOG AME FLAG COLLA      3,49 EUR\nSWS COMPATIBLE WITH    29,99 EUR\nSPORT CARE. SCUBA      29,99 EUR\nDOKOTOO WMNS FSHN      29,99 EUR\nSTOP THMB SCKNG NN-TXC  9,98 EUR\n--------------------------------\nTOTALE                174,72 EUR\nDI CUI IVA 10%          0,23 EUR\nDI CUI IVA 22%         31,06 EUR\n \nCARTA CONTACTLESS     174,72 EUR\n \nGRAZIE E ARRIVEDERCI"
+    },
+    {
+      "id": "eval-000019",
+      "country": "FR",
+      "text": "BAZAR BRANDED\nRUE DE LA GARE 13\nSIRET 95763176691729\n------------------------------------------------\n10/12/2020                                 14:22\nTICKET 2-78174-492                        OP. 07\n------------------------------------------------\nHUNTER WOMEN ORIGINAL SH               49,98 EUR\nFIRE EXTNGSHR SIGN SELF                 1,49 EUR\nGROLISH CAR DOOR LOGO                  14,99 EUR\nMRYO PLRZD                              1,49 EUR\n------------------------------------------------\nTOTAL                                  67,95 EUR\nDONT TVA 20%                           11,32 EUR\n \nCB                                     67,95 EUR\nPOINTS FIDELITE +72\n \nMERCI DE VOTRE VISITE"
+    },
+    {
+      "id": "eval-000020",
+      "country": "DE",
+      "text": "MARKT GARCIA\nMARKTPLATZ 152\n------------------------------------------\n25.07.2020                           22:23\nBELEG 6-28306-936                  KASSE 2\n------------------------------------------\nSNS TOILET SEAT                   4,99 EUR\nCLEVER CREATI CHRISTMAS           6,98 EUR\nECOVACS DBT N78                   7,99 EUR\n2 GLLN DRI                        5,99 EUR\nDARK STATE                        0,79 EUR\nEHEIM JGR AQUARIUM               49,98 EUR\n  2 x 24,99 EUR\nCHAMPION 12.5- HOME              19,99 EUR\nADURO SPO THIGH                  49,99 EUR\nFIRST ALERT BRK SC91 HRD          5,99 EUR\nSNAIL JERSEY FRA DSPLY            2,49 EUR\nELCTRC SPACE HTR                 14,99 EUR\nMELISSA DOUG SHAPES               4,99 EUR\nMILLION DOLLAR BABY               0,49 EUR\n------------------------------------------\nSUMME                           175,65 EUR\nENTH. MwSt 19%                   28,04 EUR\n \nEC-KARTE                        175,65 EUR\n \nBITTE BELEG AUFBEWAHREN"
+    },
+    {
+      "id": "eval-000021",
+      "country": "FR",
+      "text": "COMPTOIR BOSILI\nRUE DE LA GARE 203\nSIRET 65227312869862\n------------------------------------------\n04/07/2025                           11:37\nTICKET 2-79841-373                CAISSE 2\n------------------------------------------\nPRAN WOMEN ISELLE TANK            9,98 EUR\nGOUX MEN S-MOUNTAIN-BIKE          0,49 EUR\nMEWTOGO LION MANE                29,98 EUR\n  2 x 14,99 EUR\nEOOUT 16PCS MESH ZIP              2,49 EUR\nIFSUN MEN CLSSC LTHR              7,99 EUR\n------------------------------------------\nTOTAL                            50,93 EUR\nDONT TVA 20%                      8,49 EUR\n \nESPECES                          55,00 EUR\nRENDU                             4,07 EUR\nPOINTS FIDELITE +99\n \nMERCI DE VOTRE VISITE"
+    },
+    {
+      "id": "eval-000022",
+      "country": "GB",
+      "text": "BROWN'S SUPERMARKET\n205 KING ST\nTEL +44 2759 258653\nVAT NO GB922180804\n--------------------------------------\n17/12/2024                       10:28\nRECEIPT 3-84882-962             TILL 3\n--------------------------------------\n3 PACK CHEEKY                    £1.98\nZCUOO BTS BANGTAN                £5.99\nGRBAMBI PUMPKIN SWAG HAR         £5.99\nPUMA WOME DASH BACKP             £0.99\n--------------------------------------\nTOTAL                           £14.95\nINCL VAT 20%                     £2.49\n \nCASH                            £15.00\nCHANGE                           £0.05\nLOYALTY PTS +29\n \nPLEASE COME AGAIN"
+    },
+    {
+      "id": "eval-000024",
+      "country": "GB",
+      "text": "LARSEN CORNER SHOP\n89 STATION RD\nTEL +44 1308 499098\n------------------------------------------------\n17/08/2025                                 18:43\nRECEIPT 7-26315-684                        OP-11\n------------------------------------------------\nTYGE AUTO SOFT                             £4.98\n------------------------------------------------\nTOTAL                                      £4.98\nINCL VAT 20%                               £0.83\n \nCONTACTLESS                                £4.98\n \nPLEASE COME AGAIN"
+    },
+    {
+      "id": "eval-000029",
+      "country": "DE",
+      "text": "SUPERMARKT MORETTI\nMARKTPLATZ 205\nTEL +49 80 8051948\nUSt-IdNr DE765112292\n------------------------------------------\n03.11.2023                           22:40\nBELEG 5-30740-406                  KASSE 2\n------------------------------------------\nFULL MOON ANIME DRLNG             1,58 EUR\nCLDDGH STAI STEE MEMOR           49,99 EUR\n------------------------------------------\nSUMME                            51,57 EUR\nENTH. MwSt 19%                    8,23 EUR\n \nKONTAKTLOS                       51,57 EUR\nPUNKTE +96\n \nAUF WIEDERSEHEN"
+    },
+    {
+      "id": "eval-000030",
+      "country": "IT",
+      "text": "MERCATO BROWN\nPIAZZA DANTE 61\nTEL +39 06 3217081\nP.IVA 46527835772\n--------------------------------\n07/05/2024                 11:55\nSCONTRINO 5-57778-381      LUCIA\n--------------------------------\nACDELC 8-CO 9 VOLT      1,49 EUR\nVAL CSPLY               0,49 EUR\nPTZOPTIC PTZOPTICS 30X- 0,98 EUR\nBLBN SCHOOL BAC         0,99 EUR\nSISER GLTTR            24,99 EUR\nADDS ORIGIN             5,99 EUR\nMXPWR 561556B           0,49 EUR\nFOSI AUDIO D2120C       0,98 EUR\nAIQIBAO BOTTLE OPENER   9,99 EUR\nURBEST                  2,49 EUR\n--------------------------------\nTOTALE                 48,88 EUR\nDI CUI IVA 22%          8,81 EUR\n \nVISA                   48,88 EUR\nPUNTI +77\n \nGRAZIE PER LA VISITA"
+    }
+  ]
+}

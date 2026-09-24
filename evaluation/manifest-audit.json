@@ -1,0 +1,25 @@
+{
+  "real": {
+    "samples": 750,
+    "unique_ids": 750,
+    "dev_groups": 145,
+    "test_groups": 335,
+    "overlapping_groups": [],
+    "exact_duplicate_image_groups": [
+      [
+        "op-19786",
+        "op-19778"
+      ]
+    ],
+    "duplicate_images_crossing_split": []
+  },
+  "synthetic": {
+    "samples": 2000,
+    "unique_ids": 2000,
+    "dev_groups": 421,
+    "test_groups": 1579,
+    "overlapping_groups": [],
+    "exact_duplicate_image_groups": [],
+    "duplicate_images_crossing_split": []
+  }
+}

@@ -1,0 +1,632 @@
+[
+  {
+    "review_id": 1,
+    "country": "ES",
+    "evidence": "Barcelona, Spain, +34 and Spanish NIF printed in the header.",
+    "certainty": "high",
+    "reviewer": "Codex assistant; not human annotation",
+    "basis": "image inspected before Jev predictions and source labels",
+    "date": "2026-09-24"
+  },
+  {
+    "review_id": 2,
+    "country": "US",
+    "evidence": "Mountain View CA 94040 address and 650 telephone area code.",
+    "certainty": "high",
+    "reviewer": "Codex assistant; not human annotation",
+    "basis": "image inspected before Jev predictions and source labels",
+    "date": "2026-09-24"
+  },
+  {
+    "review_id": 3,
+    "country": "DE",
+    "evidence": "Berlin/Marzahn address and DE VAT identifier.",
+    "certainty": "high",
+    "reviewer": "Codex assistant; not human annotation",
+    "basis": "image inspected before Jev predictions and source labels",
+    "date": "2026-09-24"
+  },
+  {
+    "review_id": 4,
+    "country": "GB",
+    "evidence": "Southampton SO40 7BE address and GBP amounts.",
+    "certainty": "high",
+    "reviewer": "Codex assistant; not human annotation",
+    "basis": "image inspected before Jev predictions and source labels",
+    "date": "2026-09-24"
+  },
+  {
+    "review_id": 5,
+    "country": "ES",
+    "evidence": "Spanish CIF B-95390761 and factura simplificada; Eroski Alfons el Magn header.",
+    "certainty": "high",
+    "reviewer": "Codex assistant; not human annotation",
+    "basis": "image inspected before Jev predictions and source labels",
+    "date": "2026-09-24"
+  },
+  {
+    "review_id": 6,
+    "country": "UNKNOWN",
+    "evidence": "Only cropped English product lines and $ amounts; no merchant location survives.",
+    "certainty": "not_determinable",
+    "reviewer": "Codex assistant; not human annotation",
+    "basis": "image inspected before Jev predictions and source labels",
+    "date": "2026-09-24"
+  },
+  {
+    "review_id": 7,
+    "country": "DE",
+    "evidence": "10719 Berlin address and lidl.de.",
+    "certainty": "high",
+    "reviewer": "Codex assistant; not human annotation",
+    "basis": "image inspected before Jev predictions and source labels",
+    "date": "2026-09-24"
+  },
+  {
+    "review_id": 8,
+    "country": "FR",
+    "evidence": "92110 Clichy address and French telephone format.",
+    "certainty": "high",
+    "reviewer": "Codex assistant; not human annotation",
+    "basis": "image inspected before Jev predictions and source labels",
+    "date": "2026-09-24"
+  },
+  {
+    "review_id": 9,
+    "country": "ES",
+    "evidence": "Barcelona and Guissona addresses, Spanish NIF and Catalan fiscal labels.",
+    "certainty": "high",
+    "reviewer": "Codex assistant; not human annotation",
+    "basis": "image inspected before Jev predictions and source labels",
+    "date": "2026-09-24"
+  },
+  {
+    "review_id": 10,
+    "country": "IT",
+    "evidence": "Bolzano 39100 (BZ), Partita IVA and documento commerciale.",
+    "certainty": "high",
+    "reviewer": "Codex assistant; not human annotation",
+    "basis": "image inspected before Jev predictions and source labels",
+    "date": "2026-09-24"
+  },
+  {
+    "review_id": 11,
+    "country": "ES",
+    "evidence": "Valladolid/San Vicente del Palacio 47493, CIF and factura simplificada.",
+    "certainty": "high",
+    "reviewer": "Codex assistant; not human annotation",
+    "basis": "image inspected before Jev predictions and source labels",
+    "date": "2026-09-24"
+  },
+  {
+    "review_id": 12,
+    "country": "US",
+    "evidence": "Huntington NY store address and New York Avenue.",
+    "certainty": "high",
+    "reviewer": "Codex assistant; not human annotation",
+    "basis": "image inspected before Jev predictions and source labels",
+    "date": "2026-09-24"
+  },
+  {
+    "review_id": 13,
+    "country": "DE",
+    "evidence": "German receipt conventions, Pfandartikel and 7% food VAT; cropped location. Inferred, medium certainty.",
+    "certainty": "medium",
+    "reviewer": "Codex assistant; not human annotation",
+    "basis": "image inspected before Jev predictions and source labels",
+    "date": "2026-09-24"
+  },
+  {
+    "review_id": 14,
+    "country": "CA",
+    "evidence": "New Westminster BC V3L 3C2 and walmart.ca.",
+    "certainty": "high",
+    "reviewer": "Codex assistant; not human annotation",
+    "basis": "image inspected before Jev predictions and source labels",
+    "date": "2026-09-24"
+  },
+  {
+    "review_id": 15,
+    "country": "UNKNOWN",
+    "evidence": "Rotated cropped product list in French/English; no clear location or unique country identifier.",
+    "certainty": "not_determinable",
+    "reviewer": "Codex assistant; not human annotation",
+    "basis": "image inspected before Jev predictions and source labels",
+    "date": "2026-09-24"
+  },
+  {
+    "review_id": 16,
+    "country": "ES",
+    "evidence": "Madrid address and Spanish CIF A28090108.",
+    "certainty": "high",
+    "reviewer": "Codex assistant; not human annotation",
+    "basis": "image inspected before Jev predictions and source labels",
+    "date": "2026-09-24"
+  },
+  {
+    "review_id": 17,
+    "country": "FR",
+    "evidence": "38320 Bresson address and French tax/telephone conventions.",
+    "certainty": "high",
+    "reviewer": "Codex assistant; not human annotation",
+    "basis": "image inspected before Jev predictions and source labels",
+    "date": "2026-09-24"
+  },
+  {
+    "review_id": 18,
+    "country": "FR",
+    "evidence": "93100 Montreuil address and French telephone number.",
+    "certainty": "high",
+    "reviewer": "Codex assistant; not human annotation",
+    "basis": "image inspected before Jev predictions and source labels",
+    "date": "2026-09-24"
+  },
+  {
+    "review_id": 19,
+    "country": "CA",
+    "evidence": "519 telephone area code, Zehrs merchant and Canadian grocery conventions. Inferred from area code.",
+    "certainty": "medium",
+    "reviewer": "Codex assistant; not human annotation",
+    "basis": "image inspected before Jev predictions and source labels",
+    "date": "2026-09-24"
+  },
+  {
+    "review_id": 20,
+    "country": "IT",
+    "evidence": "Documento/RT fiscal footer, Italian wording and tax structure; header blurry. Inferred, medium certainty.",
+    "certainty": "medium",
+    "reviewer": "Codex assistant; not human annotation",
+    "basis": "image inspected before Jev predictions and source labels",
+    "date": "2026-09-24"
+  },
+  {
+    "review_id": 21,
+    "country": "IT",
+    "evidence": "91026 Mazara del Vallo (TP), P.IVA, Italian commercial document.",
+    "certainty": "high",
+    "reviewer": "Codex assistant; not human annotation",
+    "basis": "image inspected before Jev predictions and source labels",
+    "date": "2026-09-24"
+  },
+  {
+    "review_id": 22,
+    "country": "IT",
+    "evidence": "Bolzano 39100 (BZ), Partita IVA, Italian commercial document.",
+    "certainty": "high",
+    "reviewer": "Codex assistant; not human annotation",
+    "basis": "image inspected before Jev predictions and source labels",
+    "date": "2026-09-24"
+  },
+  {
+    "review_id": 23,
+    "country": "UNKNOWN",
+    "evidence": "Cropped French product list and prices; country cannot be distinguished.",
+    "certainty": "not_determinable",
+    "reviewer": "Codex assistant; not human annotation",
+    "basis": "image inspected before Jev predictions and source labels",
+    "date": "2026-09-24"
+  },
+  {
+    "review_id": 24,
+    "country": "US",
+    "evidence": "Chattanooga TN 37405 store address.",
+    "certainty": "high",
+    "reviewer": "Codex assistant; not human annotation",
+    "basis": "image inspected before Jev predictions and source labels",
+    "date": "2026-09-24"
+  },
+  {
+    "review_id": 25,
+    "country": "ES",
+    "evidence": "Lugo de Llanera/Pola de Siero addresses and CIF A33093097.",
+    "certainty": "high",
+    "reviewer": "Codex assistant; not human annotation",
+    "basis": "image inspected before Jev predictions and source labels",
+    "date": "2026-09-24"
+  },
+  {
+    "review_id": 26,
+    "country": "CA",
+    "evidence": "New Westminster BC, Canadian postcode and walmart.ca.",
+    "certainty": "high",
+    "reviewer": "Codex assistant; not human annotation",
+    "basis": "image inspected before Jev predictions and source labels",
+    "date": "2026-09-24"
+  },
+  {
+    "review_id": 27,
+    "country": "DE",
+    "evidence": "48163 Munster address, German fiscal and deposit conventions.",
+    "certainty": "high",
+    "reviewer": "Codex assistant; not human annotation",
+    "basis": "image inspected before Jev predictions and source labels",
+    "date": "2026-09-24"
+  },
+  {
+    "review_id": 28,
+    "country": "CA",
+    "evidence": "Royal City Centre, B.C. reference and GST registration. Inferred, medium certainty.",
+    "certainty": "medium",
+    "reviewer": "Codex assistant; not human annotation",
+    "basis": "image inspected before Jev predictions and source labels",
+    "date": "2026-09-24"
+  },
+  {
+    "review_id": 29,
+    "country": "US",
+    "evidence": "ShopRite of Huntington Commons, US retail units/pricing and order site. Inferred, medium certainty; no state printed.",
+    "certainty": "medium",
+    "reviewer": "Codex assistant; not human annotation",
+    "basis": "image inspected before Jev predictions and source labels",
+    "date": "2026-09-24"
+  },
+  {
+    "review_id": 30,
+    "country": "US",
+    "evidence": "Mountain View CA 94040 merchant address.",
+    "certainty": "high",
+    "reviewer": "Codex assistant; not human annotation",
+    "basis": "image inspected before Jev predictions and source labels",
+    "date": "2026-09-24"
+  },
+  {
+    "review_id": 31,
+    "country": "ES",
+    "evidence": "Granada street address, EUR and Spanish fiscal conventions.",
+    "certainty": "high",
+    "reviewer": "Codex assistant; not human annotation",
+    "basis": "image inspected before Jev predictions and source labels",
+    "date": "2026-09-24"
+  },
+  {
+    "review_id": 32,
+    "country": "US",
+    "evidence": "Mountain View CA 94040 merchant address.",
+    "certainty": "high",
+    "reviewer": "Codex assistant; not human annotation",
+    "basis": "image inspected before Jev predictions and source labels",
+    "date": "2026-09-24"
+  },
+  {
+    "review_id": 33,
+    "country": "CA",
+    "evidence": "42 Hanna Ave, Toronto ON merchant address.",
+    "certainty": "high",
+    "reviewer": "Codex assistant; not human annotation",
+    "basis": "image inspected before Jev predictions and source labels",
+    "date": "2026-09-24"
+  },
+  {
+    "review_id": 34,
+    "country": "CA",
+    "evidence": "New Westminster BC V3L 3C2 and walmart.ca.",
+    "certainty": "high",
+    "reviewer": "Codex assistant; not human annotation",
+    "basis": "image inspected before Jev predictions and source labels",
+    "date": "2026-09-24"
+  },
+  {
+    "review_id": 35,
+    "country": "UNKNOWN",
+    "evidence": "M&S and pound prices, but no merchant location; this does not uniquely distinguish UK from other sterling jurisdictions.",
+    "certainty": "not_determinable",
+    "reviewer": "Codex assistant; not human annotation",
+    "basis": "image inspected before Jev predictions and source labels",
+    "date": "2026-09-24"
+  },
+  {
+    "review_id": 36,
+    "country": "FR",
+    "evidence": "69002 Lyon street address and French telephone format.",
+    "certainty": "high",
+    "reviewer": "Codex assistant; not human annotation",
+    "basis": "image inspected before Jev predictions and source labels",
+    "date": "2026-09-24"
+  },
+  {
+    "review_id": 37,
+    "country": "GB",
+    "evidence": "Mansell Street Local, UK VAT/telephone and London company address plus GBP.",
+    "certainty": "high",
+    "reviewer": "Codex assistant; not human annotation",
+    "basis": "image inspected before Jev predictions and source labels",
+    "date": "2026-09-24"
+  },
+  {
+    "review_id": 38,
+    "country": "IT",
+    "evidence": "Viale Adriano 81, Milano and Italian P.IVA.",
+    "certainty": "high",
+    "reviewer": "Codex assistant; not human annotation",
+    "basis": "image inspected before Jev predictions and source labels",
+    "date": "2026-09-24"
+  },
+  {
+    "review_id": 39,
+    "country": "UNKNOWN",
+    "evidence": "Only two cropped product lines and pound prices; no store location. Product origin is not purchase country.",
+    "certainty": "not_determinable",
+    "reviewer": "Codex assistant; not human annotation",
+    "basis": "image inspected before Jev predictions and source labels",
+    "date": "2026-09-24"
+  },
+  {
+    "review_id": 40,
+    "country": "DE",
+    "evidence": "48163 Munster address, German fiscal/payment conventions.",
+    "certainty": "high",
+    "reviewer": "Codex assistant; not human annotation",
+    "basis": "image inspected before Jev predictions and source labels",
+    "date": "2026-09-24"
+  },
+  {
+    "review_id": 41,
+    "country": "US",
+    "evidence": "Santa Clara CA 95051 store address.",
+    "certainty": "high",
+    "reviewer": "Codex assistant; not human annotation",
+    "basis": "image inspected before Jev predictions and source labels",
+    "date": "2026-09-24"
+  },
+  {
+    "review_id": 42,
+    "country": "ES",
+    "evidence": "41704 Dos Hermanas, Spanish NIF and lidl.es.",
+    "certainty": "high",
+    "reviewer": "Codex assistant; not human annotation",
+    "basis": "image inspected before Jev predictions and source labels",
+    "date": "2026-09-24"
+  },
+  {
+    "review_id": 43,
+    "country": "IT",
+    "evidence": "39057 Appiano/Bolzano, Partita IVA and Italian fiscal document.",
+    "certainty": "high",
+    "reviewer": "Codex assistant; not human annotation",
+    "basis": "image inspected before Jev predictions and source labels",
+    "date": "2026-09-24"
+  },
+  {
+    "review_id": 44,
+    "country": "GB",
+    "evidence": "London Wood Green, GB VAT number and lidl.co.uk.",
+    "certainty": "high",
+    "reviewer": "Codex assistant; not human annotation",
+    "basis": "image inspected before Jev predictions and source labels",
+    "date": "2026-09-24"
+  },
+  {
+    "review_id": 45,
+    "country": "DE",
+    "evidence": "12621 Berlin and DE tax identifier.",
+    "certainty": "high",
+    "reviewer": "Codex assistant; not human annotation",
+    "basis": "image inspected before Jev predictions and source labels",
+    "date": "2026-09-24"
+  },
+  {
+    "review_id": 46,
+    "country": "FR",
+    "evidence": "Clichy la Garenne and French telephone format.",
+    "certainty": "high",
+    "reviewer": "Codex assistant; not human annotation",
+    "basis": "image inspected before Jev predictions and source labels",
+    "date": "2026-09-24"
+  },
+  {
+    "review_id": 47,
+    "country": "US",
+    "evidence": "Castro Valley CA 94546 merchant address.",
+    "certainty": "high",
+    "reviewer": "Codex assistant; not human annotation",
+    "basis": "image inspected before Jev predictions and source labels",
+    "date": "2026-09-24"
+  },
+  {
+    "review_id": 48,
+    "country": "CA",
+    "evidence": "Royal City Centre, B.C. and GST reference. Inferred, medium certainty.",
+    "certainty": "medium",
+    "reviewer": "Codex assistant; not human annotation",
+    "basis": "image inspected before Jev predictions and source labels",
+    "date": "2026-09-24"
+  },
+  {
+    "review_id": 49,
+    "country": "ES",
+    "evidence": "18006 Granada and Spanish NIF.",
+    "certainty": "high",
+    "reviewer": "Codex assistant; not human annotation",
+    "basis": "image inspected before Jev predictions and source labels",
+    "date": "2026-09-24"
+  },
+  {
+    "review_id": 50,
+    "country": "CA",
+    "evidence": "St. Catharines ON L2T 3J9 and HST.",
+    "certainty": "high",
+    "reviewer": "Codex assistant; not human annotation",
+    "basis": "image inspected before Jev predictions and source labels",
+    "date": "2026-09-24"
+  },
+  {
+    "review_id": 51,
+    "country": "IT",
+    "evidence": "Almenno S. Salvatore BG, Italian VAT number and migross.it.",
+    "certainty": "high",
+    "reviewer": "Codex assistant; not human annotation",
+    "basis": "image inspected before Jev predictions and source labels",
+    "date": "2026-09-24"
+  },
+  {
+    "review_id": 52,
+    "country": "FR",
+    "evidence": "French fiscal terminology, CB payment and 5.50% food TVA. Inferred, medium certainty; no merchant address.",
+    "certainty": "medium",
+    "reviewer": "Codex assistant; not human annotation",
+    "basis": "image inspected before Jev predictions and source labels",
+    "date": "2026-09-24"
+  },
+  {
+    "review_id": 53,
+    "country": "UNKNOWN",
+    "evidence": "Hand-obscured cropped receipt, Italian text and EUR but no readable merchant location.",
+    "certainty": "not_determinable",
+    "reviewer": "Codex assistant; not human annotation",
+    "basis": "image inspected before Jev predictions and source labels",
+    "date": "2026-09-24"
+  },
+  {
+    "review_id": 54,
+    "country": "FR",
+    "evidence": "FR-89470 Moneteau, SIRET and French tax identifier.",
+    "certainty": "high",
+    "reviewer": "Codex assistant; not human annotation",
+    "basis": "image inspected before Jev predictions and source labels",
+    "date": "2026-09-24"
+  },
+  {
+    "review_id": 55,
+    "country": "DE",
+    "evidence": "09126 Chemnitz merchant address.",
+    "certainty": "high",
+    "reviewer": "Codex assistant; not human annotation",
+    "basis": "image inspected before Jev predictions and source labels",
+    "date": "2026-09-24"
+  },
+  {
+    "review_id": 56,
+    "country": "GB",
+    "evidence": "lidl.co.uk survey URL, GBP and UK receipt conventions. Inferred from combined signals.",
+    "certainty": "medium",
+    "reviewer": "Codex assistant; not human annotation",
+    "basis": "image inspected before Jev predictions and source labels",
+    "date": "2026-09-24"
+  },
+  {
+    "review_id": 57,
+    "country": "ES",
+    "evidence": "C/Sants 76 Barcelona and Spanish CIF.",
+    "certainty": "high",
+    "reviewer": "Codex assistant; not human annotation",
+    "basis": "image inspected before Jev predictions and source labels",
+    "date": "2026-09-24"
+  },
+  {
+    "review_id": 58,
+    "country": "UNKNOWN",
+    "evidence": "Four cropped Italian product lines; no merchant location or distinguishing fiscal identifier.",
+    "certainty": "not_determinable",
+    "reviewer": "Codex assistant; not human annotation",
+    "basis": "image inspected before Jev predictions and source labels",
+    "date": "2026-09-24"
+  },
+  {
+    "review_id": 59,
+    "country": "DE",
+    "evidence": "04109 Leipzig address and German tax terms.",
+    "certainty": "high",
+    "reviewer": "Codex assistant; not human annotation",
+    "basis": "image inspected before Jev predictions and source labels",
+    "date": "2026-09-24"
+  },
+  {
+    "review_id": 60,
+    "country": "GB",
+    "evidence": "Market Rasen store and GB VAT identifier.",
+    "certainty": "high",
+    "reviewer": "Codex assistant; not human annotation",
+    "basis": "image inspected before Jev predictions and source labels",
+    "date": "2026-09-24"
+  },
+  {
+    "review_id": 61,
+    "country": "DE",
+    "evidence": "81371 Munchen address and .de merchant domain.",
+    "certainty": "high",
+    "reviewer": "Codex assistant; not human annotation",
+    "basis": "image inspected before Jev predictions and source labels",
+    "date": "2026-09-24"
+  },
+  {
+    "review_id": 62,
+    "country": "US",
+    "evidence": "Mountain View CA 94043 merchant address.",
+    "certainty": "high",
+    "reviewer": "Codex assistant; not human annotation",
+    "basis": "image inspected before Jev predictions and source labels",
+    "date": "2026-09-24"
+  },
+  {
+    "review_id": 63,
+    "country": "IT",
+    "evidence": "Santa Maria a Vico CE 81028, P.IVA and Italian commercial document.",
+    "certainty": "high",
+    "reviewer": "Codex assistant; not human annotation",
+    "basis": "image inspected before Jev predictions and source labels",
+    "date": "2026-09-24"
+  },
+  {
+    "review_id": 64,
+    "country": "GB",
+    "evidence": "Oxford Street store, London 020 number, Waitrose and GBP. Inferred from combined location signals.",
+    "certainty": "medium",
+    "reviewer": "Codex assistant; not human annotation",
+    "basis": "image inspected before Jev predictions and source labels",
+    "date": "2026-09-24"
+  },
+  {
+    "review_id": 65,
+    "country": "GB",
+    "evidence": "Toolstation UK-format service numbers, GBP and 20% VAT. Inferred, medium certainty; store address cropped.",
+    "certainty": "medium",
+    "reviewer": "Codex assistant; not human annotation",
+    "basis": "image inspected before Jev predictions and source labels",
+    "date": "2026-09-24"
+  },
+  {
+    "review_id": 66,
+    "country": "GB",
+    "evidence": "London Wood Green, GB VAT number and lidl.co.uk.",
+    "certainty": "high",
+    "reviewer": "Codex assistant; not human annotation",
+    "basis": "image inspected before Jev predictions and source labels",
+    "date": "2026-09-24"
+  },
+  {
+    "review_id": 67,
+    "country": "US",
+    "evidence": "Chicago IL 60608 merchant address.",
+    "certainty": "high",
+    "reviewer": "Codex assistant; not human annotation",
+    "basis": "image inspected before Jev predictions and source labels",
+    "date": "2026-09-24"
+  },
+  {
+    "review_id": 68,
+    "country": "DE",
+    "evidence": "87435 Kempten, +49 telephone and German fiscal conventions.",
+    "certainty": "high",
+    "reviewer": "Codex assistant; not human annotation",
+    "basis": "image inspected before Jev predictions and source labels",
+    "date": "2026-09-24"
+  },
+  {
+    "review_id": 69,
+    "country": "FR",
+    "evidence": "FR-69170 Tarare merchant address.",
+    "certainty": "high",
+    "reviewer": "Codex assistant; not human annotation",
+    "basis": "image inspected before Jev predictions and source labels",
+    "date": "2026-09-24"
+  },
+  {
+    "review_id": 70,
+    "country": "UNKNOWN",
+    "evidence": "Cropped English product lines and dollar prices only; no merchant location.",
+    "certainty": "not_determinable",
+    "reviewer": "Codex assistant; not human annotation",
+    "basis": "image inspected before Jev predictions and source labels",
+    "date": "2026-09-24"
+  }
+]

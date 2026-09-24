@@ -1,0 +1,13 @@
+{
+  "variant": "focused-v2",
+  "policy": {
+    "min_probability": 0.9,
+    "min_margin": 0.15,
+    "min_evidence": 0,
+    "automatic_enabled": false
+  },
+  "selected_on": "Exploratory synthetic development comparison; no completed real-data policy calibration",
+  "selected_at": "2026-09-24T11:37:21.811658+00:00",
+  "criterion_met": false,
+  "note": "User requested early experimental closure. This is a disabled automation policy, not a calibrated policy."
+}

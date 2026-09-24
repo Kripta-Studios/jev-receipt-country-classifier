@@ -1,0 +1,926 @@
+[
+  {
+    "id": "eval-000000",
+    "mode": "transcript",
+    "expected": "GB",
+    "answer": {
+      "type": "choice",
+      "choice": "GB",
+      "confidence": 1.0,
+      "probabilities": {
+        "FR": 0.0,
+        "CA": 0.0,
+        "UNKNOWN": 0.0,
+        "GB": 1.0,
+        "US": 0.0,
+        "DE": 0.0,
+        "OTHER": 0.0,
+        "IT": 0.0,
+        "ES": 0.0
+      }
+    },
+    "model": "jev-1.13.0",
+    "usage": {
+      "input_tokens": 721,
+      "output_tokens": 80
+    },
+    "elapsed_s": 0.8850609000000986,
+    "correct": true
+  },
+  {
+    "id": "eval-000001",
+    "mode": "transcript",
+    "expected": "FR",
+    "answer": {
+      "type": "choice",
+      "choice": "FR",
+      "confidence": 1.0,
+      "probabilities": {
+        "US": 0.0,
+        "CA": 0.0,
+        "IT": 0.0,
+        "UNKNOWN": 0.0,
+        "GB": 0.0,
+        "ES": 0.0,
+        "FR": 1.0,
+        "DE": 0.0,
+        "OTHER": 0.0
+      }
+    },
+    "model": "jev-1.13.0",
+    "usage": {
+      "input_tokens": 726,
+      "output_tokens": 80
+    },
+    "elapsed_s": 0.6302501000027405,
+    "correct": true
+  },
+  {
+    "id": "eval-000002",
+    "mode": "transcript",
+    "expected": "IT",
+    "answer": {
+      "type": "choice",
+      "choice": "IT",
+      "confidence": 0.99,
+      "probabilities": {
+        "DE": 0.0,
+        "US": 0.0,
+        "ES": 0.0,
+        "FR": 0.0,
+        "UNKNOWN": 0.01,
+        "OTHER": 0.0,
+        "CA": 0.0,
+        "GB": 0.0,
+        "IT": 0.99
+      }
+    },
+    "model": "jev-1.13.0",
+    "usage": {
+      "input_tokens": 684,
+      "output_tokens": 80
+    },
+    "elapsed_s": 0.630118200002471,
+    "correct": true
+  },
+  {
+    "id": "eval-000003",
+    "mode": "transcript",
+    "expected": "FR",
+    "answer": {
+      "type": "choice",
+      "choice": "FR",
+      "confidence": 0.99,
+      "probabilities": {
+        "DE": 0.0,
+        "UNKNOWN": 0.0,
+        "CA": 0.0,
+        "US": 0.0,
+        "GB": 0.0,
+        "FR": 1.0,
+        "OTHER": 0.0,
+        "IT": 0.0,
+        "ES": 0.0
+      }
+    },
+    "model": "jev-1.13.0",
+    "usage": {
+      "input_tokens": 647,
+      "output_tokens": 80
+    },
+    "elapsed_s": 0.7907819000029122,
+    "correct": true
+  },
+  {
+    "id": "eval-000004",
+    "mode": "transcript",
+    "expected": "US",
+    "answer": {
+      "type": "choice",
+      "choice": "UNKNOWN",
+      "confidence": 0.6,
+      "probabilities": {
+        "ES": 0.0,
+        "UNKNOWN": 0.64,
+        "IT": 0.0,
+        "OTHER": 0.0,
+        "US": 0.3,
+        "DE": 0.0,
+        "FR": 0.0,
+        "CA": 0.01,
+        "GB": 0.05
+      }
+    },
+    "model": "jev-1.13.0",
+    "usage": {
+      "input_tokens": 640,
+      "output_tokens": 80
+    },
+    "elapsed_s": 0.6465978999985964,
+    "correct": false
+  },
+  {
+    "id": "eval-000005",
+    "mode": "transcript",
+    "expected": "US",
+    "answer": {
+      "type": "choice",
+      "choice": "UNKNOWN",
+      "confidence": 0.58,
+      "probabilities": {
+        "IT": 0.0,
+        "ES": 0.0,
+        "GB": 0.0,
+        "CA": 0.0,
+        "UNKNOWN": 0.63,
+        "US": 0.33,
+        "DE": 0.0,
+        "FR": 0.0,
+        "OTHER": 0.04
+      }
+    },
+    "model": "jev-1.13.0",
+    "usage": {
+      "input_tokens": 707,
+      "output_tokens": 80
+    },
+    "elapsed_s": 0.6550078000000212,
+    "correct": false
+  },
+  {
+    "id": "eval-000006",
+    "mode": "transcript",
+    "expected": "IT",
+    "answer": {
+      "type": "choice",
+      "choice": "IT",
+      "confidence": 1.0,
+      "probabilities": {
+        "DE": 0.0,
+        "GB": 0.0,
+        "CA": 0.0,
+        "FR": 0.0,
+        "OTHER": 0.0,
+        "IT": 1.0,
+        "US": 0.0,
+        "UNKNOWN": 0.0,
+        "ES": 0.0
+      }
+    },
+    "model": "jev-1.13.0",
+    "usage": {
+      "input_tokens": 654,
+      "output_tokens": 80
+    },
+    "elapsed_s": 0.6144674000024679,
+    "correct": true
+  },
+  {
+    "id": "eval-000007",
+    "mode": "transcript",
+    "expected": "FR",
+    "answer": {
+      "type": "choice",
+      "choice": "FR",
+      "confidence": 1.0,
+      "probabilities": {
+        "GB": 0.0,
+        "IT": 0.0,
+        "US": 0.0,
+        "FR": 1.0,
+        "CA": 0.0,
+        "DE": 0.0,
+        "OTHER": 0.0,
+        "UNKNOWN": 0.0,
+        "ES": 0.0
+      }
+    },
+    "model": "jev-1.13.0",
+    "usage": {
+      "input_tokens": 618,
+      "output_tokens": 80
+    },
+    "elapsed_s": 0.6591187000012724,
+    "correct": true
+  },
+  {
+    "id": "eval-000008",
+    "mode": "transcript",
+    "expected": "DE",
+    "answer": {
+      "type": "choice",
+      "choice": "DE",
+      "confidence": 1.0,
+      "probabilities": {
+        "OTHER": 0.0,
+        "US": 0.0,
+        "FR": 0.0,
+        "ES": 0.0,
+        "GB": 0.0,
+        "UNKNOWN": 0.0,
+        "IT": 0.0,
+        "DE": 1.0,
+        "CA": 0.0
+      }
+    },
+    "model": "jev-1.13.0",
+    "usage": {
+      "input_tokens": 722,
+      "output_tokens": 80
+    },
+    "elapsed_s": 0.6370883000054164,
+    "correct": true
+  },
+  {
+    "id": "eval-000009",
+    "mode": "transcript",
+    "expected": "GB",
+    "answer": {
+      "type": "choice",
+      "choice": "GB",
+      "confidence": 0.88,
+      "probabilities": {
+        "ES": 0.0,
+        "UNKNOWN": 0.09,
+        "DE": 0.0,
+        "FR": 0.0,
+        "IT": 0.0,
+        "OTHER": 0.01,
+        "GB": 0.9,
+        "US": 0.0,
+        "CA": 0.0
+      }
+    },
+    "model": "jev-1.13.0",
+    "usage": {
+      "input_tokens": 771,
+      "output_tokens": 80
+    },
+    "elapsed_s": 0.6469642000010936,
+    "correct": true
+  },
+  {
+    "id": "eval-000010",
+    "mode": "transcript",
+    "expected": "IT",
+    "answer": {
+      "type": "choice",
+      "choice": "IT",
+      "confidence": 1.0,
+      "probabilities": {
+        "FR": 0.0,
+        "IT": 1.0,
+        "ES": 0.0,
+        "OTHER": 0.0,
+        "DE": 0.0,
+        "US": 0.0,
+        "GB": 0.0,
+        "UNKNOWN": 0.0,
+        "CA": 0.0
+      }
+    },
+    "model": "jev-1.13.0",
+    "usage": {
+      "input_tokens": 696,
+      "output_tokens": 80
+    },
+    "elapsed_s": 0.6333962999997311,
+    "correct": true
+  },
+  {
+    "id": "eval-000011",
+    "mode": "transcript",
+    "expected": "US",
+    "answer": {
+      "type": "choice",
+      "choice": "US",
+      "confidence": 0.97,
+      "probabilities": {
+        "CA": 0.0,
+        "GB": 0.0,
+        "FR": 0.0,
+        "IT": 0.0,
+        "US": 0.98,
+        "DE": 0.0,
+        "OTHER": 0.0,
+        "UNKNOWN": 0.02,
+        "ES": 0.0
+      }
+    },
+    "model": "jev-1.13.0",
+    "usage": {
+      "input_tokens": 659,
+      "output_tokens": 80
+    },
+    "elapsed_s": 0.6109112000049208,
+    "correct": true
+  },
+  {
+    "id": "eval-000012",
+    "mode": "transcript",
+    "expected": "DE",
+    "answer": {
+      "type": "choice",
+      "choice": "DE",
+      "confidence": 0.99,
+      "probabilities": {
+        "UNKNOWN": 0.01,
+        "GB": 0.0,
+        "US": 0.0,
+        "DE": 0.99,
+        "CA": 0.0,
+        "FR": 0.0,
+        "IT": 0.0,
+        "OTHER": 0.0,
+        "ES": 0.0
+      }
+    },
+    "model": "jev-1.13.0",
+    "usage": {
+      "input_tokens": 704,
+      "output_tokens": 80
+    },
+    "elapsed_s": 0.6259713000035845,
+    "correct": true
+  },
+  {
+    "id": "eval-000013",
+    "mode": "transcript",
+    "expected": "DE",
+    "answer": {
+      "type": "choice",
+      "choice": "DE",
+      "confidence": 1.0,
+      "probabilities": {
+        "GB": 0.0,
+        "UNKNOWN": 0.0,
+        "IT": 0.0,
+        "DE": 1.0,
+        "FR": 0.0,
+        "ES": 0.0,
+        "OTHER": 0.0,
+        "CA": 0.0,
+        "US": 0.0
+      }
+    },
+    "model": "jev-1.13.0",
+    "usage": {
+      "input_tokens": 703,
+      "output_tokens": 80
+    },
+    "elapsed_s": 0.6116936000034912,
+    "correct": true
+  },
+  {
+    "id": "eval-000014",
+    "mode": "transcript",
+    "expected": "US",
+    "answer": {
+      "type": "choice",
+      "choice": "US",
+      "confidence": 0.47,
+      "probabilities": {
+        "DE": 0.0,
+        "UNKNOWN": 0.45,
+        "CA": 0.01,
+        "US": 0.53,
+        "FR": 0.0,
+        "IT": 0.0,
+        "OTHER": 0.01,
+        "GB": 0.0,
+        "ES": 0.0
+      }
+    },
+    "model": "jev-1.13.0",
+    "usage": {
+      "input_tokens": 660,
+      "output_tokens": 80
+    },
+    "elapsed_s": 0.5974302999966312,
+    "correct": true
+  },
+  {
+    "id": "eval-000015",
+    "mode": "transcript",
+    "expected": "GB",
+    "answer": {
+      "type": "choice",
+      "choice": "GB",
+      "confidence": 0.77,
+      "probabilities": {
+        "US": 0.0,
+        "UNKNOWN": 0.2,
+        "FR": 0.0,
+        "DE": 0.0,
+        "IT": 0.0,
+        "CA": 0.0,
+        "ES": 0.0,
+        "GB": 0.8,
+        "OTHER": 0.0
+      }
+    },
+    "model": "jev-1.13.0",
+    "usage": {
+      "input_tokens": 614,
+      "output_tokens": 80
+    },
+    "elapsed_s": 0.6522880000047735,
+    "correct": true
+  },
+  {
+    "id": "eval-000016",
+    "mode": "transcript",
+    "expected": "US",
+    "answer": {
+      "type": "choice",
+      "choice": "US",
+      "confidence": 0.94,
+      "probabilities": {
+        "DE": 0.0,
+        "US": 0.95,
+        "ES": 0.0,
+        "FR": 0.0,
+        "UNKNOWN": 0.04,
+        "OTHER": 0.0,
+        "CA": 0.0,
+        "GB": 0.01,
+        "IT": 0.0
+      }
+    },
+    "model": "jev-1.13.0",
+    "usage": {
+      "input_tokens": 681,
+      "output_tokens": 80
+    },
+    "elapsed_s": 0.6536032000003615,
+    "correct": true
+  },
+  {
+    "id": "eval-000018",
+    "mode": "transcript",
+    "expected": "IT",
+    "answer": {
+      "type": "choice",
+      "choice": "IT",
+      "confidence": 1.0,
+      "probabilities": {
+        "GB": 0.0,
+        "IT": 1.0,
+        "US": 0.0,
+        "FR": 0.0,
+        "CA": 0.0,
+        "DE": 0.0,
+        "OTHER": 0.0,
+        "UNKNOWN": 0.0,
+        "ES": 0.0
+      }
+    },
+    "model": "jev-1.13.0",
+    "usage": {
+      "input_tokens": 867,
+      "output_tokens": 80
+    },
+    "elapsed_s": 0.6429844000012963,
+    "correct": true
+  },
+  {
+    "id": "eval-000019",
+    "mode": "transcript",
+    "expected": "FR",
+    "answer": {
+      "type": "choice",
+      "choice": "FR",
+      "confidence": 0.97,
+      "probabilities": {
+        "IT": 0.0,
+        "UNKNOWN": 0.02,
+        "ES": 0.0,
+        "OTHER": 0.0,
+        "US": 0.0,
+        "DE": 0.0,
+        "FR": 0.98,
+        "CA": 0.0,
+        "GB": 0.0
+      }
+    },
+    "model": "jev-1.13.0",
+    "usage": {
+      "input_tokens": 681,
+      "output_tokens": 80
+    },
+    "elapsed_s": 0.6143412000019453,
+    "correct": true
+  },
+  {
+    "id": "eval-000020",
+    "mode": "transcript",
+    "expected": "DE",
+    "answer": {
+      "type": "choice",
+      "choice": "DE",
+      "confidence": 0.8,
+      "probabilities": {
+        "UNKNOWN": 0.17,
+        "CA": 0.0,
+        "OTHER": 0.0,
+        "ES": 0.0,
+        "GB": 0.0,
+        "FR": 0.0,
+        "US": 0.0,
+        "IT": 0.0,
+        "DE": 0.83
+      }
+    },
+    "model": "jev-1.13.0",
+    "usage": {
+      "input_tokens": 809,
+      "output_tokens": 80
+    },
+    "elapsed_s": 0.6447824999995646,
+    "correct": true
+  },
+  {
+    "id": "eval-000021",
+    "mode": "transcript",
+    "expected": "FR",
+    "answer": {
+      "type": "choice",
+      "choice": "FR",
+      "confidence": 0.92,
+      "probabilities": {
+        "ES": 0.0,
+        "UNKNOWN": 0.05,
+        "OTHER": 0.0,
+        "CA": 0.0,
+        "GB": 0.0,
+        "FR": 0.93,
+        "DE": 0.0,
+        "US": 0.0,
+        "IT": 0.02
+      }
+    },
+    "model": "jev-1.13.0",
+    "usage": {
+      "input_tokens": 724,
+      "output_tokens": 80
+    },
+    "elapsed_s": 0.6341597000064212,
+    "correct": true
+  },
+  {
+    "id": "eval-000022",
+    "mode": "transcript",
+    "expected": "GB",
+    "answer": {
+      "type": "choice",
+      "choice": "GB",
+      "confidence": 0.97,
+      "probabilities": {
+        "IT": 0.0,
+        "ES": 0.0,
+        "OTHER": 0.0,
+        "US": 0.0,
+        "FR": 0.0,
+        "DE": 0.0,
+        "UNKNOWN": 0.03,
+        "CA": 0.0,
+        "GB": 0.97
+      }
+    },
+    "model": "jev-1.13.0",
+    "usage": {
+      "input_tokens": 682,
+      "output_tokens": 80
+    },
+    "elapsed_s": 0.6545649000036065,
+    "correct": true
+  },
+  {
+    "id": "eval-000024",
+    "mode": "transcript",
+    "expected": "GB",
+    "answer": {
+      "type": "choice",
+      "choice": "GB",
+      "confidence": 1.0,
+      "probabilities": {
+        "UNKNOWN": 0.0,
+        "CA": 0.0,
+        "OTHER": 0.0,
+        "GB": 1.0,
+        "ES": 0.0,
+        "FR": 0.0,
+        "US": 0.0,
+        "IT": 0.0,
+        "DE": 0.0
+      }
+    },
+    "model": "jev-1.13.0",
+    "usage": {
+      "input_tokens": 605,
+      "output_tokens": 80
+    },
+    "elapsed_s": 0.631799000002502,
+    "correct": true
+  },
+  {
+    "id": "eval-000029",
+    "mode": "transcript",
+    "expected": "DE",
+    "answer": {
+      "type": "choice",
+      "choice": "DE",
+      "confidence": 1.0,
+      "probabilities": {
+        "GB": 0.0,
+        "OTHER": 0.0,
+        "CA": 0.0,
+        "ES": 0.0,
+        "IT": 0.0,
+        "US": 0.0,
+        "UNKNOWN": 0.0,
+        "FR": 0.0,
+        "DE": 1.0
+      }
+    },
+    "model": "jev-1.13.0",
+    "usage": {
+      "input_tokens": 663,
+      "output_tokens": 80
+    },
+    "elapsed_s": 0.6401774000041769,
+    "correct": true
+  },
+  {
+    "id": "eval-000030",
+    "mode": "transcript",
+    "expected": "IT",
+    "answer": {
+      "type": "choice",
+      "choice": "IT",
+      "confidence": 1.0,
+      "probabilities": {
+        "OTHER": 0.0,
+        "GB": 0.0,
+        "US": 0.0,
+        "ES": 0.0,
+        "FR": 0.0,
+        "IT": 1.0,
+        "DE": 0.0,
+        "CA": 0.0,
+        "UNKNOWN": 0.0
+      }
+    },
+    "model": "jev-1.13.0",
+    "usage": {
+      "input_tokens": 778,
+      "output_tokens": 80
+    },
+    "elapsed_s": 0.6528375999987475,
+    "correct": true
+  },
+  {
+    "id": "eval-000000",
+    "mode": "ocr",
+    "expected": "GB",
+    "answer": {
+      "type": "choice",
+      "choice": "GB",
+      "confidence": 1.0,
+      "probabilities": {
+        "OTHER": 0.0,
+        "ES": 0.0,
+        "UNKNOWN": 0.0,
+        "US": 0.0,
+        "CA": 0.0,
+        "FR": 0.0,
+        "DE": 0.0,
+        "GB": 1.0,
+        "IT": 0.0
+      }
+    },
+    "model": "jev-1.13.0",
+    "usage": {
+      "input_tokens": 706,
+      "output_tokens": 80
+    },
+    "elapsed_s": 0.635525100005907,
+    "correct": true
+  },
+  {
+    "id": "eval-000001",
+    "mode": "ocr",
+    "expected": "FR",
+    "answer": {
+      "type": "choice",
+      "choice": "FR",
+      "confidence": 0.99,
+      "probabilities": {
+        "OTHER": 0.0,
+        "GB": 0.0,
+        "US": 0.0,
+        "ES": 0.0,
+        "FR": 0.99,
+        "IT": 0.0,
+        "DE": 0.0,
+        "UNKNOWN": 0.01,
+        "CA": 0.0
+      }
+    },
+    "model": "jev-1.13.0",
+    "usage": {
+      "input_tokens": 717,
+      "output_tokens": 80
+    },
+    "elapsed_s": 0.6786380999983521,
+    "correct": true
+  },
+  {
+    "id": "eval-000002",
+    "mode": "ocr",
+    "expected": "IT",
+    "answer": {
+      "type": "choice",
+      "choice": "IT",
+      "confidence": 0.99,
+      "probabilities": {
+        "IT": 0.99,
+        "ES": 0.0,
+        "DE": 0.0,
+        "GB": 0.0,
+        "OTHER": 0.0,
+        "CA": 0.0,
+        "FR": 0.0,
+        "US": 0.0,
+        "UNKNOWN": 0.01
+      }
+    },
+    "model": "jev-1.13.0",
+    "usage": {
+      "input_tokens": 673,
+      "output_tokens": 80
+    },
+    "elapsed_s": 0.6556854999944335,
+    "correct": true
+  },
+  {
+    "id": "eval-000004",
+    "mode": "ocr",
+    "expected": "US",
+    "answer": {
+      "type": "choice",
+      "choice": "UNKNOWN",
+      "confidence": 0.47,
+      "probabilities": {
+        "DE": 0.0,
+        "ES": 0.0,
+        "UNKNOWN": 0.54,
+        "FR": 0.0,
+        "IT": 0.0,
+        "OTHER": 0.0,
+        "GB": 0.06,
+        "US": 0.39,
+        "CA": 0.01
+      }
+    },
+    "model": "jev-1.13.0",
+    "usage": {
+      "input_tokens": 630,
+      "output_tokens": 80
+    },
+    "elapsed_s": 0.646364000000176,
+    "correct": false
+  },
+  {
+    "id": "eval-000008",
+    "mode": "ocr",
+    "expected": "DE",
+    "answer": {
+      "type": "choice",
+      "choice": "DE",
+      "confidence": 0.99,
+      "probabilities": {
+        "IT": 0.0,
+        "CA": 0.0,
+        "FR": 0.0,
+        "US": 0.0,
+        "GB": 0.0,
+        "DE": 0.99,
+        "ES": 0.0,
+        "UNKNOWN": 0.01,
+        "OTHER": 0.0
+      }
+    },
+    "model": "jev-1.13.0",
+    "usage": {
+      "input_tokens": 724,
+      "output_tokens": 80
+    },
+    "elapsed_s": 0.634137599998212,
+    "correct": true
+  },
+  {
+    "id": "ambiguous-eur",
+    "mode": "control",
+    "expected": "UNKNOWN",
+    "answer": {
+      "type": "choice",
+      "choice": "UNKNOWN",
+      "confidence": 1.0,
+      "probabilities": {
+        "OTHER": 0.0,
+        "GB": 0.0,
+        "US": 0.0,
+        "ES": 0.0,
+        "FR": 0.0,
+        "IT": 0.0,
+        "DE": 0.0,
+        "CA": 0.0,
+        "UNKNOWN": 1.0
+      }
+    },
+    "model": "jev-1.13.0",
+    "usage": {
+      "input_tokens": 486,
+      "output_tokens": 80
+    },
+    "elapsed_s": 0.6281930000041029,
+    "correct": true
+  },
+  {
+    "id": "explicit-spain",
+    "mode": "control",
+    "expected": "ES",
+    "answer": {
+      "type": "choice",
+      "choice": "ES",
+      "confidence": 1.0,
+      "probabilities": {
+        "UNKNOWN": 0.0,
+        "US": 0.0,
+        "FR": 0.0,
+        "ES": 1.0,
+        "OTHER": 0.0,
+        "IT": 0.0,
+        "CA": 0.0,
+        "DE": 0.0,
+        "GB": 0.0
+      }
+    },
+    "model": "jev-1.13.0",
+    "usage": {
+      "input_tokens": 496,
+      "output_tokens": 80
+    },
+    "elapsed_s": 0.6364729999986594,
+    "correct": true
+  },
+  {
+    "id": "canada",
+    "mode": "control",
+    "expected": "CA",
+    "answer": {
+      "type": "choice",
+      "choice": "CA",
+      "confidence": 1.0,
+      "probabilities": {
+        "UNKNOWN": 0.0,
+        "GB": 0.0,
+        "US": 0.0,
+        "DE": 0.0,
+        "CA": 1.0,
+        "FR": 0.0,
+        "OTHER": 0.0,
+        "IT": 0.0,
+        "ES": 0.0
+      }
+    },
+    "model": "jev-1.13.0",
+    "usage": {
+      "input_tokens": 492,
+      "output_tokens": 80
+    },
+    "elapsed_s": 0.6122602000032202,
+    "correct": true
+  }
+]
