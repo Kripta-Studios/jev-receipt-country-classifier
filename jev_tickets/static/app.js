@@ -1,4 +1,30 @@
 "use strict";
+// Some embedded/automated browsers keep a layout viewport wider than their
+// visible host window. Constrain the page itself, so content cannot be laid out
+// beyond that window even when viewport media queries still report desktop size.
+let windowWidthWatcher = null;
+function fitHostWindow() {
+  const constrained =
+    window.top === window.self &&
+    window.outerWidth > 0 &&
+    window.innerWidth > window.outerWidth + 32;
+  const root = document.documentElement;
+  if (constrained) {
+    root.style.setProperty(
+      "--available-window-width",
+      `${window.outerWidth - 32}px`,
+    );
+    // Host resizing may not emit a viewport resize while emulation is active.
+    if (windowWidthWatcher === null)
+      windowWidthWatcher = setInterval(fitHostWindow, 250);
+  } else {
+    root.style.removeProperty("--available-window-width");
+    clearInterval(windowWidthWatcher);
+    windowWidthWatcher = null;
+  }
+}
+fitHostWindow();
+window.addEventListener("resize", fitHostWindow);
 const $ = (id) => document.getElementById(id);
 const countries = {
   FR: "France",

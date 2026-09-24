@@ -66,8 +66,11 @@ and rendering; parallel request times should not be added to obtain wall time.
 
 Use **Fit image**, zoom controls or **Open full image** to inspect a receipt. The
 page and result cards wrap at narrow widths, and the text area expands to show the
-whole extraction. Tables wrap within the desktop viewport; at widths below 1,000 px,
+whole extraction. Tables respond to their own container width: below 60 rem,
 each row becomes a card with labelled values. No column requires sideways scrolling.
+The workspace columns also fit the available container width. In an embedded or
+automated browser reporting a viewport wider than its visible host window, a small
+layout safeguard bounds the page to that window and tracks host resizing.
 The introductory copy wraps naturally, without forced line breaks.
 
 The page also shows the complete 70-image reviewed-evidence comparison, generated

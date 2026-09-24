@@ -6,9 +6,40 @@ browser; the user's existing browser tab was not available for direct inspection
 
 ## Layout corrections
 
+### Native-window follow-up
+
+The earlier checks below resized an emulated viewport. A subsequent user report
+exposed a mismatch: the page reported a 1,280 px viewport while the physical browser
+window was only about 1,138 px wide. Browser zoom made the discrepancy harder to
+identify. Passing viewport-overflow checks did not establish that the entire page
+was visible inside the actual window.
+
+The browser's device-size override was cleared and zoom reset to 100%. Verification
+then resized the actual browser window, instead of calling `setViewportSize`:
+
+| Actual outer width | Layout viewport | Session table right edge | Review table right edge |
+|---:|---:|---:|---:|
+| 1,101 px | 1,091 px | 1,035 px | 1,031 px |
+| 901 px | 891 px | 835 px | 831 px |
+| 701 px | 691 px | 635 px | 631 px |
+| 521 px | 511 px | 455 px | 451 px |
+
+Both tables had data, including a freshly processed UK receipt. All right edges
+were inside the visible window; no visible text containers overflowed horizontally.
+The browser was left maximized at 100% zoom with its device-size override cleared.
+
+Tables now use container queries at 60 rem, so their layout follows the actual space
+they have rather than a potentially misleading viewport media query. Workspace
+columns also fit their container. A host-window safeguard constrains the page when
+an automated/embedded browser reports an oversized viewport, including after reload.
+It watches host width only while that mismatch exists. This safeguard can also make
+the layout more compact when deliberately zooming out; it does not change browser zoom.
+
+### Earlier viewport checks
+
 - Removed forced line breaks and the narrow fixed-width introduction layout.
 - Removed superseded responsive CSS rules; allowed grid children and long text to wrap.
-- Kept desktop tables within the page width, with wrapping cells. Below 1,000 px,
+- Kept desktop tables within the page width, with wrapping cells. In the earlier version, below 1,000 px,
   each row becomes labelled values; no columns depend on horizontal scrolling.
 - Enlarged supporting text and kept OCR text and expanded line lists at their full height.
 - Kept horizontal scrolling only where it is intentional: inspecting a zoomed image.
