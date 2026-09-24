@@ -1,0 +1,89 @@
+{
+  "video": "receipt-atlas-demo.mp4",
+  "duration_s": 45.84,
+  "size_bytes": 3134310,
+  "stream": {
+    "codec_name": "h264",
+    "width": 1280,
+    "height": 1040,
+    "r_frame_rate": "25/1"
+  },
+  "captions": "English, burned into a footer and provided as SRT",
+  "audio": false,
+  "capture": "Actual Playwright browser video; real-time playback; local OCR session warmed before recording; fresh image computation and Jev requests.",
+  "cues": [
+    {
+      "start_s": 0,
+      "text": "Receipt Atlas | A real receipt, local OCR and Jev"
+    },
+    {
+      "start_s": 3.829,
+      "text": "01  A crumpled receipt. Start a fresh OCR + Jev run."
+    },
+    {
+      "start_s": 7.358,
+      "text": "02  Real inference in progress. Jev receives text, not the image."
+    },
+    {
+      "start_s": 13.047,
+      "text": "03  Measured latency, token usage and estimated API cost."
+    },
+    {
+      "start_s": 18.943,
+      "text": "04  Compare both prompts on exactly the same extracted text."
+    },
+    {
+      "start_s": 23.471,
+      "text": "05  Click an OCR box to highlight its matching text region."
+    },
+    {
+      "start_s": 29.66,
+      "text": "06  Inspect all country probabilities. Confidence is not accuracy."
+    },
+    {
+      "start_s": 36.631,
+      "text": "07  Reviewed evidence: fewer unsupported guesses with the original prompt."
+    },
+    {
+      "start_s": 43.146,
+      "text": "Explore it locally | Open Prices photo: CC BY-SA 4.0 | Experimental results"
+    }
+  ],
+  "run": {
+    "run_id": "05a8caa1-3846-47c2-8d3d-f1189e7b7ffc",
+    "timestamp": "2026-09-24T15:30:21.436196+00:00",
+    "example": "op-65346",
+    "metrics": {
+      "jev_wall_s": 0.714378199998464,
+      "input_tokens": 2217,
+      "output_tokens": 180,
+      "estimated_cost_usd": 9.311400000000002e-05,
+      "successful_requests": 2,
+      "failed_requests": 0,
+      "fresh": true,
+      "cost_is_partial": false,
+      "cost_note": "Input-token estimate at USD 0.042/M tokens; output free. OCR compute excluded. Not an invoice.",
+      "ocr_s": 4.952115000000049,
+      "total_s": 5.6665675999993255
+    },
+    "ocr_lines": 36,
+    "candidates": [
+      {
+        "variant": "baseline-v1",
+        "candidate": "US",
+        "probability": 0.99,
+        "model": "jev-1.13.0",
+        "cache_hit": false
+      },
+      {
+        "variant": "focused-v2",
+        "candidate": "US",
+        "probability": 0.99,
+        "model": "jev-1.13.0",
+        "cache_hit": false
+      }
+    ]
+  },
+  "source_proof": "https://prices.openfoodfacts.org/proofs/65346",
+  "media_license": "CC-BY-SA-4.0"
+}

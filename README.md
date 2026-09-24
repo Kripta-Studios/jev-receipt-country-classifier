@@ -4,6 +4,18 @@ An experimental Python CLI comparing Jev prompts for receipt country classificat
 Jev receives text; the existing **trace-it local OCR** extracts text from images.
 Supported experiment labels: ES, FR, DE, IT, GB, US, CA, OTHER and UNKNOWN.
 
+## Video demo
+
+[![Watch the Receipt Atlas browser demo](docs/media/receipt-atlas-demo.jpg)](docs/media/receipt-atlas-demo.mp4)
+
+[Watch or download the 46-second MP4 demo](docs/media/receipt-atlas-demo.mp4) (3.1 MB).
+The recording shows a real crumpled receipt, fresh local OCR and Jev requests,
+selectable OCR regions, both prompt results, latency, estimated cost and the
+reviewed-evidence evaluation. English captions; no audio. See
+[recording details and attribution](docs/media/README.md).
+
+To run it yourself, follow the [installation and browser deployment guide](docs/DEPLOYMENT.md).
+
 ## Results at a glance
 
 | Evaluated input | N | Original prompt | Focused prompt |

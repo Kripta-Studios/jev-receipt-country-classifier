@@ -1,0 +1,35 @@
+1
+00:00:00,000 --> 00:00:03,829
+Receipt Atlas | A real receipt, local OCR and Jev
+
+2
+00:00:03,829 --> 00:00:07,358
+01  A crumpled receipt. Start a fresh OCR + Jev run.
+
+3
+00:00:07,358 --> 00:00:13,047
+02  Real inference in progress. Jev receives text, not the image.
+
+4
+00:00:13,047 --> 00:00:18,943
+03  Measured latency, token usage and estimated API cost.
+
+5
+00:00:18,943 --> 00:00:23,471
+04  Compare both prompts on exactly the same extracted text.
+
+6
+00:00:23,471 --> 00:00:29,660
+05  Click an OCR box to highlight its matching text region.
+
+7
+00:00:29,660 --> 00:00:36,631
+06  Inspect all country probabilities. Confidence is not accuracy.
+
+8
+00:00:36,631 --> 00:00:43,146
+07  Reviewed evidence: fewer unsupported guesses with the original prompt.
+
+9
+00:00:43,146 --> 00:00:45,840
+Explore it locally | Open Prices photo: CC BY-SA 4.0 | Experimental results
