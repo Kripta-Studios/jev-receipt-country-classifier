@@ -48,6 +48,9 @@
       <section id="workspace" aria-label="Receipt playground">
         <div class="toolbar">
           <div class="mode-switch" role="group" aria-label="Playground mode">
+            <button id="real-mode" aria-pressed="false">
+              Real challenge gallery
+            </button>
             <button id="demo-mode" class="selected" aria-pressed="true">
               Saved demo</button
             ><button id="live-mode" aria-pressed="false">Your receipt</button>
@@ -56,12 +59,31 @@
             <span class="dot"></span> Recorded results. No API calls.
           </p>
         </div>
+        <section
+          id="run-metrics"
+          class="run-metrics"
+          aria-label="Measured run statistics"
+          hidden
+        ></section>
         <div class="workspace-grid">
           <section class="source-panel" aria-labelledby="source-title">
             <div class="section-heading">
               <span class="step">01</span>
               <h2 id="source-title">The receipt</h2>
               <span class="small-label">INPUT</span>
+            </div>
+            <div id="real-controls" hidden>
+              <label for="real-example">Choose a difficult real receipt</label>
+              <select id="real-example"></select>
+              <p id="challenge-note" class="challenge-note"></p>
+              <div class="run-actions">
+                <button id="run-real" class="primary">Run real OCR + Jev</button
+                ><button id="run-all" class="secondary">Run all 8</button>
+              </div>
+              <p class="help">
+                Fresh local OCR and two new Jev requests on each run. These are
+                selected examples, not an independent accuracy test.
+              </p>
             </div>
             <div id="demo-controls">
               <label for="example">Explore an example</label
@@ -103,6 +125,24 @@
                 </p>
               </div>
               <span class="stage-index" aria-hidden="true">RA—01</span>
+            </div>
+            <div class="image-actions">
+              <button
+                id="zoom-out"
+                class="secondary"
+                aria-label="Zoom out of receipt"
+              >
+                −</button
+              ><button id="zoom-fit" class="secondary">Fit image</button
+              ><button
+                id="zoom-in"
+                class="secondary"
+                aria-label="Zoom into receipt"
+              >
+                ＋</button
+              ><a id="open-image" target="_blank" rel="noreferrer" hidden
+                >Open full image ↗</a
+              >
             </div>
             <div id="overlay-controls" hidden>
               <label class="box-toggle"
@@ -192,6 +232,30 @@
         <p id="status" class="status" role="status" aria-live="polite">
           Loading the playground…
         </p>
+        <section id="run-history" hidden>
+          <h2>Results from this session</h2>
+          <p class="help">
+            Every row is a new run. Country matches use source metadata; OCR
+            scores do not measure transcription accuracy.
+          </p>
+          <div class="table-scroll">
+            <table>
+              <thead>
+                <tr>
+                  <th>Receipt</th>
+                  <th>Reference</th>
+                  <th>Original</th>
+                  <th>Focused</th>
+                  <th>OCR</th>
+                  <th>Jev</th>
+                  <th>Total</th>
+                  <th>Est. API cost</th>
+                </tr>
+              </thead>
+              <tbody id="history-rows"></tbody>
+            </table>
+          </div>
+        </section>
       </section>
 
       <section class="findings" aria-labelledby="findings-title">
@@ -227,14 +291,16 @@
           used an incomplete processing-order subset.
         </p>
         <p>
-          Demo image:
+          Synthetic demo:
           <a
             href="https://huggingface.co/datasets/albertobarnabo/synthetic-receipts-ocr"
             target="_blank"
             rel="noreferrer"
             >Synthetic Receipts OCR</a
           >
-          · Apache 2.0<br />Saved results from the September 2026 experiment.
+          · Apache 2.0<br />Real images: Open Prices contributors · CC BY-SA
+          4.0.<br />Historic benchmark figures are separate from live session
+          runs.
         </p>
       </footer>
     </main>

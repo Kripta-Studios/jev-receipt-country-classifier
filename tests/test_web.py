@@ -101,7 +101,13 @@ class PlaygroundTests(unittest.TestCase):
         def decision(text, client, variant, policy):
             if variant == "baseline-v1":
                 raise RuntimeError("private error detail")
-            return {"variant": variant, "candidate": "FR", "status": "review"}
+            return {
+                "variant": variant,
+                "candidate": "FR",
+                "status": "review",
+                "cache_hit": False,
+                "usage": {"input_tokens": 1000, "output_tokens": 100},
+            }
 
         with patch("jev_tickets.web.classify", side_effect=decision):
             status, data = self.post("/api/compare", {"text": "France"})
@@ -110,6 +116,61 @@ class PlaygroundTests(unittest.TestCase):
         self.assertNotIn("candidate", data["results"][0])
         self.assertNotIn("private error detail", json.dumps(data))
         self.assertEqual(data["results"][1]["candidate"], "FR")
+        self.assertTrue(data["metrics"]["cost_is_partial"])
+        self.assertAlmostEqual(data["metrics"]["estimated_cost_usd"], 0.000042)
+
+    def test_real_examples_require_live_mode(self):
+        self.assertEqual(self.post("/api/run-example", {"id": "op-65346"})[0], 400)
+
+    def test_real_run_uses_image_text_only_and_fresh_clients(self):
+        self.app.live = True
+        self.app.trace_repo = "configured"
+        self.app.client.api_key = "test-secret"
+        extraction = {"text": "OCR INPUT ONLY", "lines": [], "elapsed_s": 1.2}
+        self.app.read_image = Mock(return_value=extraction)
+        clients = []
+
+        def decision(text, client, variant, policy):
+            self.assertEqual(text, "OCR INPUT ONLY")
+            self.assertIsNone(client.cache_dir)
+            clients.append(client)
+            return {
+                "variant": variant,
+                "candidate": "US",
+                "status": "review",
+                "cache_hit": False,
+                "usage": {"input_tokens": 1000, "output_tokens": 9999},
+            }
+
+        with patch("jev_tickets.web.classify", side_effect=decision):
+            status, data = self.post("/api/run-example", {"id": "op-65346"})
+        self.assertEqual(status, 200)
+        self.assertTrue(data["metrics"]["fresh"])
+        self.assertEqual(len(clients), 2)
+        self.assertEqual(data["metrics"]["input_tokens"], 2000)
+        self.assertAlmostEqual(data["metrics"]["estimated_cost_usd"], 0.000084)
+        self.assertEqual(data["example"]["expected"], "US")
+
+    def test_real_unknown_id_never_runs_ocr(self):
+        self.app.live = True
+        self.app.trace_repo = "configured"
+        self.app.client.api_key = "test-secret"
+        self.app.read_image = Mock()
+        self.assertEqual(self.post("/api/run-example", {"id": "../../secrets"})[0], 400)
+        self.app.read_image.assert_not_called()
+
+    def test_browser_ocr_forces_recomputation(self):
+        self.app.trace_repo = "configured"
+        with patch("jev_tickets.ocr.TraceReader") as reader:
+            reader.return_value.read.return_value = {
+                "text": "France",
+                "lines": [{"confidence": 0.8}],
+                "elapsed_s": 0.1,
+            }
+            result = self.app.read_image("receipt.png")
+        self.assertTrue(reader.call_args.kwargs["force_recompute"])
+        self.assertFalse(result["cache_hit"])
+        self.assertEqual(result["mean_confidence"], 0.8)
 
 
 if __name__ == "__main__":

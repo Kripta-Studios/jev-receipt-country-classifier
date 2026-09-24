@@ -10,6 +10,9 @@ import os
 from pathlib import Path
 import tempfile
 import threading
+import time
+from datetime import datetime, timezone
+import uuid
 from urllib.parse import urlsplit
 
 from .classifier import classify, rule_baseline
@@ -20,6 +23,7 @@ POLICY = {"min_probability": 0.9, "min_margin": 0.15, "min_evidence": 0, "automa
 MAX_FILE = 10 * 1024 * 1024
 MAX_BODY = 14 * 1024 * 1024
 VARIANTS = ("baseline-v1", "focused-v2")
+INPUT_USD_PER_MILLION = 0.042
 
 
 class Playground:
@@ -34,6 +38,7 @@ class Playground:
         self.reader = None
         self.busy = threading.Lock()
         self.demos = json.loads((STATIC / "demos.json").read_text(encoding="utf-8"))
+        self.real_examples = json.loads((STATIC / "real-examples.json").read_text(encoding="utf-8"))
 
     def config(self):
         return {
@@ -41,6 +46,13 @@ class Playground:
             "jev_available": self.live and bool(self.client.api_key),
             "ocr_available": self.live and bool(self.trace_repo),
             "examples": [{k: row[k] for k in ("id", "title", "description")} for row in self.demos],
+            "real_examples": self.real_examples,
+            "pricing": {
+                "input_usd_per_million": INPUT_USD_PER_MILLION,
+                "output_usd_per_million": 0,
+                "source": "https://docs.typesafe.ai/models",
+                "checked_on": "2026-09-24",
+            },
         }
 
     def demo(self, ident):
@@ -49,7 +61,7 @@ class Playground:
             raise ValueError("Unknown saved example")
         return {**row, "mode": "recorded", "rules": rule_baseline(row["text"])}
 
-    def compare(self, text):
+    def compare(self, text, fresh=True):
         if not self.live or not self.client.api_key:
             raise ValueError(
                 "Live Jev is unavailable. Start locally with --live and TYPESAFE_API_KEY."
@@ -57,9 +69,18 @@ class Playground:
         if not isinstance(text, str) or not text.strip() or len(text) > 80_000:
             raise ValueError("Enter between 1 and 80,000 characters of receipt text.")
 
+        started = time.perf_counter()
+        client = JevClient(api_key=self.client.api_key) if fresh else self.client
+
         def run(variant):
             try:
-                return classify(text, self.client, variant, POLICY)
+                answer = classify(text, client, variant, POLICY)
+                answer["estimated_cost_usd"] = (
+                    0
+                    if answer["cache_hit"]
+                    else answer["usage"]["input_tokens"] * INPUT_USD_PER_MILLION / 1_000_000
+                )
+                return answer
             except Exception:
                 # Provider messages may contain internal request details; keep them off the browser.
                 return {
@@ -70,7 +91,66 @@ class Playground:
 
         with ThreadPoolExecutor(max_workers=2) as pool:
             results = list(pool.map(run, VARIANTS))
-        return {"mode": "live", "results": results, "rules": rule_baseline(text)}
+        successful = [r for r in results if r["status"] != "error"]
+        return {
+            "mode": "live",
+            "results": results,
+            "rules": rule_baseline(text),
+            "run_id": str(uuid.uuid4()),
+            "timestamp": datetime.now(timezone.utc).isoformat(),
+            "metrics": {
+                "jev_wall_s": time.perf_counter() - started,
+                "input_tokens": sum(r["usage"]["input_tokens"] for r in successful),
+                "output_tokens": sum(r["usage"]["output_tokens"] for r in successful),
+                "estimated_cost_usd": sum(r["estimated_cost_usd"] for r in successful),
+                "successful_requests": len(successful),
+                "failed_requests": len(results) - len(successful),
+                "fresh": fresh,
+                "cost_is_partial": len(successful) != len(results),
+                "cost_note": "Input-token estimate at USD 0.042/M tokens; output free. OCR compute excluded. Not an invoice.",
+            },
+        }
+
+    def read_image(self, path):
+        started = time.perf_counter()
+        cold = self.reader is None
+        if self.reader is None:
+            from .ocr import TraceReader
+
+            self.reader = TraceReader(
+                self.trace_repo, self.model_dir, self.cache_dir / "ocr", force_recompute=True
+            )
+        extraction = self.reader.read(path)
+        scores = [l["confidence"] for l in extraction["lines"] if l.get("confidence") is not None]
+        return {
+            **extraction,
+            "line_count": len(extraction["lines"]),
+            "elapsed_s": time.perf_counter() - started,
+            "cache_hit": False,
+            "model_load_included": cold,
+            "mean_confidence": sum(scores) / len(scores) if scores else None,
+            "min_confidence": min(scores) if scores else None,
+            "model": "PP-OCRv5 mobile detector + Latin PP-OCRv5 mobile recognizer (CPU)",
+            "mode": "local_ocr",
+        }
+
+    def run_example(self, ident):
+        if not self.live or not self.trace_repo or not self.client.api_key:
+            raise ValueError("Real examples require local OCR, --live and TYPESAFE_API_KEY.")
+        example = next((r for r in self.real_examples if r["id"] == ident), None)
+        if example is None:
+            raise ValueError("Unknown real example")
+        started = time.perf_counter()
+        extraction = self.read_image(STATIC / example["image"].lstrip("/"))
+        if not extraction["text"].strip():
+            raise ValueError("OCR returned no readable text for this image.")
+        # The source country, title, difficulty and filename never enter Jev's state.
+        result = self.compare(extraction["text"], fresh=True)
+        result.update(example=example, extraction=extraction, text=extraction["text"])
+        result["metrics"].update(
+            ocr_s=extraction["elapsed_s"], total_s=time.perf_counter() - started
+        )
+        return result
 
     def extract(self, body):
         if not self.live or not self.trace_repo:
@@ -87,31 +167,16 @@ class Playground:
             raise ValueError("Invalid file encoding.") from exc
         if not data or len(data) > MAX_FILE:
             raise ValueError("Choose a file between 1 byte and 10 MiB.")
-        if self.reader is None:
-            try:
-                from .ocr import TraceReader
-
-                self.reader = TraceReader(self.trace_repo, self.model_dir, self.cache_dir / "ocr")
-            except Exception as exc:
-                raise ValueError(
-                    "OCR could not start. Use the trace-it backend Python environment and download the v5-latin weights."
-                ) from exc
         with tempfile.TemporaryDirectory(prefix="jev-upload-") as directory:
             path = Path(directory) / ("receipt" + suffix)
             path.write_bytes(data)
             try:
-                extraction = self.reader.read(path)
+                extraction = self.read_image(path)
             except Exception as exc:
                 raise ValueError(
                     "This file could not be read. Check its format, resolution and orientation; try a smaller image."
                 ) from exc
-        return {
-            "text": extraction["text"],
-            "lines": extraction["lines"],
-            "line_count": len(extraction["lines"]),
-            "elapsed_s": extraction["elapsed_s"],
-            "mode": "local_ocr",
-        }
+        return extraction
 
 
 def handler_for(app):
@@ -151,6 +216,12 @@ def handler_for(app):
                 "/style.css": ("style.css", "text/css; charset=utf-8"),
                 "/demo-receipt.jpg": ("demo-receipt.jpg", "image/jpeg"),
             }
+            for example in app.real_examples:
+                extension = Path(example["image"]).suffix
+                assets[example["image"]] = (
+                    example["image"].lstrip("/"),
+                    {".jpg": "image/jpeg", ".png": "image/png", ".webp": "image/webp"}[extension],
+                )
             if path not in assets:
                 return self.send(404, {"error": "Not found"})
             filename, mime = assets[path]
@@ -178,7 +249,7 @@ def handler_for(app):
             except (ValueError, UnicodeError):
                 return self.send(400, {"error": "Invalid JSON request"})
             path = urlsplit(self.path).path
-            if path not in {"/api/demo", "/api/compare", "/api/extract"}:
+            if path not in {"/api/demo", "/api/compare", "/api/extract", "/api/run-example"}:
                 return self.send(404, {"error": "Not found"})
             if not app.busy.acquire(blocking=False):
                 return self.send(
@@ -188,7 +259,9 @@ def handler_for(app):
                 if path == "/api/demo":
                     result = app.demo(body.get("id"))
                 elif path == "/api/compare":
-                    result = app.compare(body.get("text"))
+                    result = app.compare(body.get("text"), fresh=True)
+                elif path == "/api/run-example":
+                    result = app.run_example(body.get("id"))
                 else:
                     result = app.extract(body)
                 self.send(200, result)

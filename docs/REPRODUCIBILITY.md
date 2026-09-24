@@ -15,7 +15,7 @@ The report script reads the stored predictions, policy, review assignments and l
 then writes `evaluation/summary.json`, `review-comparison.json`, `predictions.csv`
 and `TABLES.md`. It does not make new predictions.
 
-Expected checks: 21 unit tests pass (15 classifier tests and six browser-server tests);
+Expected checks: 25 unit tests pass (15 classifier tests and ten browser-server tests);
 the report prints 16 metric groups, 19 reviewed
 predictions, 1,940 successful uncached requests from the recorded run and an estimated
 historical usage cost of USD 0.073908912. Recomputing these values is free of API calls.

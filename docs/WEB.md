@@ -27,6 +27,52 @@ Click a rectangle or expand **Inspect extracted lines** and select a line: the
 matching region turns orange. These are text regions, not semantic merchant/total
 fields. Source attribution is in [ATTRIBUTION.md](../jev_tickets/static/ATTRIBUTION.md).
 
+## Difficult real receipt gallery
+
+With the OCR environment, downloaded weights and API key configured, start:
+
+```powershell
+$env:TYPESAFE_API_KEY = '<your API key>'
+& '.\external\trace-it\backend\.venv\Scripts\python.exe' -m jev_tickets.web --live --port 8765 --trace-repo external/trace-it --model-dir .cache/models
+```
+
+Open **http://127.0.0.1:8765**. The live server starts on **Real challenge gallery**.
+Choose among eight real photographs, then click **Run real OCR + Jev**, or **Run all 8**
+to process the gallery sequentially. Selecting a photo alone does not make API calls.
+
+The photos include heavy wrinkles, uneven illumination, a blue color cast, folds
+through the address, small dense type and an out-of-focus faded print. Images are
+unaltered Open Prices contributions and include per-image source URLs, reference
+evidence, licensing and hashes in `jev_tickets/static/real-examples.json`.
+
+Each run forces a new OCR computation and two fresh Jev requests. The loaded local
+model session can be reused, but neither OCR text nor Jev responses are replayed
+from a result cache. Only extracted text reaches Jev; source labels and example
+descriptions do not. The results panel shows:
+
+- Total server processing time, OCR time and the wall time of the two parallel Jev calls.
+- Whether the first OCR model load was included.
+- Input/output tokens, per-request latency and estimated API cost.
+- Candidate probability, API confidence, top-two margin, Noul evidence judgment
+  and the complete country distribution.
+- Mean OCR score and individual line scores via selectable bounding boxes.
+- A session table with both predictions and their source-reference matches.
+
+Costs use the [published input rate](https://docs.typesafe.ai/models) checked on
+2026-09-24: USD 0.042 per million input tokens; output is free. They exclude local
+CPU/storage costs and are not an account invoice. If a request fails, displayed
+costs cover successful responses only. Total server time excludes browser upload
+and rendering; parallel request times should not be added to obtain wall time.
+
+Use **Fit image**, zoom controls or **Open full image** to inspect a receipt. The
+page and result cards wrap at narrow widths, and the text area expands to show the
+whole extraction. Large session tables have their own horizontal scroll region.
+
+The gallery was deliberately selected from previously successful cases with visible
+image difficulties. A new verification run matched all eight source labels under
+both prompts. This is a curated demonstration, not independent accuracy evidence;
+no character-level OCR accuracy was measured. See [gallery validation](GALLERY_RESULTS.md).
+
 ## Use your own text or image locally
 
 For text only:
@@ -37,7 +83,8 @@ python -m jev_tickets.web --live
 ```
 
 Choose **Your receipt**, paste text and click **Compare prompts**. Each comparison
-can make two Jev requests; matching cached inputs may reuse responses. API keys stay
+makes two new Jev requests. The web interface bypasses the response cache; the CLI's
+existing cache behavior is unchanged. API keys stay
 on the server. The browser shows candidates and probabilities, with review routing.
 
 For images, first follow the [OCR setup](../README.md#images-and-pdfs), then use the
@@ -58,7 +105,7 @@ and 20-page PDF limits. Images support interactive overlays; PDFs support text
 extraction and line inspection but have no page-image overlay in this simple UI.
 Native PDF text can lack bounding boxes. OCR errors are reported separately from
 country uncertainty. Temporary upload files are removed after processing; the
-configured OCR/API cache may retain extraction and response data.
+local OCR cache may retain extraction data even when its reuse is disabled.
 
 **Download comparison JSON** exports the displayed comparison and text. It does not
 modify the published evaluation files.
@@ -101,7 +148,13 @@ Browser verification covered desktop and 390-pixel mobile layouts, switching sav
 examples, clicking image boxes and text lines, uploading the bundled image, local OCR
 and one live comparison. That image produced 19 OCR lines and 406 characters; both
 live prompts proposed France. These two smoke-test calls are separate from the
-published benchmark. The full suite has 21 tests.
+published benchmark. The full suite now has 25 tests, including fresh-inference,
+cost calculation and source-label isolation checks for the real gallery.
+
+The real-gallery update also passed the complete **Run all 8** browser flow using
+fresh OCR and Jev responses. Layout was checked from 320 to 1440 pixels, with full
+transcriptions and result cards visible without clipping. Both prompt variants
+matched the eight source references in that curated batch.
 
 The Dockerfile is provided, but a container build was not verified in the development
 environment because the Docker engine was not running. The equivalent Python server

@@ -21,6 +21,10 @@ let config,
 let ocrLines = [],
   hasImage = false,
   previewGeneration = 0;
+let currentExample = null,
+  lastExtraction = null,
+  batchRunning = false,
+  imageZoom = 1;
 
 function status(message, error = false) {
   $("status").textContent = message;
@@ -28,7 +32,14 @@ function status(message, error = false) {
 }
 function setBusy(value) {
   busy = value;
-  for (const id of ["demo-mode", "live-mode", "example", "upload"])
+  for (const id of [
+    "demo-mode",
+    "live-mode",
+    "real-mode",
+    "example",
+    "real-example",
+    "upload",
+  ])
     $(id).disabled = value;
   $("compare").disabled =
     value ||
@@ -36,7 +47,10 @@ function setBusy(value) {
       ? !saved
       : !config?.jev_available || !$("receipt-text").value.trim());
   $("extract").disabled = value || !file || !config?.ocr_available;
-  $("receipt-text").readOnly = value || mode === "demo";
+  $("run-real").disabled =
+    value || !config?.ocr_available || !config?.jev_available;
+  $("run-all").disabled = $("run-real").disabled;
+  $("receipt-text").readOnly = value || mode !== "live";
   $("workspace").setAttribute("aria-busy", String(value));
 }
 async function api(path, body) {
@@ -62,14 +76,25 @@ function clearResults() {
   $("empty-results").hidden = false;
   $("result-notes").hidden = true;
   $("result-kind").textContent = "READY TO COMPARE";
+  $("run-metrics").hidden = true;
 }
 function textCount() {
   $("text-count").textContent =
     `${$("receipt-text").value.length.toLocaleString()} CHARACTERS`;
+  // Fit the actual wrapped content instead of clipping it in a fixed-height panel.
+  $("receipt-text").style.height = "auto";
+  $("receipt-text").style.height =
+    `${Math.max(200, $("receipt-text").scrollHeight + 4)}px`;
 }
+window.addEventListener("resize", textCount);
 function preview(src, caption) {
   const generation = ++previewGeneration;
   hasImage = Boolean(src);
+  imageZoom = 1;
+  $("receipt-canvas").style.width = "100%";
+  $("receipt-canvas").style.height = "100%";
+  $("open-image").hidden = !src;
+  if (src) $("open-image").href = src;
   $("receipt-canvas").toggleAttribute("hidden", !src);
   $("text-preview").hidden = Boolean(src);
   $("text-preview").querySelector("strong").textContent = caption.startsWith(
@@ -180,6 +205,7 @@ $("show-boxes").addEventListener("change", () =>
   $("ocr-boxes").classList.toggle("boxes-hidden", !$("show-boxes").checked),
 );
 async function loadDemo() {
+  lastExtraction = null;
   saved = null;
   clearResults();
   setBusy(true);
@@ -274,6 +300,43 @@ function render(data) {
         ),
       );
     card.append(bottom);
+    const facts = node("dl", "card-facts");
+    const values = [
+      ["API confidence", `${(answer.confidence * 100).toFixed(1)}%`],
+      ["Top-two margin", `${(answer.margin * 100).toFixed(1)} pts`],
+      [
+        "Input / output tokens",
+        `${answer.usage?.input_tokens ?? "—"} / ${answer.usage?.output_tokens ?? "—"}`,
+      ],
+      ["Request latency", `${(answer.elapsed_s || 0).toFixed(3)} s`],
+      [
+        data.mode === "recorded"
+          ? "Historical cost estimate"
+          : "Estimated request cost",
+        money(
+          answer.estimated_cost_usd ??
+            ((answer.usage?.input_tokens || 0) * 0.042) / 1e6,
+        ),
+      ],
+      ["Jev model", answer.model || "jev-1.13.0"],
+    ];
+    for (const [label, value] of values) {
+      facts.append(node("dt", "", label), node("dd", "", value));
+    }
+    card.append(facts);
+    const distribution = node("details", "distribution");
+    distribution.append(node("summary", "", "All country probabilities"));
+    for (const [label, p] of Object.entries(answer.probabilities).sort(
+      (a, b) => b[1] - a[1],
+    )) {
+      const row = node("div", "distribution-row");
+      row.append(
+        node("span", "", countries[label] || label),
+        node("strong", "", `${(p * 100).toFixed(1)}%`),
+      );
+      distribution.append(row);
+    }
+    card.append(distribution);
     target.append(card);
   }
   $("result-kind").textContent =
@@ -310,7 +373,169 @@ function render(data) {
     $("rules-result").append(
       node("p", "", "No configured literal country signal matched."),
     );
+  if (data.mode !== "recorded") renderMetrics(data);
 }
+function money(value) {
+  return value == null ? "—" : `$${value.toFixed(6)}`;
+}
+function seconds(value) {
+  return value == null ? "—" : `${value.toFixed(2)} s`;
+}
+function renderMetrics(data) {
+  const metrics = data.metrics || {},
+    extraction = data.extraction || lastExtraction;
+  const target = $("run-metrics");
+  target.replaceChildren();
+  const values = [
+    [
+      "Total processing",
+      seconds(
+        metrics.total_s ?? metrics.jev_wall_s + (extraction?.elapsed_s || 0),
+      ),
+    ],
+    ["Local OCR", seconds(extraction?.elapsed_s)],
+    ["Jev comparison", seconds(metrics.jev_wall_s)],
+    ["Estimated API cost", money(metrics.estimated_cost_usd)],
+    [
+      "Input / output tokens",
+      `${metrics.input_tokens ?? 0} / ${metrics.output_tokens ?? 0}`,
+    ],
+    [
+      "Mean OCR score",
+      extraction?.mean_confidence == null
+        ? "—"
+        : `${(extraction.mean_confidence * 100).toFixed(1)}%`,
+    ],
+  ];
+  for (const [label, value] of values) {
+    const block = node("div", "run-metric");
+    block.append(node("span", "", label), node("strong", "", value));
+    target.append(block);
+  }
+  const note = node(
+    "p",
+    "metrics-note",
+    `Fresh inference · ${!extraction ? "Text input; no OCR executed" : extraction.model_load_included ? "OCR model loading included" : "OCR session reused; image recomputed"} · ${metrics.successful_requests ?? 0}/2 Jev responses. Input $0.042/M tokens; output free. Cost is an estimate, excludes local compute${metrics.cost_is_partial ? ", and covers successful responses only" : ""}.`,
+  );
+  target.append(note);
+  target.hidden = false;
+}
+function loadReal() {
+  currentExample = config.real_examples.find(
+    (row) => row.id === $("real-example").value,
+  );
+  if (!currentExample) return;
+  clearResults();
+  lastExtraction = null;
+  setLines();
+  $("receipt-text").value = "";
+  textCount();
+  $("challenge-note").textContent = currentExample.challenge;
+  preview(currentExample.image, "REAL PHOTO / FRESH INFERENCE ON RUN");
+  $("source-note").replaceChildren(
+    node(
+      "span",
+      "",
+      `${currentExample.id} · ${currentExample.attribution} · ${currentExample.license} · `,
+    ),
+  );
+  const link = node("a", "", "Source image ↗");
+  link.href = currentExample.source_url;
+  link.target = "_blank";
+  link.rel = "noreferrer";
+  $("source-note").append(link);
+  $("text-note").textContent =
+    "Run the image through local OCR and both Jev prompts. No saved answers are loaded.";
+  status(currentExample.challenge);
+  setBusy(false);
+}
+async function runReal() {
+  clearResults();
+  setBusy(true);
+  status(
+    `Reading ${currentExample.id} with local OCR, then requesting both Jev decisions…`,
+  );
+  try {
+    const data = await api("/api/run-example", { id: currentExample.id });
+    lastExtraction = data.extraction;
+    $("receipt-text").value = data.text;
+    textCount();
+    setLines(data.extraction.lines);
+    $("text-note").textContent =
+      `Fresh local OCR · ${data.extraction.line_count} lines · ${seconds(data.extraction.elapsed_s)}. All extracted text is displayed below.`;
+    render(data);
+    $("comparison-note").textContent =
+      `Source reference: ${countries[data.example.expected]}. ${data.example.reference_evidence} Reference labels are not sent to Jev. OCR scores and model confidence are not verified accuracy.`;
+    appendHistory(data);
+    status(
+      `Completed ${currentExample.id} in ${seconds(data.metrics.total_s)}. New OCR computation and new Jev requests; no result-cache replay.`,
+    );
+  } catch (error) {
+    status(error.message, true);
+    appendHistory({ example: currentExample, error: error.message });
+  } finally {
+    setBusy(false);
+  }
+}
+function appendHistory(data) {
+  const row = node("tr");
+  const values = data.error
+    ? [
+        data.example.id,
+        countries[data.example.expected],
+        data.error,
+        "—",
+        "—",
+        "—",
+        "—",
+        "—",
+      ]
+    : [
+        data.example.id,
+        countries[data.example.expected],
+        ...data.results.map((r) =>
+          r.status === "error"
+            ? "Request failed"
+            : `${countries[r.candidate]} ${r.candidate === data.example.expected ? "✓" : "≠"}`,
+        ),
+        seconds(data.extraction.elapsed_s),
+        seconds(data.metrics.jev_wall_s),
+        seconds(data.metrics.total_s),
+        money(data.metrics.estimated_cost_usd),
+      ];
+  for (const value of values) row.append(node("td", "", value));
+  $("history-rows").append(row);
+  $("run-history").hidden = false;
+}
+$("real-mode").addEventListener("click", () => {
+  if (busy) return;
+  mode = "real";
+  updateMode();
+  loadReal();
+});
+$("real-example").addEventListener("change", loadReal);
+$("run-real").addEventListener("click", runReal);
+$("run-all").addEventListener("click", async () => {
+  batchRunning = true;
+  for (const example of config.real_examples) {
+    $("real-example").value = example.id;
+    loadReal();
+    await runReal();
+  }
+  batchRunning = false;
+  setBusy(false);
+  status(
+    "All real examples processed. Every run is listed in the session table.",
+  );
+});
+function zoom(value) {
+  imageZoom = Math.max(1, Math.min(4, value));
+  $("receipt-canvas").style.width = `${imageZoom * 100}%`;
+  $("receipt-canvas").style.height = `${imageZoom * 100}%`;
+}
+$("zoom-in").addEventListener("click", () => zoom(imageZoom + 0.5));
+$("zoom-out").addEventListener("click", () => zoom(imageZoom - 0.5));
+$("zoom-fit").addEventListener("click", () => zoom(1));
 $("demo-mode").addEventListener("click", async () => {
   if (busy) return;
   mode = "demo";
@@ -320,6 +545,7 @@ $("demo-mode").addEventListener("click", async () => {
 $("live-mode").addEventListener("click", () => {
   if (busy) return;
   mode = "live";
+  lastExtraction = null;
   updateMode();
   clearResults();
   $("receipt-text").value = "";
@@ -340,16 +566,18 @@ $("live-mode").addEventListener("click", () => {
   );
 });
 function updateMode() {
-  for (const kind of ["demo", "live"]) {
+  for (const kind of ["real", "demo", "live"]) {
     $(`${kind}-mode`).classList.toggle("selected", mode === kind);
     $(`${kind}-mode`).setAttribute("aria-pressed", String(mode === kind));
   }
   $("demo-controls").hidden = mode !== "demo";
   $("upload-controls").hidden = mode !== "live";
+  $("real-controls").hidden = mode !== "real";
+  $("compare").hidden = mode === "real";
   $("mode-note").textContent =
     mode === "demo"
       ? "Recorded results. No API calls."
-      : "Local OCR → text sent to Jev on comparison.";
+      : "Fresh local OCR + fresh Jev decisions. No response-cache replay.";
   $("ocr-note").textContent = config.ocr_available
     ? "Extraction stays local. Only the text is sent to Jev when you compare."
     : "OCR is unavailable. Start with the trace-it environment and model weights.";
@@ -389,6 +617,7 @@ $("compare").addEventListener("click", async () => {
   }
 });
 $("upload").addEventListener("change", () => {
+  lastExtraction = null;
   file = $("upload").files[0] || null;
   clearResults();
   setLines();
@@ -436,6 +665,7 @@ $("extract").addEventListener("click", async () => {
       reader.readAsDataURL(file);
     });
     const data = await api("/api/extract", { name: file.name, data: encoded });
+    lastExtraction = data;
     $("receipt-text").value = data.text;
     textCount();
     setLines(data.lines);
@@ -471,6 +701,17 @@ $("download").addEventListener("click", () => {
 (async () => {
   try {
     config = await api("/api/config");
+    $("real-example").replaceChildren(
+      ...config.real_examples.map((row) => {
+        const option = node(
+          "option",
+          "",
+          `${countries[row.expected]} · ${row.title}`,
+        );
+        option.value = row.id;
+        return option;
+      }),
+    );
     $("example").replaceChildren(
       ...config.examples.map((row) => {
         const option = node("option", "", row.title);
@@ -478,8 +719,14 @@ $("download").addEventListener("click", () => {
         return option;
       }),
     );
+    // Keep current decisions visible above the complete, expandable text rather than below it.
+    $("results")
+      .closest(".analysis-panel")
+      .prepend(document.querySelector(".results-section"));
+    mode = config.jev_available && config.ocr_available ? "real" : "demo";
     updateMode();
-    await loadDemo();
+    if (mode === "real") loadReal();
+    else await loadDemo();
   } catch (error) {
     status(`Playground could not start: ${error.message}`, true);
   }

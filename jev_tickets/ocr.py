@@ -8,7 +8,7 @@ import time
 
 
 class TraceReader:
-    def __init__(self, repository, model_dir, cache_dir, threads=2):
+    def __init__(self, repository, model_dir, cache_dir, threads=2, force_recompute=False):
         repository = Path(repository).resolve()
         if not (repository / "backend/app/features/ingestion/ocr/local.py").exists():
             raise ValueError("TRACE_REPO must contain the trace-it backend")
@@ -23,6 +23,7 @@ class TraceReader:
                 ocr_mode="local",
                 ocr_profile="experimental",
                 ocr_threads=threads,
+                ocr_force_recompute=force_recompute,
                 vision_providers=(),
                 text_providers=(),
             )

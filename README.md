@@ -37,6 +37,11 @@ compare the two prompts using saved results. No API key or OCR installation is
 needed for the demo. See [browser setup and Docker deployment](docs/WEB.md) for
 live text/image processing and a small deployable container.
 
+Live mode also includes **eight difficult real receipts** with folds, blur, shadows
+and small print. Run them individually or together using real OCR and fresh Jev
+requests, with measured latency, token usage, estimated cost and confidence values.
+See [gallery results and selection limits](docs/GALLERY_RESULTS.md).
+
 ### Command line
 
 Python 3.12 or later. Clone the repository, then run the commands from its root:
