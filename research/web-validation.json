@@ -1,0 +1,950 @@
+{
+  "date": "2026-09-24",
+  "browser": "Automated Chromium, separate from user tab",
+  "url": "http://127.0.0.1:8765/",
+  "flows": "Eight gallery batch runs followed by one single run; all use live OCR and uncached Jev",
+  "layouts": [
+    {
+      "width": 1440,
+      "page_width": 1425,
+      "viewport_width": 1425,
+      "horizontal_overflow": [],
+      "vertical_clipping": [],
+      "history_cells": 72,
+      "review_cells": 18
+    },
+    {
+      "width": 1280,
+      "page_width": 1265,
+      "viewport_width": 1265,
+      "horizontal_overflow": [],
+      "vertical_clipping": [],
+      "history_cells": 72,
+      "review_cells": 18
+    },
+    {
+      "width": 1024,
+      "page_width": 1009,
+      "viewport_width": 1009,
+      "horizontal_overflow": [],
+      "vertical_clipping": [],
+      "history_cells": 72,
+      "review_cells": 18
+    },
+    {
+      "width": 800,
+      "page_width": 785,
+      "viewport_width": 785,
+      "horizontal_overflow": [],
+      "vertical_clipping": [],
+      "history_cells": 72,
+      "review_cells": 18
+    },
+    {
+      "width": 390,
+      "page_width": 375,
+      "viewport_width": 375,
+      "horizontal_overflow": [],
+      "vertical_clipping": [],
+      "history_cells": 72,
+      "review_cells": 18
+    },
+    {
+      "width": 320,
+      "page_width": 305,
+      "viewport_width": 305,
+      "horizontal_overflow": [],
+      "vertical_clipping": [],
+      "history_cells": 72,
+      "review_cells": 18
+    }
+  ],
+  "javascript_errors": [],
+  "runs": [
+    {
+      "id": "op-65346",
+      "expected": "US",
+      "run_id": "8dacb7e2-dc77-42c3-bff6-466bc6e7dd45",
+      "timestamp": "2026-09-24T13:00:40.161457+00:00",
+      "metrics": {
+        "jev_wall_s": 0.6811305000001084,
+        "input_tokens": 2217,
+        "output_tokens": 180,
+        "estimated_cost_usd": 0.00009311400000000002,
+        "successful_requests": 2,
+        "failed_requests": 0,
+        "fresh": true,
+        "cost_is_partial": false,
+        "cost_note": "Input-token estimate at USD 0.042/M tokens; output free. OCR compute excluded. Not an invoice.",
+        "ocr_s": 7.339129799999682,
+        "total_s": 8.020328499999778
+      },
+      "ocr": {
+        "elapsed_s": 7.339129799999682,
+        "line_count": 36,
+        "sha256": "145deab24c47defb8fa2040d534d7c2eab261003674255938d0ad80cfaf7bd00",
+        "cache_hit": false
+      },
+      "results": [
+        {
+          "country": null,
+          "candidate": "US",
+          "status": "review",
+          "review_reason": "automation_not_validated",
+          "probability": 0.99,
+          "margin": 0.98,
+          "confidence": 0.99,
+          "probabilities": {
+            "IT": 0,
+            "CA": 0,
+            "US": 0.99,
+            "UNKNOWN": 0.01,
+            "GB": 0,
+            "ES": 0,
+            "FR": 0,
+            "DE": 0,
+            "OTHER": 0
+          },
+          "location_evidence_probability": null,
+          "variant": "baseline-v1",
+          "model": "jev-1.13.0",
+          "literal_evidence": [],
+          "usage": {
+            "input_tokens": 932,
+            "output_tokens": 80
+          },
+          "request_sha256": "ae0bc047134f2f50da3e0b31f2302aaed3f3dbf10cd4e99f2c697b2cc4f8d4fe",
+          "cache_hit": false,
+          "network_attempts": 1,
+          "elapsed_s": 0.6571991999999227,
+          "estimated_cost_usd": 0.000039144
+        },
+        {
+          "country": null,
+          "candidate": "US",
+          "status": "review",
+          "review_reason": "automation_not_validated",
+          "probability": 0.99,
+          "margin": 0.98,
+          "confidence": 0.99,
+          "probabilities": {
+            "DE": 0,
+            "US": 0.99,
+            "ES": 0,
+            "FR": 0,
+            "UNKNOWN": 0.01,
+            "OTHER": 0,
+            "CA": 0,
+            "GB": 0,
+            "IT": 0
+          },
+          "location_evidence_probability": 0.92,
+          "variant": "focused-v2",
+          "model": "jev-1.13.0",
+          "literal_evidence": [],
+          "usage": {
+            "input_tokens": 1285,
+            "output_tokens": 100
+          },
+          "request_sha256": "ef56048d7d657f07da433ead4e2dbf2d39718ff826355b1cd397f2647aeeb667",
+          "cache_hit": false,
+          "network_attempts": 1,
+          "elapsed_s": 0.6769504000003508,
+          "estimated_cost_usd": 0.00005397000000000001
+        }
+      ]
+    },
+    {
+      "id": "op-114865",
+      "expected": "ES",
+      "run_id": "82b9546c-b3e9-499e-946c-a1a01e3f92a0",
+      "timestamp": "2026-09-24T13:00:47.892906+00:00",
+      "metrics": {
+        "jev_wall_s": 0.6635554000004049,
+        "input_tokens": 1717,
+        "output_tokens": 180,
+        "estimated_cost_usd": 0.00007211400000000001,
+        "successful_requests": 2,
+        "failed_requests": 0,
+        "fresh": true,
+        "cost_is_partial": false,
+        "cost_note": "Input-token estimate at USD 0.042/M tokens; output free. OCR compute excluded. Not an invoice.",
+        "ocr_s": 7.060164399999849,
+        "total_s": 7.723789700000452
+      },
+      "ocr": {
+        "elapsed_s": 7.060164399999849,
+        "line_count": 22,
+        "sha256": "f1b399aaee8ec96136573f91375be081b79961a7c2ffdf23245cfce39a74452b",
+        "cache_hit": false
+      },
+      "results": [
+        {
+          "country": null,
+          "candidate": "ES",
+          "status": "review",
+          "review_reason": "automation_not_validated",
+          "probability": 0.71,
+          "margin": 0.42,
+          "confidence": 0.66,
+          "probabilities": {
+            "IT": 0,
+            "UNKNOWN": 0.29,
+            "ES": 0.71,
+            "GB": 0,
+            "OTHER": 0,
+            "FR": 0,
+            "CA": 0,
+            "DE": 0,
+            "US": 0
+          },
+          "location_evidence_probability": null,
+          "variant": "baseline-v1",
+          "model": "jev-1.13.0",
+          "literal_evidence": [],
+          "usage": {
+            "input_tokens": 682,
+            "output_tokens": 80
+          },
+          "request_sha256": "13f652eac10f3ba55d23709cfd3267948c7b427117e9dc05a9210bb6fabb6e1f",
+          "cache_hit": false,
+          "network_attempts": 1,
+          "elapsed_s": 0.6615428000004613,
+          "estimated_cost_usd": 0.000028644000000000002
+        },
+        {
+          "country": null,
+          "candidate": "ES",
+          "status": "review",
+          "review_reason": "automation_not_validated",
+          "probability": 0.97,
+          "margin": 0.94,
+          "confidence": 0.96,
+          "probabilities": {
+            "US": 0,
+            "OTHER": 0,
+            "ES": 0.97,
+            "IT": 0,
+            "CA": 0,
+            "UNKNOWN": 0.03,
+            "GB": 0,
+            "DE": 0,
+            "FR": 0
+          },
+          "location_evidence_probability": 0.58,
+          "variant": "focused-v2",
+          "model": "jev-1.13.0",
+          "literal_evidence": [],
+          "usage": {
+            "input_tokens": 1035,
+            "output_tokens": 100
+          },
+          "request_sha256": "c5c3fd4e4af222de6cedb37f3e659f912bd1f07b210ac2f876b9621c1779abe9",
+          "cache_hit": false,
+          "network_attempts": 1,
+          "elapsed_s": 0.6208437000004778,
+          "estimated_cost_usd": 0.00004347000000000001
+        }
+      ]
+    },
+    {
+      "id": "op-20873",
+      "expected": "FR",
+      "run_id": "d2d13f2e-996a-4bc1-b77c-22a6c23cf341",
+      "timestamp": "2026-09-24T13:00:55.138259+00:00",
+      "metrics": {
+        "jev_wall_s": 0.6622545999998692,
+        "input_tokens": 2007,
+        "output_tokens": 180,
+        "estimated_cost_usd": 0.000084294,
+        "successful_requests": 2,
+        "failed_requests": 0,
+        "fresh": true,
+        "cost_is_partial": false,
+        "cost_note": "Input-token estimate at USD 0.042/M tokens; output free. OCR compute excluded. Not an invoice.",
+        "ocr_s": 6.5840533999999025,
+        "total_s": 7.246359799999482
+      },
+      "ocr": {
+        "elapsed_s": 6.5840533999999025,
+        "line_count": 27,
+        "sha256": "5447686a99fe0168cb681d366791525f03bd6f76cf9e41916115088278b4d866",
+        "cache_hit": false
+      },
+      "results": [
+        {
+          "country": null,
+          "candidate": "FR",
+          "status": "review",
+          "review_reason": "automation_not_validated",
+          "probability": 1,
+          "margin": 1,
+          "confidence": 1,
+          "probabilities": {
+            "OTHER": 0,
+            "GB": 0,
+            "CA": 0,
+            "DE": 0,
+            "ES": 0,
+            "IT": 0,
+            "FR": 1,
+            "UNKNOWN": 0,
+            "US": 0
+          },
+          "location_evidence_probability": null,
+          "variant": "baseline-v1",
+          "model": "jev-1.13.0",
+          "literal_evidence": [],
+          "usage": {
+            "input_tokens": 827,
+            "output_tokens": 80
+          },
+          "request_sha256": "069c4e4f7911876a9b7541f6f70b2cc29651948e39014b8c9463e527c3e01304",
+          "cache_hit": false,
+          "network_attempts": 1,
+          "elapsed_s": 0.6396411000005173,
+          "estimated_cost_usd": 0.000034734
+        },
+        {
+          "country": null,
+          "candidate": "FR",
+          "status": "review",
+          "review_reason": "automation_not_validated",
+          "probability": 1,
+          "margin": 1,
+          "confidence": 1,
+          "probabilities": {
+            "GB": 0,
+            "IT": 0,
+            "US": 0,
+            "FR": 1,
+            "CA": 0,
+            "DE": 0,
+            "OTHER": 0,
+            "UNKNOWN": 0,
+            "ES": 0
+          },
+          "location_evidence_probability": 0.96,
+          "variant": "focused-v2",
+          "model": "jev-1.13.0",
+          "literal_evidence": [],
+          "usage": {
+            "input_tokens": 1180,
+            "output_tokens": 100
+          },
+          "request_sha256": "1a077f390cddba15efd0045eab1fa2455c9df3ac69038542e81536e4d6fdea80",
+          "cache_hit": false,
+          "network_attempts": 1,
+          "elapsed_s": 0.6597164000004341,
+          "estimated_cost_usd": 0.00004956
+        }
+      ]
+    },
+    {
+      "id": "op-33833",
+      "expected": "DE",
+      "run_id": "14d1f82e-760e-4f13-a5b0-bdb5471712e8",
+      "timestamp": "2026-09-24T13:01:00.209482+00:00",
+      "metrics": {
+        "jev_wall_s": 0.6442205000003014,
+        "input_tokens": 2393,
+        "output_tokens": 180,
+        "estimated_cost_usd": 0.00010050600000000002,
+        "successful_requests": 2,
+        "failed_requests": 0,
+        "fresh": true,
+        "cost_is_partial": false,
+        "cost_note": "Input-token estimate at USD 0.042/M tokens; output free. OCR compute excluded. Not an invoice.",
+        "ocr_s": 4.41333080000004,
+        "total_s": 5.057611100000031
+      },
+      "ocr": {
+        "elapsed_s": 4.41333080000004,
+        "line_count": 36,
+        "sha256": "33f4832fd1db21d91c18068dd2e708371f01c97e927a5457aa3e3df009bc47cf",
+        "cache_hit": false
+      },
+      "results": [
+        {
+          "country": null,
+          "candidate": "DE",
+          "status": "review",
+          "review_reason": "automation_not_validated",
+          "probability": 1,
+          "margin": 1,
+          "confidence": 1,
+          "probabilities": {
+            "DE": 1,
+            "OTHER": 0,
+            "IT": 0,
+            "ES": 0,
+            "GB": 0,
+            "FR": 0,
+            "US": 0,
+            "CA": 0,
+            "UNKNOWN": 0
+          },
+          "location_evidence_probability": null,
+          "variant": "baseline-v1",
+          "model": "jev-1.13.0",
+          "literal_evidence": [],
+          "usage": {
+            "input_tokens": 1020,
+            "output_tokens": 80
+          },
+          "request_sha256": "dd39b62ded62c646480cdb9acd83d9492cca8650f84f1b44dd4e5b7c01422d07",
+          "cache_hit": false,
+          "network_attempts": 1,
+          "elapsed_s": 0.641413599999396,
+          "estimated_cost_usd": 0.00004284
+        },
+        {
+          "country": null,
+          "candidate": "DE",
+          "status": "review",
+          "review_reason": "automation_not_validated",
+          "probability": 1,
+          "margin": 1,
+          "confidence": 1,
+          "probabilities": {
+            "US": 0,
+            "GB": 0,
+            "CA": 0,
+            "DE": 1,
+            "ES": 0,
+            "IT": 0,
+            "FR": 0,
+            "UNKNOWN": 0,
+            "OTHER": 0
+          },
+          "location_evidence_probability": 0.95,
+          "variant": "focused-v2",
+          "model": "jev-1.13.0",
+          "literal_evidence": [],
+          "usage": {
+            "input_tokens": 1373,
+            "output_tokens": 100
+          },
+          "request_sha256": "5987a23fb97d03a80c3f4c973ec8b512434819d3fdcb58406e6c29b0b85ea367",
+          "cache_hit": false,
+          "network_attempts": 1,
+          "elapsed_s": 0.6414356000004773,
+          "estimated_cost_usd": 0.000057666000000000007
+        }
+      ]
+    },
+    {
+      "id": "op-41050",
+      "expected": "IT",
+      "run_id": "1702f243-7480-4144-b294-a97afc8f12e0",
+      "timestamp": "2026-09-24T13:01:05.145944+00:00",
+      "metrics": {
+        "jev_wall_s": 0.6741910999999163,
+        "input_tokens": 2425,
+        "output_tokens": 180,
+        "estimated_cost_usd": 0.00010185000000000001,
+        "successful_requests": 2,
+        "failed_requests": 0,
+        "fresh": true,
+        "cost_is_partial": false,
+        "cost_note": "Input-token estimate at USD 0.042/M tokens; output free. OCR compute excluded. Not an invoice.",
+        "ocr_s": 4.25588020000032,
+        "total_s": 4.9301244999996925
+      },
+      "ocr": {
+        "elapsed_s": 4.25588020000032,
+        "line_count": 41,
+        "sha256": "f5d65ff47feb7df6b5867d8ea10a551f8fa45d61da83838df1b6ab0ed2df0941",
+        "cache_hit": false
+      },
+      "results": [
+        {
+          "country": null,
+          "candidate": "IT",
+          "status": "review",
+          "review_reason": "automation_not_validated",
+          "probability": 1,
+          "margin": 1,
+          "confidence": 1,
+          "probabilities": {
+            "CA": 0,
+            "GB": 0,
+            "FR": 0,
+            "US": 0,
+            "IT": 1,
+            "DE": 0,
+            "OTHER": 0,
+            "UNKNOWN": 0,
+            "ES": 0
+          },
+          "location_evidence_probability": null,
+          "variant": "baseline-v1",
+          "model": "jev-1.13.0",
+          "literal_evidence": [
+            {
+              "country": "IT",
+              "line_number": 5,
+              "quote": "P.Iva: 04159280405"
+            }
+          ],
+          "usage": {
+            "input_tokens": 1036,
+            "output_tokens": 80
+          },
+          "request_sha256": "bdc79643451455ef970b868b1e14962314576e6e7479fd73e3dd35a241c893a9",
+          "cache_hit": false,
+          "network_attempts": 1,
+          "elapsed_s": 0.6171618999997008,
+          "estimated_cost_usd": 0.000043512
+        },
+        {
+          "country": null,
+          "candidate": "IT",
+          "status": "review",
+          "review_reason": "automation_not_validated",
+          "probability": 1,
+          "margin": 1,
+          "confidence": 1,
+          "probabilities": {
+            "UNKNOWN": 0,
+            "FR": 0,
+            "DE": 0,
+            "CA": 0,
+            "ES": 0,
+            "OTHER": 0,
+            "US": 0,
+            "GB": 0,
+            "IT": 1
+          },
+          "location_evidence_probability": 0.97,
+          "variant": "focused-v2",
+          "model": "jev-1.13.0",
+          "literal_evidence": [
+            {
+              "country": "IT",
+              "line_number": 5,
+              "quote": "P.Iva: 04159280405"
+            }
+          ],
+          "usage": {
+            "input_tokens": 1389,
+            "output_tokens": 100
+          },
+          "request_sha256": "bf3a6d1ee046d6868bc415e353a38ad5cd318076a721b1d9bdd2d0a101b9f322",
+          "cache_hit": false,
+          "network_attempts": 1,
+          "elapsed_s": 0.6711153999995076,
+          "estimated_cost_usd": 0.000058338
+        }
+      ]
+    },
+    {
+      "id": "op-121503",
+      "expected": "GB",
+      "run_id": "d40a10b8-b799-43d0-855d-11484944fede",
+      "timestamp": "2026-09-24T13:01:14.118806+00:00",
+      "metrics": {
+        "jev_wall_s": 0.6641662000001816,
+        "input_tokens": 2453,
+        "output_tokens": 180,
+        "estimated_cost_usd": 0.00010302600000000001,
+        "successful_requests": 2,
+        "failed_requests": 0,
+        "fresh": true,
+        "cost_is_partial": false,
+        "cost_note": "Input-token estimate at USD 0.042/M tokens; output free. OCR compute excluded. Not an invoice.",
+        "ocr_s": 8.301103599999806,
+        "total_s": 8.965323200000057
+      },
+      "ocr": {
+        "elapsed_s": 8.301103599999806,
+        "line_count": 37,
+        "sha256": "63fe80412cc856dbe5531db89c56e338edddfcdf728e43fea38a70ec4c315a54",
+        "cache_hit": false
+      },
+      "results": [
+        {
+          "country": null,
+          "candidate": "GB",
+          "status": "review",
+          "review_reason": "automation_not_validated",
+          "probability": 0.92,
+          "margin": 0.8400000000000001,
+          "confidence": 0.91,
+          "probabilities": {
+            "UNKNOWN": 0.08,
+            "IT": 0,
+            "CA": 0,
+            "OTHER": 0,
+            "DE": 0,
+            "ES": 0,
+            "US": 0,
+            "GB": 0.92,
+            "FR": 0
+          },
+          "location_evidence_probability": null,
+          "variant": "baseline-v1",
+          "model": "jev-1.13.0",
+          "literal_evidence": [],
+          "usage": {
+            "input_tokens": 1050,
+            "output_tokens": 80
+          },
+          "request_sha256": "027e0aa124cec7cf6a9d19753bfe5009b24d7fb944c172fc33a670f35b02a13a",
+          "cache_hit": false,
+          "network_attempts": 1,
+          "elapsed_s": 0.6128404999999475,
+          "estimated_cost_usd": 0.0000441
+        },
+        {
+          "country": null,
+          "candidate": "GB",
+          "status": "review",
+          "review_reason": "automation_not_validated",
+          "probability": 1,
+          "margin": 1,
+          "confidence": 0.99,
+          "probabilities": {
+            "IT": 0,
+            "UNKNOWN": 0,
+            "GB": 1,
+            "ES": 0,
+            "OTHER": 0,
+            "FR": 0,
+            "CA": 0,
+            "DE": 0,
+            "US": 0
+          },
+          "location_evidence_probability": 0.8,
+          "variant": "focused-v2",
+          "model": "jev-1.13.0",
+          "literal_evidence": [],
+          "usage": {
+            "input_tokens": 1403,
+            "output_tokens": 100
+          },
+          "request_sha256": "0dc6362d504cc275e5fd75e60187e221726cafce2895f5d3c3c79f7b6a43f2b7",
+          "cache_hit": false,
+          "network_attempts": 1,
+          "elapsed_s": 0.6609350999997332,
+          "estimated_cost_usd": 0.000058926000000000005
+        }
+      ]
+    },
+    {
+      "id": "op-12106",
+      "expected": "CA",
+      "run_id": "e0f3de76-1424-49bd-a35e-b77564f8f354",
+      "timestamp": "2026-09-24T13:01:20.431679+00:00",
+      "metrics": {
+        "jev_wall_s": 0.6290115000001606,
+        "input_tokens": 1885,
+        "output_tokens": 180,
+        "estimated_cost_usd": 0.00007917000000000002,
+        "successful_requests": 2,
+        "failed_requests": 0,
+        "fresh": true,
+        "cost_is_partial": false,
+        "cost_note": "Input-token estimate at USD 0.042/M tokens; output free. OCR compute excluded. Not an invoice.",
+        "ocr_s": 5.6792787000003955,
+        "total_s": 6.308348999999907
+      },
+      "ocr": {
+        "elapsed_s": 5.6792787000003955,
+        "line_count": 23,
+        "sha256": "8d107f65a966813bd933090ed864cabe5d59f2c4a507207dd35f3ece1e2794b3",
+        "cache_hit": false
+      },
+      "results": [
+        {
+          "country": null,
+          "candidate": "CA",
+          "status": "review",
+          "review_reason": "automation_not_validated",
+          "probability": 1,
+          "margin": 1,
+          "confidence": 1,
+          "probabilities": {
+            "US": 0,
+            "IT": 0,
+            "ES": 0,
+            "OTHER": 0,
+            "CA": 1,
+            "UNKNOWN": 0,
+            "GB": 0,
+            "DE": 0,
+            "FR": 0
+          },
+          "location_evidence_probability": null,
+          "variant": "baseline-v1",
+          "model": "jev-1.13.0",
+          "literal_evidence": [
+            {
+              "country": "CA",
+              "line_number": 23,
+              "quote": "o.9pnara   OLAT   8.45 CAD   ptidoh"
+            }
+          ],
+          "usage": {
+            "input_tokens": 766,
+            "output_tokens": 80
+          },
+          "request_sha256": "6b9d1efb892a59e116b41a49b18873f9ffca93cd0b33fe9f6d90ed9515435c7e",
+          "cache_hit": false,
+          "network_attempts": 1,
+          "elapsed_s": 0.6037286000000677,
+          "estimated_cost_usd": 0.000032172
+        },
+        {
+          "country": null,
+          "candidate": "CA",
+          "status": "review",
+          "review_reason": "automation_not_validated",
+          "probability": 1,
+          "margin": 1,
+          "confidence": 1,
+          "probabilities": {
+            "GB": 0,
+            "DE": 0,
+            "US": 0,
+            "CA": 1,
+            "IT": 0,
+            "ES": 0,
+            "OTHER": 0,
+            "UNKNOWN": 0,
+            "FR": 0
+          },
+          "location_evidence_probability": 0.93,
+          "variant": "focused-v2",
+          "model": "jev-1.13.0",
+          "literal_evidence": [
+            {
+              "country": "CA",
+              "line_number": 23,
+              "quote": "o.9pnara   OLAT   8.45 CAD   ptidoh"
+            }
+          ],
+          "usage": {
+            "input_tokens": 1119,
+            "output_tokens": 100
+          },
+          "request_sha256": "f8459204fd0b09280152775a99e23e9c60daa92a3dece311f409f428b3d4fa71",
+          "cache_hit": false,
+          "network_attempts": 1,
+          "elapsed_s": 0.6259632000001147,
+          "estimated_cost_usd": 0.000046998000000000006
+        }
+      ]
+    },
+    {
+      "id": "op-116267",
+      "expected": "ES",
+      "run_id": "7667ff6f-813a-454f-8836-fdb30b43cef7",
+      "timestamp": "2026-09-24T13:01:29.112477+00:00",
+      "metrics": {
+        "jev_wall_s": 0.6887615999994523,
+        "input_tokens": 1739,
+        "output_tokens": 180,
+        "estimated_cost_usd": 0.000073038,
+        "successful_requests": 2,
+        "failed_requests": 0,
+        "fresh": true,
+        "cost_is_partial": false,
+        "cost_note": "Input-token estimate at USD 0.042/M tokens; output free. OCR compute excluded. Not an invoice.",
+        "ocr_s": 7.984385300000213,
+        "total_s": 8.67319950000001
+      },
+      "ocr": {
+        "elapsed_s": 7.984385300000213,
+        "line_count": 15,
+        "sha256": "b4cad05cddfa26c30e1d85a5030f4f68b94e2bbb5b59ce607e073affbeb21cef",
+        "cache_hit": false
+      },
+      "results": [
+        {
+          "country": null,
+          "candidate": "ES",
+          "status": "review",
+          "review_reason": "automation_not_validated",
+          "probability": 0.96,
+          "margin": 0.9199999999999999,
+          "confidence": 0.95,
+          "probabilities": {
+            "DE": 0,
+            "GB": 0,
+            "CA": 0,
+            "FR": 0,
+            "OTHER": 0,
+            "IT": 0,
+            "US": 0,
+            "UNKNOWN": 0.04,
+            "ES": 0.96
+          },
+          "location_evidence_probability": null,
+          "variant": "baseline-v1",
+          "model": "jev-1.13.0",
+          "literal_evidence": [
+            {
+              "country": "ES",
+              "line_number": 3,
+              "quote": "CIF A28090108"
+            }
+          ],
+          "usage": {
+            "input_tokens": 693,
+            "output_tokens": 80
+          },
+          "request_sha256": "81c542074de3aeb60eb926a666f61be09e1d1f9327ff65dd87f27a89a6ae54e9",
+          "cache_hit": false,
+          "network_attempts": 1,
+          "elapsed_s": 0.6166963000005126,
+          "estimated_cost_usd": 0.000029106000000000002
+        },
+        {
+          "country": null,
+          "candidate": "ES",
+          "status": "review",
+          "review_reason": "automation_not_validated",
+          "probability": 0.99,
+          "margin": 0.98,
+          "confidence": 0.99,
+          "probabilities": {
+            "OTHER": 0,
+            "IT": 0,
+            "UNKNOWN": 0.01,
+            "DE": 0,
+            "FR": 0,
+            "ES": 0.99,
+            "GB": 0,
+            "CA": 0,
+            "US": 0
+          },
+          "location_evidence_probability": 0.9,
+          "variant": "focused-v2",
+          "model": "jev-1.13.0",
+          "literal_evidence": [
+            {
+              "country": "ES",
+              "line_number": 3,
+              "quote": "CIF A28090108"
+            }
+          ],
+          "usage": {
+            "input_tokens": 1046,
+            "output_tokens": 100
+          },
+          "request_sha256": "67dc356146649c689776ae0d4e5e54c18a6b84957568da915f78f570e75c31bf",
+          "cache_hit": false,
+          "network_attempts": 1,
+          "elapsed_s": 0.686538500000097,
+          "estimated_cost_usd": 0.000043932
+        }
+      ]
+    },
+    {
+      "id": "op-116267",
+      "expected": "ES",
+      "run_id": "37e9791d-603a-492e-a9d0-f41a763cabef",
+      "timestamp": "2026-09-24T13:01:58.870229+00:00",
+      "metrics": {
+        "jev_wall_s": 0.7142156999998406,
+        "input_tokens": 1739,
+        "output_tokens": 180,
+        "estimated_cost_usd": 0.000073038,
+        "successful_requests": 2,
+        "failed_requests": 0,
+        "fresh": true,
+        "cost_is_partial": false,
+        "cost_note": "Input-token estimate at USD 0.042/M tokens; output free. OCR compute excluded. Not an invoice.",
+        "ocr_s": 6.259281999999985,
+        "total_s": 6.973548199999641
+      },
+      "ocr": {
+        "elapsed_s": 6.259281999999985,
+        "line_count": 15,
+        "sha256": "b4cad05cddfa26c30e1d85a5030f4f68b94e2bbb5b59ce607e073affbeb21cef",
+        "cache_hit": false
+      },
+      "results": [
+        {
+          "country": null,
+          "candidate": "ES",
+          "status": "review",
+          "review_reason": "automation_not_validated",
+          "probability": 0.97,
+          "margin": 0.94,
+          "confidence": 0.96,
+          "probabilities": {
+            "OTHER": 0,
+            "US": 0,
+            "GB": 0,
+            "ES": 0.97,
+            "FR": 0,
+            "IT": 0,
+            "DE": 0,
+            "CA": 0,
+            "UNKNOWN": 0.03
+          },
+          "location_evidence_probability": null,
+          "variant": "baseline-v1",
+          "model": "jev-1.13.0",
+          "literal_evidence": [
+            {
+              "country": "ES",
+              "line_number": 3,
+              "quote": "CIF A28090108"
+            }
+          ],
+          "usage": {
+            "input_tokens": 693,
+            "output_tokens": 80
+          },
+          "request_sha256": "81c542074de3aeb60eb926a666f61be09e1d1f9327ff65dd87f27a89a6ae54e9",
+          "cache_hit": false,
+          "network_attempts": 1,
+          "elapsed_s": 0.6374700999995184,
+          "estimated_cost_usd": 0.000029106000000000002
+        },
+        {
+          "country": null,
+          "candidate": "ES",
+          "status": "review",
+          "review_reason": "automation_not_validated",
+          "probability": 0.99,
+          "margin": 0.98,
+          "confidence": 0.98,
+          "probabilities": {
+            "IT": 0,
+            "OTHER": 0,
+            "GB": 0,
+            "DE": 0,
+            "FR": 0,
+            "US": 0,
+            "ES": 0.99,
+            "UNKNOWN": 0.01,
+            "CA": 0
+          },
+          "location_evidence_probability": 0.9,
+          "variant": "focused-v2",
+          "model": "jev-1.13.0",
+          "literal_evidence": [
+            {
+              "country": "ES",
+              "line_number": 3,
+              "quote": "CIF A28090108"
+            }
+          ],
+          "usage": {
+            "input_tokens": 1046,
+            "output_tokens": 100
+          },
+          "request_sha256": "67dc356146649c689776ae0d4e5e54c18a6b84957568da915f78f570e75c31bf",
+          "cache_hit": false,
+          "network_attempts": 1,
+          "elapsed_s": 0.7122025000007852,
+          "estimated_cost_usd": 0.000043932
+        }
+      ]
+    }
+  ]
+}

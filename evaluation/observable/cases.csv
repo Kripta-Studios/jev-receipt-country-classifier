@@ -1,0 +1,141 @@
+id,review_id,variant,status,metadata_country,reviewed_image_country,candidate,probability,location_evidence_probability,review_certainty,review_evidence
+op-56158,1,baseline-v1,ok,ES,ES,ES,1.0,,high,"Barcelona, Spain, +34 and Spanish NIF printed in the header."
+op-56158,1,focused-v2,ok,ES,ES,ES,1.0,0.98,high,"Barcelona, Spain, +34 and Spanish NIF printed in the header."
+op-48052,2,baseline-v1,ok,US,US,US,1.0,,high,Mountain View CA 94040 address and 650 telephone area code.
+op-48052,2,focused-v2,ok,US,US,US,1.0,0.96,high,Mountain View CA 94040 address and 650 telephone area code.
+op-134390,3,baseline-v1,ok,DE,DE,DE,1.0,,high,Berlin/Marzahn address and DE VAT identifier.
+op-134390,3,focused-v2,ok,DE,DE,DE,1.0,0.97,high,Berlin/Marzahn address and DE VAT identifier.
+op-7471,4,baseline-v1,ok,GB,GB,GB,1.0,,high,Southampton SO40 7BE address and GBP amounts.
+op-7471,4,focused-v2,ok,GB,GB,GB,1.0,0.94,high,Southampton SO40 7BE address and GBP amounts.
+op-51357,5,baseline-v1,ok,ES,ES,ES,0.99,,high,Spanish CIF B-95390761 and factura simplificada; Eroski Alfons el Magn header.
+op-51357,5,focused-v2,ok,ES,ES,ES,0.99,0.93,high,Spanish CIF B-95390761 and factura simplificada; Eroski Alfons el Magn header.
+op-7604,6,baseline-v1,ok,CA,UNKNOWN,UNKNOWN,0.86,,not_determinable,Only cropped English product lines and $ amounts; no merchant location survives.
+op-7604,6,focused-v2,ok,CA,UNKNOWN,UNKNOWN,0.89,0.14,not_determinable,Only cropped English product lines and $ amounts; no merchant location survives.
+op-48271,7,baseline-v1,extraction_error,DE,DE,,,,high,10719 Berlin address and lidl.de.
+op-48271,7,focused-v2,extraction_error,DE,DE,,,,high,10719 Berlin address and lidl.de.
+op-51522,8,baseline-v1,ok,FR,FR,FR,1.0,,high,92110 Clichy address and French telephone format.
+op-51522,8,focused-v2,ok,FR,FR,FR,1.0,0.95,high,92110 Clichy address and French telephone format.
+op-56032,9,baseline-v1,ok,ES,ES,ES,1.0,,high,"Barcelona and Guissona addresses, Spanish NIF and Catalan fiscal labels."
+op-56032,9,focused-v2,ok,ES,ES,ES,1.0,0.96,high,"Barcelona and Guissona addresses, Spanish NIF and Catalan fiscal labels."
+op-18171,10,baseline-v1,ok,IT,IT,IT,1.0,,high,"Bolzano 39100 (BZ), Partita IVA and documento commerciale."
+op-18171,10,focused-v2,ok,IT,IT,IT,1.0,0.94,high,"Bolzano 39100 (BZ), Partita IVA and documento commerciale."
+op-53583,11,baseline-v1,ok,ES,ES,ES,1.0,,high,"Valladolid/San Vicente del Palacio 47493, CIF and factura simplificada."
+op-53583,11,focused-v2,ok,ES,ES,ES,1.0,0.96,high,"Valladolid/San Vicente del Palacio 47493, CIF and factura simplificada."
+op-94248,12,baseline-v1,ok,US,US,US,1.0,,high,Huntington NY store address and New York Avenue.
+op-94248,12,focused-v2,ok,US,US,US,1.0,0.96,high,Huntington NY store address and New York Avenue.
+op-63185,13,baseline-v1,ok,DE,DE,DE,0.57,,medium,"German receipt conventions, Pfandartikel and 7% food VAT; cropped location. Inferred, medium certainty."
+op-63185,13,focused-v2,ok,DE,DE,DE,0.85,0.2,medium,"German receipt conventions, Pfandartikel and 7% food VAT; cropped location. Inferred, medium certainty."
+op-50961,14,baseline-v1,ok,CA,CA,CA,1.0,,high,New Westminster BC V3L 3C2 and walmart.ca.
+op-50961,14,focused-v2,ok,CA,CA,CA,1.0,0.97,high,New Westminster BC V3L 3C2 and walmart.ca.
+op-118228,15,baseline-v1,ok,FR,UNKNOWN,FR,0.6900000000000001,,not_determinable,Rotated cropped product list in French/English; no clear location or unique country identifier.
+op-118228,15,focused-v2,ok,FR,UNKNOWN,FR,0.98,0.53,not_determinable,Rotated cropped product list in French/English; no clear location or unique country identifier.
+op-84026,16,baseline-v1,ok,ES,ES,ES,1.0,,high,Madrid address and Spanish CIF A28090108.
+op-84026,16,focused-v2,ok,ES,ES,ES,1.0,0.97,high,Madrid address and Spanish CIF A28090108.
+op-7542,17,baseline-v1,ok,FR,FR,FR,1.0,,high,38320 Bresson address and French tax/telephone conventions.
+op-7542,17,focused-v2,ok,FR,FR,FR,1.0,0.96,high,38320 Bresson address and French tax/telephone conventions.
+op-52074,18,baseline-v1,ok,FR,FR,FR,1.0,,high,93100 Montreuil address and French telephone number.
+op-52074,18,focused-v2,ok,FR,FR,FR,1.0,0.96,high,93100 Montreuil address and French telephone number.
+op-56123,19,baseline-v1,ok,CA,CA,CA,0.97,,medium,"519 telephone area code, Zehrs merchant and Canadian grocery conventions. Inferred from area code."
+op-56123,19,focused-v2,ok,CA,CA,CA,0.94,0.9,medium,"519 telephone area code, Zehrs merchant and Canadian grocery conventions. Inferred from area code."
+op-8422,20,baseline-v1,ok,IT,IT,IT,0.59,,medium,"Documento/RT fiscal footer, Italian wording and tax structure; header blurry. Inferred, medium certainty."
+op-8422,20,focused-v2,ok,IT,IT,IT,0.99,0.38,medium,"Documento/RT fiscal footer, Italian wording and tax structure; header blurry. Inferred, medium certainty."
+op-16102,21,baseline-v1,ok,IT,IT,IT,1.0,,high,"91026 Mazara del Vallo (TP), P.IVA, Italian commercial document."
+op-16102,21,focused-v2,ok,IT,IT,IT,1.0,0.97,high,"91026 Mazara del Vallo (TP), P.IVA, Italian commercial document."
+op-14994,22,baseline-v1,ok,IT,IT,IT,1.0,,high,"Bolzano 39100 (BZ), Partita IVA, Italian commercial document."
+op-14994,22,focused-v2,ok,IT,IT,IT,1.0,0.94,high,"Bolzano 39100 (BZ), Partita IVA, Italian commercial document."
+op-24920,23,baseline-v1,ok,FR,UNKNOWN,UNKNOWN,0.72,,not_determinable,Cropped French product list and prices; country cannot be distinguished.
+op-24920,23,focused-v2,ok,FR,UNKNOWN,FR,0.52,0.22,not_determinable,Cropped French product list and prices; country cannot be distinguished.
+op-99128,24,baseline-v1,ok,US,US,US,1.0,,high,Chattanooga TN 37405 store address.
+op-99128,24,focused-v2,ok,US,US,US,1.0,0.95,high,Chattanooga TN 37405 store address.
+op-58957,25,baseline-v1,ok,ES,ES,ES,1.0,,high,Lugo de Llanera/Pola de Siero addresses and CIF A33093097.
+op-58957,25,focused-v2,ok,ES,ES,ES,1.0,0.96,high,Lugo de Llanera/Pola de Siero addresses and CIF A33093097.
+op-7786,26,baseline-v1,ok,CA,CA,CA,1.0,,high,"New Westminster BC, Canadian postcode and walmart.ca."
+op-7786,26,focused-v2,ok,CA,CA,CA,1.0,0.97,high,"New Westminster BC, Canadian postcode and walmart.ca."
+op-113560,27,baseline-v1,ok,DE,DE,DE,1.0,,high,"48163 Munster address, German fiscal and deposit conventions."
+op-113560,27,focused-v2,ok,DE,DE,DE,1.0,0.95,high,"48163 Munster address, German fiscal and deposit conventions."
+op-8239,28,baseline-v1,ok,CA,CA,CA,0.99,,medium,"Royal City Centre, B.C. reference and GST registration. Inferred, medium certainty."
+op-8239,28,focused-v2,ok,CA,CA,CA,1.0,0.94,medium,"Royal City Centre, B.C. reference and GST registration. Inferred, medium certainty."
+op-95454,29,baseline-v1,ok,US,US,US,0.76,,medium,"ShopRite of Huntington Commons, US retail units/pricing and order site. Inferred, medium certainty; no state printed."
+op-95454,29,focused-v2,ok,US,US,US,0.88,0.8,medium,"ShopRite of Huntington Commons, US retail units/pricing and order site. Inferred, medium certainty; no state printed."
+op-125173,30,baseline-v1,ok,US,US,US,1.0,,high,Mountain View CA 94040 merchant address.
+op-125173,30,focused-v2,ok,US,US,US,1.0,0.97,high,Mountain View CA 94040 merchant address.
+op-8815,31,baseline-v1,ok,ES,ES,ES,1.0,,high,"Granada street address, EUR and Spanish fiscal conventions."
+op-8815,31,focused-v2,ok,ES,ES,ES,1.0,0.96,high,"Granada street address, EUR and Spanish fiscal conventions."
+op-49207,32,baseline-v1,ok,US,US,US,1.0,,high,Mountain View CA 94040 merchant address.
+op-49207,32,focused-v2,ok,US,US,US,1.0,0.96,high,Mountain View CA 94040 merchant address.
+op-21424,33,baseline-v1,ok,CA,CA,CA,0.99,,high,"42 Hanna Ave, Toronto ON merchant address."
+op-21424,33,focused-v2,ok,CA,CA,CA,0.99,0.94,high,"42 Hanna Ave, Toronto ON merchant address."
+op-33271,34,baseline-v1,ok,CA,CA,CA,1.0,,high,New Westminster BC V3L 3C2 and walmart.ca.
+op-33271,34,focused-v2,ok,CA,CA,CA,1.0,0.96,high,New Westminster BC V3L 3C2 and walmart.ca.
+op-107951,35,baseline-v1,ok,GB,UNKNOWN,UNKNOWN,0.6,,not_determinable,"M&S and pound prices, but no merchant location; this does not uniquely distinguish UK from other sterling jurisdictions."
+op-107951,35,focused-v2,ok,GB,UNKNOWN,GB,0.96,0.21,not_determinable,"M&S and pound prices, but no merchant location; this does not uniquely distinguish UK from other sterling jurisdictions."
+op-8357,36,baseline-v1,ok,FR,FR,FR,1.0,,high,69002 Lyon street address and French telephone format.
+op-8357,36,focused-v2,ok,FR,FR,FR,1.0,0.96,high,69002 Lyon street address and French telephone format.
+op-54597,37,baseline-v1,ok,GB,GB,GB,1.0,,high,"Mansell Street Local, UK VAT/telephone and London company address plus GBP."
+op-54597,37,focused-v2,ok,GB,GB,GB,1.0,0.95,high,"Mansell Street Local, UK VAT/telephone and London company address plus GBP."
+op-123877,38,baseline-v1,ok,IT,IT,IT,1.0,,high,"Viale Adriano 81, Milano and Italian P.IVA."
+op-123877,38,focused-v2,ok,IT,IT,IT,1.0,0.96,high,"Viale Adriano 81, Milano and Italian P.IVA."
+op-22911,39,baseline-v1,ok,GB,UNKNOWN,UNKNOWN,0.51,,not_determinable,Only two cropped product lines and pound prices; no store location. Product origin is not purchase country.
+op-22911,39,focused-v2,ok,GB,UNKNOWN,GB,0.93,0.27,not_determinable,Only two cropped product lines and pound prices; no store location. Product origin is not purchase country.
+op-9742,40,baseline-v1,ok,DE,DE,DE,1.0,,high,"48163 Munster address, German fiscal/payment conventions."
+op-9742,40,focused-v2,ok,DE,DE,DE,1.0,0.95,high,"48163 Munster address, German fiscal/payment conventions."
+op-123974,41,baseline-v1,ok,US,US,US,1.0,,high,Santa Clara CA 95051 store address.
+op-123974,41,focused-v2,ok,US,US,US,1.0,0.96,high,Santa Clara CA 95051 store address.
+op-28893,42,baseline-v1,ok,ES,ES,ES,1.0,,high,"41704 Dos Hermanas, Spanish NIF and lidl.es."
+op-28893,42,focused-v2,ok,ES,ES,ES,1.0,0.97,high,"41704 Dos Hermanas, Spanish NIF and lidl.es."
+op-16096,43,baseline-v1,ok,IT,IT,IT,1.0,,high,"39057 Appiano/Bolzano, Partita IVA and Italian fiscal document."
+op-16096,43,focused-v2,ok,IT,IT,IT,1.0,0.95,high,"39057 Appiano/Bolzano, Partita IVA and Italian fiscal document."
+op-42863,44,baseline-v1,ok,GB,GB,GB,1.0,,high,"London Wood Green, GB VAT number and lidl.co.uk."
+op-42863,44,focused-v2,ok,GB,GB,GB,1.0,0.95,high,"London Wood Green, GB VAT number and lidl.co.uk."
+op-7769,45,baseline-v1,ok,DE,DE,DE,1.0,,high,12621 Berlin and DE tax identifier.
+op-7769,45,focused-v2,ok,DE,DE,DE,1.0,0.97,high,12621 Berlin and DE tax identifier.
+op-111092,46,baseline-v1,ok,FR,FR,FR,1.0,,high,Clichy la Garenne and French telephone format.
+op-111092,46,focused-v2,ok,FR,FR,FR,1.0,0.95,high,Clichy la Garenne and French telephone format.
+op-132170,47,baseline-v1,ok,US,US,US,1.0,,high,Castro Valley CA 94546 merchant address.
+op-132170,47,focused-v2,ok,US,US,US,1.0,0.96,high,Castro Valley CA 94546 merchant address.
+op-11432,48,baseline-v1,ok,CA,CA,CA,0.99,,medium,"Royal City Centre, B.C. and GST reference. Inferred, medium certainty."
+op-11432,48,focused-v2,ok,CA,CA,CA,1.0,0.91,medium,"Royal City Centre, B.C. and GST reference. Inferred, medium certainty."
+op-78358,49,baseline-v1,ok,ES,ES,ES,1.0,,high,18006 Granada and Spanish NIF.
+op-78358,49,focused-v2,ok,ES,ES,ES,1.0,0.97,high,18006 Granada and Spanish NIF.
+op-64251,50,baseline-v1,ok,CA,CA,CA,1.0,,high,St. Catharines ON L2T 3J9 and HST.
+op-64251,50,focused-v2,ok,CA,CA,CA,1.0,0.96,high,St. Catharines ON L2T 3J9 and HST.
+op-37971,51,baseline-v1,ok,IT,IT,IT,0.99,,high,"Almenno S. Salvatore BG, Italian VAT number and migross.it."
+op-37971,51,focused-v2,ok,IT,IT,IT,1.0,0.96,high,"Almenno S. Salvatore BG, Italian VAT number and migross.it."
+op-6178,52,baseline-v1,ok,FR,FR,FR,0.66,,medium,"French fiscal terminology, CB payment and 5.50% food TVA. Inferred, medium certainty; no merchant address."
+op-6178,52,focused-v2,ok,FR,FR,FR,0.98,0.34,medium,"French fiscal terminology, CB payment and 5.50% food TVA. Inferred, medium certainty; no merchant address."
+op-59498,53,baseline-v1,ok,IT,UNKNOWN,IT,0.81,,not_determinable,"Hand-obscured cropped receipt, Italian text and EUR but no readable merchant location."
+op-59498,53,focused-v2,ok,IT,UNKNOWN,IT,0.98,0.47,not_determinable,"Hand-obscured cropped receipt, Italian text and EUR but no readable merchant location."
+op-123900,54,baseline-v1,ok,FR,FR,FR,1.0,,high,"FR-89470 Moneteau, SIRET and French tax identifier."
+op-123900,54,focused-v2,ok,FR,FR,FR,1.0,0.98,high,"FR-89470 Moneteau, SIRET and French tax identifier."
+op-13828,55,baseline-v1,ok,DE,DE,DE,1.0,,high,09126 Chemnitz merchant address.
+op-13828,55,focused-v2,ok,DE,DE,DE,1.0,0.95,high,09126 Chemnitz merchant address.
+op-34426,56,baseline-v1,ok,GB,GB,GB,0.75,,medium,"lidl.co.uk survey URL, GBP and UK receipt conventions. Inferred from combined signals."
+op-34426,56,focused-v2,ok,GB,GB,GB,0.99,0.32,medium,"lidl.co.uk survey URL, GBP and UK receipt conventions. Inferred from combined signals."
+op-56143,57,baseline-v1,ok,ES,ES,ES,0.96,,high,C/Sants 76 Barcelona and Spanish CIF.
+op-56143,57,focused-v2,ok,ES,ES,ES,1.0,0.95,high,C/Sants 76 Barcelona and Spanish CIF.
+op-111937,58,baseline-v1,ok,IT,UNKNOWN,UNKNOWN,0.74,,not_determinable,Four cropped Italian product lines; no merchant location or distinguishing fiscal identifier.
+op-111937,58,focused-v2,ok,IT,UNKNOWN,IT,0.91,0.39,not_determinable,Four cropped Italian product lines; no merchant location or distinguishing fiscal identifier.
+op-28963,59,baseline-v1,extraction_error,DE,DE,,,,high,04109 Leipzig address and German tax terms.
+op-28963,59,focused-v2,extraction_error,DE,DE,,,,high,04109 Leipzig address and German tax terms.
+op-131256,60,baseline-v1,ok,GB,GB,GB,1.0,,high,Market Rasen store and GB VAT identifier.
+op-131256,60,focused-v2,ok,GB,GB,GB,1.0,0.96,high,Market Rasen store and GB VAT identifier.
+op-117409,61,baseline-v1,ok,DE,DE,DE,1.0,,high,81371 Munchen address and .de merchant domain.
+op-117409,61,focused-v2,ok,DE,DE,DE,1.0,0.96,high,81371 Munchen address and .de merchant domain.
+op-99084,62,baseline-v1,ok,US,US,US,1.0,,high,Mountain View CA 94043 merchant address.
+op-99084,62,focused-v2,ok,US,US,US,1.0,0.96,high,Mountain View CA 94043 merchant address.
+op-12182,63,baseline-v1,ok,IT,IT,IT,1.0,,high,"Santa Maria a Vico CE 81028, P.IVA and Italian commercial document."
+op-12182,63,focused-v2,ok,IT,IT,IT,1.0,0.97,high,"Santa Maria a Vico CE 81028, P.IVA and Italian commercial document."
+op-19354,64,baseline-v1,ok,GB,GB,GB,0.75,,medium,"Oxford Street store, London 020 number, Waitrose and GBP. Inferred from combined location signals."
+op-19354,64,focused-v2,ok,GB,GB,GB,0.99,0.59,medium,"Oxford Street store, London 020 number, Waitrose and GBP. Inferred from combined location signals."
+op-35079,65,baseline-v1,ok,GB,GB,GB,0.97,,medium,"Toolstation UK-format service numbers, GBP and 20% VAT. Inferred, medium certainty; store address cropped."
+op-35079,65,focused-v2,ok,GB,GB,GB,1.0,0.88,medium,"Toolstation UK-format service numbers, GBP and 20% VAT. Inferred, medium certainty; store address cropped."
+op-51450,66,baseline-v1,ok,GB,GB,GB,1.0,,high,"London Wood Green, GB VAT number and lidl.co.uk."
+op-51450,66,focused-v2,ok,GB,GB,GB,1.0,0.96,high,"London Wood Green, GB VAT number and lidl.co.uk."
+op-34667,67,baseline-v1,ok,US,US,US,1.0,,high,Chicago IL 60608 merchant address.
+op-34667,67,focused-v2,ok,US,US,US,1.0,0.95,high,Chicago IL 60608 merchant address.
+op-60712,68,baseline-v1,ok,DE,DE,DE,0.99,,high,"87435 Kempten, +49 telephone and German fiscal conventions."
+op-60712,68,focused-v2,ok,DE,DE,DE,1.0,0.95,high,"87435 Kempten, +49 telephone and German fiscal conventions."
+op-61706,69,baseline-v1,ok,FR,FR,FR,1.0,,high,FR-69170 Tarare merchant address.
+op-61706,69,focused-v2,ok,FR,FR,FR,1.0,0.97,high,FR-69170 Tarare merchant address.
+op-7607,70,baseline-v1,ok,CA,UNKNOWN,UNKNOWN,0.85,,not_determinable,Cropped English product lines and dollar prices only; no merchant location.
+op-7607,70,focused-v2,ok,CA,UNKNOWN,UNKNOWN,0.88,0.14,not_determinable,Cropped English product lines and dollar prices only; no merchant location.

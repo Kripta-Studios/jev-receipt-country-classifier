@@ -1,0 +1,41 @@
+{
+  "cohort": "70 pre-labelled images; 10 per source country; test partition",
+  "reference": "Assistant image review, not human ground truth or OCR-text-only labels",
+  "variants": {
+    "baseline-v1": {
+      "n": 70,
+      "successful": 68,
+      "errors": 2,
+      "metadata_matches": 62,
+      "reviewed_image_matches": 66,
+      "image_country_observable": 62,
+      "observable_correct": 60,
+      "observable_abstentions": 0,
+      "observable_wrong_country": 0,
+      "image_country_unobservable": 8,
+      "reasonable_abstentions": 6,
+      "unsupported_country_assertions": 2,
+      "unsupported_metadata_matches": 2,
+      "unsupported_probability_at_least_0_9": 0
+    },
+    "focused-v2": {
+      "n": 70,
+      "successful": 68,
+      "errors": 2,
+      "metadata_matches": 66,
+      "reviewed_image_matches": 62,
+      "image_country_observable": 62,
+      "observable_correct": 60,
+      "observable_abstentions": 0,
+      "observable_wrong_country": 0,
+      "image_country_unobservable": 8,
+      "reasonable_abstentions": 2,
+      "unsupported_country_assertions": 6,
+      "unsupported_metadata_matches": 6,
+      "unsupported_probability_at_least_0_9": 5
+    }
+  },
+  "input_tokens": 130474,
+  "output_tokens": 12240,
+  "estimated_api_cost_usd": 0.005479908
+}

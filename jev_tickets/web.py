@@ -47,6 +47,9 @@ class Playground:
             "ocr_available": self.live and bool(self.trace_repo),
             "examples": [{k: row[k] for k in ("id", "title", "description")} for row in self.demos],
             "real_examples": self.real_examples,
+            "reviewed_evaluation": json.loads(
+                (STATIC / "observable-summary.json").read_text(encoding="utf-8")
+            ),
             "pricing": {
                 "input_usd_per_million": INPUT_USD_PER_MILLION,
                 "output_usd_per_million": 0,

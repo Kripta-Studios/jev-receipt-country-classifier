@@ -17,6 +17,14 @@ The real-image cohort is an incomplete processing-order subset; the text cohort 
 development data. They are exploratory results, not a production accuracy estimate.
 The focused prompt also falls from 26/26 to 25/26 on authored ambiguity controls.
 
+**Follow-up using reviewed visible evidence:** on the full 70-image assistant-reviewed
+cohort, the original prompt matches the image review in **66/70** cases and the focused
+prompt in **62/70**, including two extraction failures. On eight indeterminate images,
+they make **2 vs 6 unsupported country assertions**. The focused prompt matches more
+store labels but makes more unjustified guesses. See the [case audit, measurements and
+reproduction commands](docs/OBSERVABLE_EVALUATION.md). These assistant labels are not
+human ground truth; the cohort overlaps the historical benchmark.
+
 Read [the results](EVALUATION_REPORT.md), [Jev's role and API usage](docs/JEV_USAGE.md),
 and [the independent data review](docs/DATA_REVIEW.md).
 For an introduction, read [architecture, prompt differences and alternatives to

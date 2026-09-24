@@ -32,6 +32,7 @@ function status(message, error = false) {
 }
 function setBusy(value) {
   busy = value;
+  value = value || batchRunning;
   for (const id of [
     "demo-mode",
     "live-mode",
@@ -467,12 +468,18 @@ async function runReal() {
     $("comparison-note").textContent =
       `Source reference: ${countries[data.example.expected]}. ${data.example.reference_evidence} Reference labels are not sent to Jev. OCR scores and model confidence are not verified accuracy.`;
     appendHistory(data);
+    const failed = data.results.some((r) => r.status === "error");
     status(
-      `Completed ${currentExample.id} in ${seconds(data.metrics.total_s)}. New OCR computation and new Jev requests; no result-cache replay.`,
+      failed
+        ? `Completed ${currentExample.id} with a Jev request failure. Check the result cards; the cost estimate is partial.`
+        : `Completed ${currentExample.id} in ${seconds(data.metrics.total_s)}. New OCR computation and new Jev requests; no result-cache replay.`,
+      failed,
     );
+    return !failed;
   } catch (error) {
     status(error.message, true);
     appendHistory({ example: currentExample, error: error.message });
+    return false;
   } finally {
     setBusy(false);
   }
@@ -503,7 +510,21 @@ function appendHistory(data) {
         seconds(data.metrics.total_s),
         money(data.metrics.estimated_cost_usd),
       ];
-  for (const value of values) row.append(node("td", "", value));
+  const labels = [
+    "Receipt",
+    "Store metadata",
+    "Original",
+    "Focused",
+    "OCR",
+    "Jev",
+    "Total",
+    "Est. API cost",
+  ];
+  values.forEach((value, index) => {
+    const cell = node("td", "", value);
+    cell.dataset.label = labels[index];
+    row.append(cell);
+  });
   $("history-rows").append(row);
   $("run-history").hidden = false;
 }
@@ -517,15 +538,20 @@ $("real-example").addEventListener("change", loadReal);
 $("run-real").addEventListener("click", runReal);
 $("run-all").addEventListener("click", async () => {
   batchRunning = true;
-  for (const example of config.real_examples) {
-    $("real-example").value = example.id;
-    loadReal();
-    await runReal();
+  let failures = 0;
+  try {
+    for (const example of config.real_examples) {
+      $("real-example").value = example.id;
+      loadReal();
+      if (!(await runReal())) failures++;
+    }
+  } finally {
+    batchRunning = false;
+    setBusy(false);
   }
-  batchRunning = false;
-  setBusy(false);
   status(
-    "All real examples processed. Every run is listed in the session table.",
+    `All ${config.real_examples.length} examples processed; ${failures} runs with errors. Every run is listed in the session table.`,
+    failures > 0,
   );
 });
 function zoom(value) {
@@ -584,6 +610,8 @@ function updateMode() {
 }
 $("example").addEventListener("change", loadDemo);
 $("receipt-text").addEventListener("input", () => {
+  // An edited transcription no longer corresponds exactly to the measured OCR run.
+  lastExtraction = null;
   clearResults();
   textCount();
   setBusy(false);
@@ -701,6 +729,48 @@ $("download").addEventListener("click", () => {
 (async () => {
   try {
     config = await api("/api/config");
+    const review = config.reviewed_evaluation?.variants;
+    if (review) {
+      const measurements = [
+        ["Matches store metadata", "metadata_matches", "n"],
+        ["Matches reviewed image evidence", "reviewed_image_matches", "n"],
+        [
+          "Correct country on observable images",
+          "observable_correct",
+          "image_country_observable",
+        ],
+        [
+          "Reasonable UNKNOWN on indeterminate images",
+          "reasonable_abstentions",
+          "image_country_unobservable",
+        ],
+        [
+          "Unsupported country assertions",
+          "unsupported_country_assertions",
+          "image_country_unobservable",
+        ],
+        ["Extraction / request failures", "errors", "n"],
+      ];
+      for (const [label, key, denominator] of measurements) {
+        const row = node("tr");
+        const values = [
+          label,
+          ...["baseline-v1", "focused-v2"].map(
+            (v) => `${review[v][key]} / ${review[v][denominator]}`,
+          ),
+        ];
+        values.forEach((value, i) => {
+          const cell = node("td", "", value);
+          cell.dataset.label = [
+            "Measurement",
+            "Original prompt",
+            "Focused prompt",
+          ][i];
+          row.append(cell);
+        });
+        $("reviewed-rows").append(row);
+      }
+    }
     $("real-example").replaceChildren(
       ...config.real_examples.map((row) => {
         const option = node(

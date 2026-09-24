@@ -16,6 +16,13 @@ policy was calibrated; the saved policy disables automatic acceptance.
 
 ## Research objective
 
+Follow-up completed: all 70 pre-labelled real images now have recorded extraction
+attempts and two prompt outcomes, with failures retained. The [observable-evidence
+report](docs/OBSERVABLE_EVALUATION.md) separates metadata agreement from justified
+decisions. The historical partial benchmark and frozen review-only policy remain intact.
+The browser layout and real model workflow were also checked; see
+[WEB_VALIDATION.md](docs/WEB_VALIDATION.md).
+
 Implement receipt classification using Jev and trace-it OCR, evaluate it on substantially
 more data, independently inspect and label receipt evidence, and determine whether Jev
 is useful. Code, documentation and reports are written in English.

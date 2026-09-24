@@ -51,7 +51,10 @@ The focused prompt gained 24 source-label matches on the 361 real images. It los
 one of 26 authored ambiguity controls. We changed several prompt elements together;
 the experiment does not isolate which change caused the improvement. The Noul
 question is independent of the Choice answer, and its usefulness as an acceptance
-gate was not established.
+gate was not established. In the [completed visual-review follow-up](OBSERVABLE_EVALUATION.md),
+the original prompt matches image evidence in 66/70 cases versus 62/70 for focused-v2.
+The focused version makes more unsupported guesses on indeterminate crops. Better
+metadata agreement therefore does not establish better country reasoning.
 
 ## Could this work without Jev?
 

@@ -40,9 +40,14 @@ measurements from observable evidence judgments.
 
 ## Independence limits
 
-At experimental closure, only 19 of the 70 blind-reviewed images had completed OCR
-and final Jev predictions. The other 51 retain visual labels without a measured
-model comparison. Six source images were additionally inspected after prediction;
+At the original experimental closure, only 19 of the 70 blind-reviewed images had
+completed OCR and final Jev predictions. The [follow-up evaluation](OBSERVABLE_EVALUATION.md)
+now covers all 70 attempts: 68 OCR successes and two extraction failures. Original
+labels and both prompts were preserved. Against image review, the original prompt
+matches 66/70 and the focused prompt 62/70; their unsupported country assertions on
+the eight indeterminate images are 2/8 and 6/8. All eight ambiguous OCR texts were
+also inspected after prediction; this additional audit is not blind annotation.
+Six other source images were additionally inspected after the original prediction run;
 these error audits are described separately in [EVALUATION_REPORT.md](../EVALUATION_REPORT.md)
 and do not constitute additional independent blind labels.
 

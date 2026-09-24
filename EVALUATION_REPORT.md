@@ -10,6 +10,14 @@ synthetic text. It still makes unsupported country guesses, especially on ambigu
 French or Italian text. It should expose a candidate and allow abstention/review.
 These results do not establish reliable unattended classification.
 
+**Follow-up:** evaluating all 70 previously reviewed images reverses the prompt
+ranking against reviewed image evidence: original **66/70**, focused **62/70**.
+The focused prompt makes six unsupported assertions on eight indeterminate inputs;
+the original makes two. Both identify the country on all 60 observable images with
+successful OCR, with two further observable images failing extraction. See the
+[complete follow-up and reproducible case audit](docs/OBSERVABLE_EVALUATION.md).
+The historical benchmark below remains unchanged and is not pooled with this cohort.
+
 Jev does not read the images. The pipeline is image → trace-it local OCR → text →
 Jev Choice (country) plus an independent Noul evidence question. OCR, dataset quality,
 and country reasoning have separate failure modes. No model was trained or fine-tuned.
@@ -62,10 +70,12 @@ address-parsing system; that comparison was not run.
 ## Reviewing the data and the mistakes
 
 Before seeing real Jev outputs, the assistant visually labeled 70 real images and
-marked eight UNKNOWN. These are assistant judgments, not human gold labels. Only 19 of those
-images overlap the completed test OCR subset: Jev agrees with 17 / 19, including
+marked eight UNKNOWN. These are assistant judgments, not human gold labels. At the
+original closure, only 19 of those images overlapped the completed test OCR subset:
+the focused prompt agreed with 17 / 19, including
 15 / 15 high-certainty labels. It assigns France to two of four indeterminate crops.
-The subset is too small and selected by processing completion to generalize.
+The subset was too small and selected by processing completion to generalize.
+The later 70-image evaluation linked above supersedes this partial reviewed comparison.
 
 After the final run, the assistant inspected real mismatch OCR and six source images,
 including two metadata matches that disagreed with the blind review:

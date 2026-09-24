@@ -6,6 +6,7 @@ From the repository root, with Python 3.12 or later:
 
 ```powershell
 python research/make_report.py
+python research/evaluate_observable.py
 python -m unittest discover -s tests -v
 ```
 
@@ -15,13 +16,19 @@ The report script reads the stored predictions, policy, review assignments and l
 then writes `evaluation/summary.json`, `review-comparison.json`, `predictions.csv`
 and `TABLES.md`. It does not make new predictions.
 
-Expected checks: 25 unit tests pass (15 classifier tests and ten browser-server tests);
+Expected checks: 28 unit tests pass (15 classifier, ten browser-server and three
+observable-evaluation tests);
 the report prints 16 metric groups, 19 reviewed
 predictions, 1,940 successful uncached requests from the recorded run and an estimated
 historical usage cost of USD 0.073908912. Recomputing these values is free of API calls.
 See [TABLES.md](../evaluation/TABLES.md) for the full expected table.
 
-### Verification performed for this documentation update
+The second script separately reproduces the complete 70-image visual-review
+comparison: original 66/70, focused 62/70 against image review, with 2 vs 6 unsupported
+assertions on eight indeterminate images. See [the follow-up protocol and fresh-run
+commands](OBSERVABLE_EVALUATION.md). It does not alter the historical report.
+
+### Earlier documentation verification
 
 - Copied the publishable project files into a fresh directory without the API key,
   cache or submodule, regenerated the reports and compared them with the saved
@@ -32,8 +39,9 @@ See [TABLES.md](../evaluation/TABLES.md) for the full expected table.
   19 text lines and 406 characters were extracted.
 - Executed the transcript-preparation block below: 421 inputs were produced.
 
-The full benchmark and live Jev comparison were not rerun for this documentation
-update. The published measurements remain those of the original experiment.
+The full benchmark and live Jev comparison were not rerun for that earlier documentation
+update. A subsequent 70-image follow-up and live browser tests are now reported separately
+in [OBSERVABLE_EVALUATION.md](OBSERVABLE_EVALUATION.md) and [WEB_VALIDATION.md](WEB_VALIDATION.md).
 
 ## Repeat the synthetic text comparison with live Jev calls
 

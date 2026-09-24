@@ -659,203 +659,6 @@ footer p:last-child {
     transform: translateY(0);
   }
 }
-@media (min-width: 1600px) {
-  .receipt-stage {
-    height: 455px;
-  }
-  textarea {
-    height: 230px;
-  }
-}
-@media (max-width: 1100px) {
-  main {
-    padding: 0 28px;
-  }
-  .topbar {
-    padding: 20px 28px;
-  }
-  .intro-copy {
-    min-width: 290px;
-  }
-  .workspace-grid {
-    grid-template-columns: 35% 65%;
-  }
-  .source-panel {
-    padding: 20px;
-  }
-  .analysis-panel {
-    padding: 20px;
-  }
-  .small-label {
-    font-size: 8px;
-    letter-spacing: 0;
-  }
-  .country-result h3 {
-    font-size: 23px;
-  }
-  .card-top {
-    font-size: 9px;
-  }
-  .card-tag {
-    font-size: 8px;
-  }
-  .card-bottom {
-    font-size: 9px;
-  }
-  .text-footer {
-    align-items: flex-start;
-  }
-  .text-footer p {
-    max-width: 150px;
-  }
-  .primary {
-    padding: 11px;
-  }
-  .primary span {
-    margin-left: 8px;
-  }
-  .findings {
-    gap: 15px;
-  }
-  .metric {
-    padding-left: 14px;
-  }
-  .lab-tag {
-    display: none;
-  }
-}
-@media (max-width: 760px) {
-  .topbar {
-    padding: 17px 20px;
-  }
-  main {
-    padding: 0 20px;
-  }
-  .wordmark {
-    font-size: 17px;
-  }
-  .repo-link {
-    font-size: 11px;
-    gap: 7px;
-  }
-  .intro {
-    padding: 32px 0;
-    display: block;
-  }
-  .intro-copy {
-    margin-top: 24px;
-    min-width: 0;
-  }
-  .intro-copy > p {
-    font-size: 14px;
-    margin-bottom: 17px;
-  }
-  .intro-copy > p br {
-    display: none;
-  }
-  .pipeline {
-    gap: 13px;
-    font-size: 9px;
-  }
-  h1 {
-    font-size: 58px;
-    letter-spacing: -3px;
-  }
-  .toolbar {
-    align-items: flex-start;
-    gap: 10px;
-    flex-direction: column;
-    padding: 12px;
-  }
-  .toolbar > p {
-    font-size: 9px;
-  }
-  .workspace-grid {
-    grid-template-columns: 1fr;
-  }
-  .source-panel {
-    border-right: 0;
-    border-bottom: 1px solid var(--line);
-    padding: 20px;
-  }
-  .receipt-stage {
-    height: 290px;
-    min-height: 0;
-    padding: 35px 30px;
-  }
-  .analysis-panel {
-    padding: 20px;
-  }
-  .source-note {
-    font-size: 9px;
-  }
-  .result-grid {
-    gap: 9px;
-  }
-  .result-card {
-    padding: 12px;
-  }
-  .country-result h3 {
-    font-size: 23px;
-  }
-  .text-footer {
-    gap: 10px;
-  }
-  .text-footer p {
-    max-width: none;
-  }
-  .primary {
-    font-size: 11px;
-  }
-  .results-section .small-label {
-    display: none;
-  }
-  .findings {
-    grid-template-columns: 1fr 1fr;
-    gap: 25px;
-    padding: 27px 0;
-  }
-  .findings-heading {
-    grid-column: 1/-1;
-  }
-  .findings-heading h2 br {
-    display: none;
-  }
-  .metric {
-    padding-left: 15px;
-  }
-  .metric strong {
-    font-size: 30px;
-  }
-  .metric.caveat {
-    grid-column: 1/-1;
-  }
-  footer {
-    flex-direction: column;
-    gap: 13px;
-  }
-  footer p:last-child {
-    text-align: left;
-  }
-}
-@media (max-width: 380px) {
-  main {
-    padding: 0 12px;
-  }
-  .analysis-panel,
-  .source-panel {
-    padding: 15px;
-  }
-  .country-result h3 {
-    font-size: 20px;
-  }
-  .card-tag {
-    display: none;
-  }
-  .primary span {
-    display: none;
-  }
-}
 #receipt-canvas {
   width: 100%;
   height: 100%;
@@ -913,6 +716,30 @@ footer p:last-child {
   border: 1px solid var(--line);
   border-radius: 4px;
   margin-top: 8px;
+}
+
+.reviewed-evaluation {
+  margin: 24px 0;
+  padding: 24px;
+  border: 1px solid var(--line);
+  background: var(--white);
+}
+.reviewed-evaluation h2 {
+  font: 27px/1.3 var(--serif);
+}
+.reviewed-evaluation p,
+.reviewed-evaluation a {
+  font-size: 14px;
+  line-height: 1.7;
+}
+.reviewed-evaluation table {
+  font-size: 13px;
+}
+@media (max-width: 1000px) {
+  .reviewed-evaluation td:first-child {
+    grid-column: 1 / -1;
+    font-weight: 600;
+  }
 }
 .ocr-line {
   display: flex;
@@ -981,13 +808,17 @@ html {
   overflow-y: scroll;
 }
 body {
-  min-width: 280px;
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 main,
 .topbar {
-  max-width: 1600px;
+  width: 100%;
+  max-width: 1440px;
 }
 .intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   padding: 28px 0;
   align-items: center;
 }
@@ -998,6 +829,9 @@ h1 {
 }
 .intro-copy {
   min-width: 0;
+  width: 100%;
+  max-width: 440px;
+  justify-self: start;
 }
 .intro-copy > p {
   font-size: 15px;
@@ -1217,9 +1051,10 @@ textarea {
 }
 .table-scroll {
   max-width: 100%;
-  overflow: auto;
+  overflow: visible;
 }
 table {
+  table-layout: fixed;
   border-collapse: collapse;
   width: 100%;
   font: 11px/1.5 var(--mono);
@@ -1230,6 +1065,8 @@ td {
   padding: 12px 10px;
   border-bottom: 1px solid var(--line);
   vertical-align: top;
+  overflow-wrap: anywhere;
+  white-space: normal;
 }
 th {
   color: var(--muted);
@@ -1247,6 +1084,12 @@ th {
   font-size: clamp(22px, 2.1vw, 30px);
 }
 @media (max-width: 1100px) {
+  .topbar {
+    padding: 20px;
+  }
+  .lab-tag {
+    display: none;
+  }
   main {
     padding: 0 20px;
   }
@@ -1262,6 +1105,40 @@ th {
   }
   .source-panel {
     position: static;
+  }
+}
+@media (max-width: 1000px) {
+  /* Preserve every column as a labelled value, with no sideways scrolling. */
+  .table-scroll table,
+  .table-scroll tbody {
+    display: block;
+  }
+  .table-scroll thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+  }
+  .table-scroll tr {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px 20px;
+    border-bottom: 1px solid var(--line);
+    padding: 16px 0;
+  }
+  .table-scroll td {
+    display: block;
+    padding: 4px 0;
+    border: 0;
+    min-width: 0;
+  }
+  .table-scroll td::before {
+    content: attr(data-label);
+    display: block;
+    color: var(--muted);
+    font-weight: 600;
+    margin-bottom: 4px;
   }
 }
 @media (max-width: 800px) {
@@ -1280,6 +1157,7 @@ th {
   }
   .intro-copy {
     margin-top: 16px;
+    max-width: none;
   }
   .intro-copy br {
     display: none;
@@ -1290,6 +1168,12 @@ th {
   .findings {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+  footer {
+    flex-direction: column;
+  }
+  footer p:last-child {
+    text-align: left;
+  }
 }
 @media (max-width: 480px) {
   main {
@@ -1297,6 +1181,8 @@ th {
   }
   .topbar {
     padding: 16px 12px;
+    flex-wrap: wrap;
+    gap: 16px;
   }
   .mode-switch button {
     padding: 9px 10px;
@@ -1320,4 +1206,44 @@ th {
   .card-facts {
     font-size: 11px;
   }
+}
+
+.pipeline {
+  flex-wrap: wrap;
+  gap: 12px;
+  line-height: 1.6;
+}
+.primary,
+.secondary,
+.card-tag {
+  white-space: normal;
+}
+.source-note,
+.help,
+.text-footer p,
+.probability-note,
+.comparison-note,
+.metrics-note,
+.card-facts,
+.card-bottom,
+.score-line,
+.distribution-row,
+.metric > p,
+footer,
+.toolbar > p {
+  font-size: 12px;
+  line-height: 1.65;
+}
+.card-top,
+.small-label,
+.stage-caption {
+  font-size: 11px;
+  line-height: 1.6;
+}
+.result-card details summary {
+  overflow-wrap: anywhere;
+}
+#ocr-lines {
+  max-height: none;
+  overflow: visible;
 }

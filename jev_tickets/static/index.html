@@ -34,8 +34,8 @@
         </div>
         <div class="intro-copy">
           <p>
-            Where was this receipt issued? <br />Follow the clues from an image
-            to text, <br />then compare two ways of asking Jev.
+            Where was this receipt issued? Follow the clues from an image to
+            text, then compare two ways of asking Jev.
           </p>
           <div class="pipeline">
             <span>01 Read</span><i aria-hidden="true">→</i
@@ -243,7 +243,7 @@
               <thead>
                 <tr>
                   <th>Receipt</th>
-                  <th>Reference</th>
+                  <th>Store metadata</th>
                   <th>Original</th>
                   <th>Focused</th>
                   <th>OCR</th>
@@ -262,7 +262,7 @@
         <div class="findings-heading">
           <p class="eyebrow">THE EXPERIMENT, IN CONTEXT</p>
           <h2 id="findings-title">
-            Better guidance.<br />More useful guesses.
+            Dataset agreement.<br />Not verified accuracy.
           </h2>
           <p>
             Matches against dataset labels.<br />Exploratory results, not
@@ -284,6 +284,43 @@
           ><strong>26 <i>→</i> 25<span>/26</span></strong>
           <p>More guidance can also overreach.</p>
         </div>
+      </section>
+      <section class="reviewed-evaluation" aria-labelledby="reviewed-title">
+        <p class="eyebrow">CHECKING WHAT THE DOCUMENT ACTUALLY SHOWS</p>
+        <h2 id="reviewed-title">
+          More label matches can mean more unsupported guesses.
+        </h2>
+        <p>
+          We separately evaluated 70 real images labelled by the assistant
+          before consulting Jev predictions or store metadata. A country was
+          observable in 62; eight were indeterminate crops or documents without
+          sufficient location clues. These are assistant judgments, not human
+          ground truth. Prompts were unchanged.
+        </p>
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th>Measurement</th>
+                <th>Original prompt</th>
+                <th>Focused prompt</th>
+              </tr>
+            </thead>
+            <tbody id="reviewed-rows"></tbody>
+          </table>
+        </div>
+        <p>
+          Image reviews assess the complete OCR-to-country pipeline. They do not
+          isolate OCR errors from Jev errors. Two oversized images failed
+          extraction and remain in the 70-case denominator. Confidence is not
+          proof of visible country evidence.
+        </p>
+        <a
+          href="https://github.com/Kripta-Studios/jev-receipt-country-classifier/blob/main/docs/OBSERVABLE_EVALUATION.md"
+          target="_blank"
+          rel="noreferrer"
+          >Read the case audit and reproduction commands ↗</a
+        >
       </section>
       <footer>
         <p>

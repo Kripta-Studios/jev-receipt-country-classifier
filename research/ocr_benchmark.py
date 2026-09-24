@@ -12,11 +12,17 @@ sys.path.insert(0, str(ROOT))
 READER = None
 
 
-def initialize(repo):
+def initialize(repo, force_recompute=False):
     global READER
     from jev_tickets.ocr import TraceReader
 
-    READER = TraceReader(repo, ROOT / ".cache/models", ROOT / ".cache/benchmark-ocr", threads=1)
+    READER = TraceReader(
+        repo,
+        ROOT / ".cache/models",
+        ROOT / ".cache/benchmark-ocr",
+        threads=1,
+        force_recompute=force_recompute,
+    )
 
 
 def process(row):
@@ -33,6 +39,11 @@ def main():
     parser.add_argument("--manifest", default="real-manifest.jsonl")
     parser.add_argument("--reverse", action="store_true")
     parser.add_argument("--output")
+    parser.add_argument(
+        "--force-recompute",
+        action="store_true",
+        help="Bypass OCR cache for pending images; completed output records still resume",
+    )
     args = parser.parse_args()
     if not 1 <= args.workers <= 8:
         raise ValueError("Use 1 to 8 OCR workers")
@@ -54,7 +65,9 @@ def main():
     with (
         output.open("a", encoding="utf-8") as stream,
         ProcessPoolExecutor(
-            max_workers=args.workers, initializer=initialize, initargs=(args.trace_repo,)
+            max_workers=args.workers,
+            initializer=initialize,
+            initargs=(args.trace_repo, args.force_recompute),
         ) as pool,
     ):
         futures = [pool.submit(process, row) for row in pending]

@@ -66,7 +66,15 @@ and rendering; parallel request times should not be added to obtain wall time.
 
 Use **Fit image**, zoom controls or **Open full image** to inspect a receipt. The
 page and result cards wrap at narrow widths, and the text area expands to show the
-whole extraction. Large session tables have their own horizontal scroll region.
+whole extraction. Tables wrap within the desktop viewport; at widths below 1,000 px,
+each row becomes a card with labelled values. No column requires sideways scrolling.
+The introductory copy wraps naturally, without forced line breaks.
+
+The page also shows the complete 70-image reviewed-evidence comparison, generated
+from the same artifacts as [the follow-up report](OBSERVABLE_EVALUATION.md). Store
+metadata agreement, reviewed image agreement, abstentions, unsupported guesses and
+extraction failures are separate measurements. The original 85.6% is explicitly
+labelled dataset agreement. See [browser verification](WEB_VALIDATION.md).
 
 The gallery was deliberately selected from previously successful cases with visible
 image difficulties. A new verification run matched all eight source labels under
@@ -99,6 +107,8 @@ Choose a file, click **Extract text locally**, inspect its boxes and text, then
 click **Compare prompts**. The image stays local; only text is sent to Jev. The
 extraction step does not call Jev. Edited text affects classification; boxes and
 line labels continue to represent the original OCR extraction.
+After editing the transcription, timing cards no longer attribute the changed text
+to the earlier OCR run.
 
 The web upload limit is 10 MiB. The adapter also imposes its existing 18 MP image
 and 20-page PDF limits. Images support interactive overlays; PDFs support text
@@ -148,7 +158,7 @@ Browser verification covered desktop and 390-pixel mobile layouts, switching sav
 examples, clicking image boxes and text lines, uploading the bundled image, local OCR
 and one live comparison. That image produced 19 OCR lines and 406 characters; both
 live prompts proposed France. These two smoke-test calls are separate from the
-published benchmark. The full suite now has 25 tests, including fresh-inference,
+published benchmark. The full suite now has 28 tests, including observable-reference scoring, fresh-inference,
 cost calculation and source-label isolation checks for the real gallery.
 
 The real-gallery update also passed the complete **Run all 8** browser flow using
