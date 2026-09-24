@@ -2,6 +2,16 @@
 
 Generated from stored predictions. Country references are dataset metadata unless explicitly described as assistant review.
 
+See the [evaluation report](../EVALUATION_REPORT.md) for scope and interpretation, and [reproduction notes](../docs/REPRODUCIBILITY.md) for offline commands.
+
+The image cohorts are incomplete processing-order subsets. The synthetic text cohort is development data. Controls use authored expected answers.
+
+N includes failures and abstentions. Raw match is agreement with the reference label, including an expected UNKNOWN or OTHER. It is not verified real-world accuracy.
+
+All Jev rows use the saved disabled automation policy, so Accepted and Coverage are zero by configuration. The literal-rules row uses its own permissive routing rule. These columns are not a calibrated coverage comparison.
+
+Assistant review rows use focused-v2 and overlap the real test cohort; they are not additional receipts. Image and reference-text cohorts can also overlap.
+
 | Dataset / variant | N | Raw match | UNKNOWN | OTHER | Accepted | Accepted errors | Coverage |
 |---|---:|---:|---:|---:|---:|---:|---:|
 | controls/test/baseline-v1 | 26 | 100.0% | 8 | 5 | 0 | 0 | 0.0% |
@@ -22,6 +32,8 @@ Generated from stored predictions. Country references are dataset metadata unles
 | real_test_literal_rules | 168 | 9.5% | 147 | 0 | 18 | 2 | 10.7% |
 
 ## Usage
+
+Expanded experiment only; historical pilot excluded. There are 1,956 prediction records: 1,940 successful uncached responses, 2 cache replays and 14 failed records. Extraction failures: 14; provider failures: 0. Counts include both prompt variants. The estimated price uses the rate inspected on 2026-09-24; HTTP latency excludes OCR.
 
 ```json
 {

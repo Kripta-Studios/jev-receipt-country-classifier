@@ -1,8 +1,11 @@
-# Receipt country classification work plan
+# Archived receipt country evaluation protocol
+
+Status: closed exploratory experiment. This document preserves the original plan;
+completed work and conclusions are in [EVALUATION_REPORT.md](EVALUATION_REPORT.md).
 
 ## Closure amendment
 
-The user requested an early close as an exploratory project on 2026-09-24.
+The experiment closed after a partial run on 2026-09-24.
 Long OCR jobs were stopped. The available snapshot contains 361 real and 170
 synthetic image extractions; the completed text development comparison contains
 421 receipts. Remaining planned OCR and text test requests were not run.
@@ -11,11 +14,11 @@ original development/test membership. Processing order affects inclusion, so thi
 does not complete the original benchmark protocol below. No real-data acceptance
 policy was calibrated; the saved policy disables automatic acceptance.
 
-## Authorized objective
+## Research objective
 
 Implement receipt classification using Jev and trace-it OCR, evaluate it on substantially
 more data, independently inspect and label receipt evidence, and determine whether Jev
-is useful. All code, documentation, and reports must be in English. Conversation remains Spanish.
+is useful. Code, documentation and reports are written in English.
 
 ## Evaluation protocol (declared before expanded results)
 
@@ -49,6 +52,8 @@ is useful. All code, documentation, and reports must be in English. Conversation
 
 ## Source baseline
 
-trace-it main: 84c4c0463862640940efb1232344287a2d03bcf5 (already up to date).
-OCR weights are in .cache/models; original repository is not modified.
-The original 33-call pilot is retained in research/ as historical evidence.
+Inspected trace-it main: `84c4c0463862640940efb1232344287a2d03bcf5`.
+The same source revision is now recorded as the `external/trace-it` Git submodule.
+Its source was not modified. Local OCR weights were stored in `.cache/models` and
+are excluded from Git. The original 33-call pilot is retained in `research/` as
+historical evidence; see [PILOT_REPORT.md](PILOT_REPORT.md).

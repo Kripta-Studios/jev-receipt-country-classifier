@@ -1,7 +1,8 @@
 # Initial feasibility pilot (superseded by the expanded evaluation)
 
 Date: 2026-09-24. This pilot verified connectivity; it was not sufficient to decide
-whether Jev is suitable for production. See WORK_PLAN.md for the expanded protocol.
+whether Jev is suitable for production. See [EVALUATION_REPORT.md](EVALUATION_REPORT.md)
+for the final experimental results and [WORK_PLAN.md](WORK_PLAN.md) for the archived protocol.
 
 The trace-it repository was updated with `git pull --ff-only origin main` and was
 already at commit `84c4c0463862640940efb1232344287a2d03bcf5`. Its source was not modified.
@@ -17,6 +18,9 @@ only, without country labels or source filenames. The API key was not saved to f
 | Original transcript | 25 | 23 | 2 | 0 |
 | Local OCR transcript | 5 | 4 | 1 | 0 |
 | Hand-written controls | 3 | 2 | 1 expected | 0 |
+
+All three controls matched their expected decision: two country labels and one
+UNKNOWN. The table's country count excludes that expected abstention.
 
 The US image produced the same abstention with its reference transcript. All five
 image/text decisions agreed, but the OCR had numeric errors (e.g. `46,22` read as

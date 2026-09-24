@@ -16,9 +16,8 @@ and country reasoning have separate failure modes. No model was trained or fine-
 
 ## Scope actually completed
 
-The user requested closing this as an exploratory project before the longer benchmark
-finished. OCR workers were stopped, and the final API comparison used only the saved
-extractions. No further OCR was launched.
+The experiment closed after a partial run of the planned benchmark. OCR workers
+were stopped, and the final API comparison used only the saved extractions.
 
 | Evidence | Completed | Earlier target |
 |---|---:|---:|
@@ -62,13 +61,14 @@ address-parsing system; that comparison was not run.
 
 ## Reviewing the data and the mistakes
 
-Before seeing real Jev outputs, I visually labeled 70 real images and marked eight
-UNKNOWN. These are assistant judgments, not human gold labels. Only 19 of those
+Before seeing real Jev outputs, the assistant visually labeled 70 real images and
+marked eight UNKNOWN. These are assistant judgments, not human gold labels. Only 19 of those
 images overlap the completed test OCR subset: Jev agrees with 17 / 19, including
 15 / 15 high-certainty labels. It assigns France to two of four indeterminate crops.
 The subset is too small and selected by processing completion to generalize.
 
-After the final run, I inspected real mismatch OCR and six corresponding source images:
+After the final run, the assistant inspected real mismatch OCR and six source images,
+including two metadata matches that disagreed with the blind review:
 
 - `op-15137`: a chocolate package, despite receipt-type metadata. Jev predicts Italy
   from packaging text; the selling store's country is not established. This combines
@@ -111,6 +111,12 @@ The expanded run records 1,940 successful uncached responses, two cache replays,
 At the inspected published input rate, successful uncached usage is approximately
 **USD 0.074**, excluding the historical pilot. This is an estimate, not an account bill;
 OCR compute and storage are excluded.
+
+Across both prompt variants there are 1,956 prediction records: 1,942 successful
+answers and 14 extraction failures. Latency measures the Jev HTTP request, not the
+complete image-to-country pipeline. The zero acceptance counts in the generated
+Jev tables result from the disabled policy; they do not mean the model returned no
+candidates. The regex baseline is tabulated under its own permissive routing rule.
 
 ## Delivered
 

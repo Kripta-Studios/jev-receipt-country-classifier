@@ -1,0 +1,3 @@
+[submodule "external/trace-it"]
+	path = external/trace-it
+	url = https://github.com/Martinhdeez/trace-it.git

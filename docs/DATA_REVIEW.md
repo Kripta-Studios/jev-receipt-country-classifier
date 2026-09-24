@@ -7,8 +7,8 @@ were not consulted while assigning the labels. The prompts were already written 
 were not changed using this test review.
 
 Each judgment records a country or `UNKNOWN`, visible evidence, and a certainty level
-in `evaluation/blind-labels.json`. The assignment mapping is in
-`evaluation/blind-review-assignment.jsonl`. These are assistant judgments, not human
+in [blind-labels.json](../evaluation/blind-labels.json). The assignment mapping is in
+[blind-review-assignment.jsonl](../evaluation/blind-review-assignment.jsonl). These are assistant judgments, not human
 ground truth. Eight images were judged indeterminate. Medium-certainty inferences
 are retained separately from high-certainty explicit location readings.
 
@@ -35,7 +35,7 @@ synthetic development partition. They all have generator label US:
 The area-code facts were checked against the [Canadian Numbering Administrator](https://www.cnac.ca/data/COCodeStatus_NPA780.htm)
 and [NANPA territory table](https://www.nanpa.com/resources/area-code-map/territories).
 No phone-number-based relabeling was used to inflate accuracy or tune to generator quirks.
-Original source labels remain unchanged, and the final report must distinguish those
+Original source labels remain unchanged. The final report distinguishes source-label
 measurements from observable evidence judgments.
 
 ## Independence limits
@@ -43,11 +43,13 @@ measurements from observable evidence judgments.
 At experimental closure, only 19 of the 70 blind-reviewed images had completed OCR
 and final Jev predictions. The other 51 retain visual labels without a measured
 model comparison. Six source images were additionally inspected after prediction;
-these error audits are described separately in `EVALUATION_REPORT.md` and are not
-independent blind labels.
+these error audits are described separately in [EVALUATION_REPORT.md](../EVALUATION_REPORT.md)
+and do not constitute additional independent blind labels.
 
-The source-country sample is balanced by receipt count, not by retailer, contributor,
-or image quality. Store locations are disjoint between development and test, but
+The prepared sample contains 100 receipts per named country and 10 per out-of-scope
+country. The 361-image evaluated subset is incomplete and is not country-balanced.
+Neither selection balances retailer, contributor or image quality.
+Store locations are disjoint between development and test, but
 retail chains can appear in both. Exact duplicate images were checked: one duplicate
 pair exists within a real partition and none crosses the split. Near-duplicate photos
 and cropped portions of the same transaction have not been exhaustively eliminated.
