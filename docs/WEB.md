@@ -4,6 +4,10 @@ A small Python web server and a static HTML/CSS/JavaScript interface. No Node bu
 frontend framework, database or extra Python packages are required for the saved demo.
 The interface and documentation are in English.
 
+For a new machine, start with [DEPLOYMENT.md](DEPLOYMENT.md): it includes the complete
+Windows/Linux/macOS setup, dataset availability, Docker and remote live access.
+This page describes the UI and its behavior in more detail.
+
 ## Start the saved demo
 
 From the repository root, with Python 3.12 or later:

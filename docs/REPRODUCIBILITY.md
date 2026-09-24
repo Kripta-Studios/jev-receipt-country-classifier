@@ -1,5 +1,8 @@
 # Reproducing the experiment
 
+For installation on a fresh machine, including the browser, datasets, OCR weights
+and deployment commands, first read [DEPLOYMENT.md](DEPLOYMENT.md).
+
 ## Recompute the published results offline
 
 From the repository root, with Python 3.12 or later:
@@ -29,6 +32,11 @@ assertions on eight indeterminate images. See [the follow-up protocol and fresh-
 commands](OBSERVABLE_EVALUATION.md). It does not alter the historical report.
 
 ### Earlier documentation verification
+
+A later clean-clone installation check also reproduced both reports, passed all 28
+tests, served the bundled gallery, installed the pinned OCR backend and extracted
+a real image with newly populated model files. See [deployment verification](DEPLOYMENT.md#10-installation-verification-performed)
+for its exact scope and platform limitations. The list below records the earlier check.
 
 - Copied the publishable project files into a fresh directory without the API key,
   cache or submodule, regenerated the reports and compared them with the saved
@@ -154,7 +162,9 @@ Consequently, a fresh data/inference run is not guaranteed to reproduce this coh
 or these predictions exactly. The tracked raw predictions support exact offline
 metric reproduction regardless of upstream changes.
 
-Images, source parquet files, model weights and API caches are excluded from Git.
+Full benchmark images, source parquet files, model weights and API caches are excluded
+from Git. The small browser gallery (eight real images and one synthetic demo image)
+is bundled with attribution and does not require downloading the benchmark datasets.
 The trace-it source is included as a pinned Git submodule; see
 [OCR provenance](OCR.md) for its commit, model revisions and dependency lockfile.
 The model identifier is pinned to `jev-1.13.0`, but future hosted availability and

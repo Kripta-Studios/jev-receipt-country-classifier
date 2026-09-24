@@ -1,5 +1,8 @@
 # OCR source and model provenance
 
+For step-by-step installation commands on Windows and Linux/macOS, see
+[DEPLOYMENT.md](DEPLOYMENT.md#3-install-the-ocr-environment-and-weights).
+
 ## Pinned upstream source
 
 The Git submodule at `external/trace-it` points to

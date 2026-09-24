@@ -32,6 +32,11 @@ Jev](docs/ARCHITECTURE.md).
 
 ## Run
 
+**Starting on another machine?** Follow [the complete installation and deployment
+guide](docs/DEPLOYMENT.md). It includes Windows PowerShell and Linux/macOS commands,
+OCR/model installation, the bundled browser datasets, live Jev, offline evaluation,
+Docker recorded mode, remote live access through SSH, and troubleshooting.
+
 ### Browser playground
 
 From a clone of this repository:
