@@ -1,0 +1,6 @@
+*
+!Dockerfile
+!jev_tickets/
+!jev_tickets/**
+**/__pycache__/
+**/*.pyc

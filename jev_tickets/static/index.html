@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#eeeae1" />
+    <title>Receipt Atlas — Jev playground</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="/style.css" />
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip" href="#workspace">Skip to playground</a>
+    <header class="topbar">
+      <a class="wordmark" href="/" aria-label="Receipt Atlas home"
+        ><span class="brand-icon" aria-hidden="true">ra</span>Receipt Atlas<span
+          class="lab-tag"
+          >EXPERIMENT 01</span
+        ></a
+      >
+      <a
+        class="repo-link"
+        href="https://github.com/Kripta-Studios/jev-receipt-country-classifier"
+        target="_blank"
+        rel="noreferrer"
+        >View project <span aria-hidden="true">↗</span></a
+      >
+    </header>
+    <main>
+      <section class="intro" aria-labelledby="title">
+        <div>
+          <p class="eyebrow"><span class="dot"></span> FROM PAPER TO PLACE</p>
+          <h1 id="title">Small receipt.<br /><span>Big clues.</span></h1>
+        </div>
+        <div class="intro-copy">
+          <p>
+            Where was this receipt issued? <br />Follow the clues from an image
+            to text, <br />then compare two ways of asking Jev.
+          </p>
+          <div class="pipeline">
+            <span>01 Read</span><i aria-hidden="true">→</i
+            ><span>02 Interpret</span><i aria-hidden="true">→</i
+            ><span>03 Compare</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="workspace" aria-label="Receipt playground">
+        <div class="toolbar">
+          <div class="mode-switch" role="group" aria-label="Playground mode">
+            <button id="demo-mode" class="selected" aria-pressed="true">
+              Saved demo</button
+            ><button id="live-mode" aria-pressed="false">Your receipt</button>
+          </div>
+          <p id="mode-note">
+            <span class="dot"></span> Recorded results. No API calls.
+          </p>
+        </div>
+        <div class="workspace-grid">
+          <section class="source-panel" aria-labelledby="source-title">
+            <div class="section-heading">
+              <span class="step">01</span>
+              <h2 id="source-title">The receipt</h2>
+              <span class="small-label">INPUT</span>
+            </div>
+            <div id="demo-controls">
+              <label for="example">Explore an example</label
+              ><select id="example">
+                <option>Loading examples…</option>
+              </select>
+            </div>
+            <div id="upload-controls" hidden>
+              <label class="upload-label" for="upload"
+                ><span aria-hidden="true">＋</span> Choose an image or PDF<input
+                  id="upload"
+                  type="file"
+                  accept="image/jpeg,image/png,image/webp,application/pdf"
+              /></label>
+              <p class="help">JPEG, PNG, WebP or PDF · up to 10 MiB</p>
+              <button id="extract" class="secondary full" disabled>
+                Extract text locally
+              </button>
+              <p id="ocr-note" class="help"></p>
+            </div>
+            <div class="receipt-stage">
+              <span class="stage-caption" id="preview-caption"
+                >SYNTHETIC RECEIPT / SAVED IMAGE</span
+              ><svg
+                id="receipt-canvas"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-label="Receipt image with selectable OCR text regions"
+                role="group"
+              >
+                <image id="receipt-image" />
+                <g id="ocr-boxes"></g>
+              </svg>
+              <div id="text-preview" hidden>
+                <span class="paper-icon" aria-hidden="true">≡</span
+                ><strong>Start with the text</strong>
+                <p>
+                  This example uses a transcription.<br />It skips the
+                  image-reading step.
+                </p>
+              </div>
+              <span class="stage-index" aria-hidden="true">RA—01</span>
+            </div>
+            <div id="overlay-controls" hidden>
+              <label class="box-toggle"
+                ><input type="checkbox" id="show-boxes" checked /> Show OCR text
+                regions</label
+              >
+              <p id="selected-line" class="help">
+                Select a box or a text line to see the match.
+              </p>
+            </div>
+            <p id="source-note" class="source-note">Loading saved example…</p>
+          </section>
+
+          <div class="analysis-panel">
+            <section aria-labelledby="text-title">
+              <div class="section-heading">
+                <span class="step">02</span>
+                <h2 id="text-title">What Jev reads</h2>
+                <span class="small-label" id="text-count">TEXT ONLY</span>
+              </div>
+              <label class="sr-only" for="receipt-text"
+                >Receipt text sent to Jev</label
+              ><textarea
+                id="receipt-text"
+                maxlength="80000"
+                spellcheck="false"
+                readonly
+                placeholder="Paste receipt text here, or extract it from a file."
+              ></textarea>
+              <div class="text-footer">
+                <p id="text-note">
+                  Saved OCR output. Jev never receives the image.
+                </p>
+                <button id="compare" class="primary" disabled>
+                  Compare prompts <span aria-hidden="true">↗</span>
+                </button>
+              </div>
+              <details id="ocr-details" hidden>
+                <summary>
+                  Inspect extracted lines <span id="line-count"></span>
+                </summary>
+                <div id="ocr-lines" aria-label="Extracted OCR lines"></div>
+                <p class="help">
+                  Boxes mark original OCR text regions, not verified semantic
+                  fields such as merchant or total. Click a line to locate it in
+                  the image.
+                </p>
+              </details>
+            </section>
+            <section class="results-section" aria-labelledby="results-title">
+              <div class="section-heading">
+                <span class="step">03</span>
+                <h2 id="results-title">Two prompts. Same text.</h2>
+                <span id="result-kind" class="small-label"
+                  >READY TO COMPARE</span
+                >
+              </div>
+              <div id="empty-results" class="empty-results">
+                <span class="crosshair" aria-hidden="true">⌖</span>
+                <div>
+                  <strong>Follow the evidence.</strong>
+                  <p>
+                    Compare the original instructions with a more specific
+                    country guide.
+                  </p>
+                </div>
+              </div>
+              <div id="results" class="result-grid" hidden></div>
+              <div id="result-notes" hidden>
+                <p class="probability-note">
+                  Model probability describes the response distribution. It is
+                  not a measured accuracy guarantee. All candidates remain
+                  suggestions for review.
+                </p>
+                <p id="comparison-note" class="comparison-note"></p>
+                <details>
+                  <summary>What would simple rules say?</summary>
+                  <div id="rules-result"></div>
+                </details>
+                <button id="download" class="text-button">
+                  Download comparison JSON ↓
+                </button>
+              </div>
+            </section>
+          </div>
+        </div>
+        <p id="status" class="status" role="status" aria-live="polite">
+          Loading the playground…
+        </p>
+      </section>
+
+      <section class="findings" aria-labelledby="findings-title">
+        <div class="findings-heading">
+          <p class="eyebrow">THE EXPERIMENT, IN CONTEXT</p>
+          <h2 id="findings-title">
+            Better guidance.<br />More useful guesses.
+          </h2>
+          <p>
+            Matches against dataset labels.<br />Exploratory results, not
+            production accuracy.
+          </p>
+        </div>
+        <div class="metric">
+          <span>361 real images</span
+          ><strong>78.9 <i>→</i> 85.6<span>%</span></strong>
+          <p>Original → focused prompt</p>
+        </div>
+        <div class="metric">
+          <span>421 synthetic texts</span
+          ><strong>96.7 <i>→</i> 99.0<span>%</span></strong>
+          <p>Development data</p>
+        </div>
+        <div class="metric caveat">
+          <span>26 ambiguity controls</span
+          ><strong>26 <i>→</i> 25<span>/26</span></strong>
+          <p>More guidance can also overreach.</p>
+        </div>
+      </section>
+      <footer>
+        <p>
+          Built with local trace-it OCR + Jev.<br />The real-image evaluation
+          used an incomplete processing-order subset.
+        </p>
+        <p>
+          Demo image:
+          <a
+            href="https://huggingface.co/datasets/albertobarnabo/synthetic-receipts-ocr"
+            target="_blank"
+            rel="noreferrer"
+            >Synthetic Receipts OCR</a
+          >
+          · Apache 2.0<br />Saved results from the September 2026 experiment.
+        </p>
+      </footer>
+    </main>
+  </body>
+</html>

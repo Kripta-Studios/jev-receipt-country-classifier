@@ -1,0 +1,408 @@
+[
+  {
+    "id": "eval-000001",
+    "title": "A receipt from France",
+    "description": "See a photograph become text, then a country suggestion.",
+    "text": "MARCHE GARCIA\nBD SAINT-MICHEL 178\nTEL +33 3 84 79 32 98\nSIRET 25882052352331\n19/10/2025\n09:39\nTICKET 3-45150-243   CAISSE 2\nFUNNY AUTISM NOT YOUR   3,49 EUR\nLCFN DUAL   25,98 EUR\nPILOT   0,98 EUR\nREEBOK MENS FLASHF   19,99\nEUR\nAMBERSHI AMBRSHN FULL SO   3,98 EUR\nCONT CONTÉ PRS SANGUI   7,99 EUR\nTOTAL   62,41 EUR\nDONT TVA 20%   10,40 EUR\nSANS CONTACT   62,41 EUR\nPOINTS FIDELITE +68\nCONSERVEZ VOTRE TICKET",
+    "image": "/demo-receipt.jpg",
+    "source": "Synthetic receipt image and recorded local OCR",
+    "expected": "FR",
+    "results": [
+      {
+        "country": null,
+        "candidate": "FR",
+        "status": "review",
+        "review_reason": "automation_not_validated",
+        "probability": 0.99,
+        "margin": 0.98,
+        "confidence": 0.99,
+        "probabilities": {
+          "CA": 0.0,
+          "DE": 0.0,
+          "ES": 0.0,
+          "US": 0.0,
+          "IT": 0.0,
+          "FR": 0.99,
+          "OTHER": 0.0,
+          "GB": 0.0,
+          "UNKNOWN": 0.01
+        },
+        "location_evidence_probability": null,
+        "variant": "baseline-v1",
+        "elapsed_s": 0.6921542000000045,
+        "usage": {
+          "input_tokens": 717,
+          "output_tokens": 80
+        }
+      },
+      {
+        "country": null,
+        "candidate": "FR",
+        "status": "review",
+        "review_reason": "automation_not_validated",
+        "probability": 1.0,
+        "margin": 1.0,
+        "confidence": 1.0,
+        "probabilities": {
+          "CA": 0.0,
+          "IT": 0.0,
+          "UNKNOWN": 0.0,
+          "FR": 1.0,
+          "ES": 0.0,
+          "OTHER": 0.0,
+          "DE": 0.0,
+          "US": 0.0,
+          "GB": 0.0
+        },
+        "location_evidence_probability": 0.96,
+        "variant": "focused-v2",
+        "elapsed_s": 0.672332200000028,
+        "usage": {
+          "input_tokens": 1070,
+          "output_tokens": 100
+        }
+      }
+    ],
+    "lines": [
+      {
+        "text": "MARCHE GARCIA",
+        "confidence": 0.98631,
+        "bbox": [
+          67.0,
+          31.0,
+          226.0,
+          60.0
+        ],
+        "page": 1
+      },
+      {
+        "text": "BD SAINT-MICHEL 178",
+        "confidence": 0.99948,
+        "bbox": [
+          195.0,
+          60.0,
+          421.0,
+          92.0
+        ],
+        "page": 1
+      },
+      {
+        "text": "TEL +33 3 84 79 32 98",
+        "confidence": 0.96068,
+        "bbox": [
+          184.0,
+          84.0,
+          433.0,
+          117.0
+        ],
+        "page": 1
+      },
+      {
+        "text": "SIRET 25882052352331",
+        "confidence": 0.99696,
+        "bbox": [
+          195.0,
+          110.0,
+          432.0,
+          142.0
+        ],
+        "page": 1
+      },
+      {
+        "text": "19/10/2025",
+        "confidence": 0.99996,
+        "bbox": [
+          67.0,
+          157.0,
+          192.0,
+          186.0
+        ],
+        "page": 1
+      },
+      {
+        "text": "09:39",
+        "confidence": 0.99951,
+        "bbox": [
+          495.0,
+          169.0,
+          558.0,
+          194.0
+        ],
+        "page": 1
+      },
+      {
+        "text": "TICKET 3-45150-243   CAISSE 2",
+        "confidence": 0.96786,
+        "bbox": [
+          67.0,
+          183.0,
+          559.0,
+          222.0
+        ],
+        "page": 1
+      },
+      {
+        "text": "FUNNY AUTISM NOT YOUR   3,49 EUR",
+        "confidence": 0.9791,
+        "bbox": [
+          66.0,
+          235.0,
+          562.0,
+          270.0
+        ],
+        "page": 1
+      },
+      {
+        "text": "LCFN DUAL   25,98 EUR",
+        "confidence": 0.99841,
+        "bbox": [
+          65.0,
+          261.0,
+          563.0,
+          296.0
+        ],
+        "page": 1
+      },
+      {
+        "text": "PILOT   0,98 EUR",
+        "confidence": 0.9989,
+        "bbox": [
+          66.0,
+          288.0,
+          565.0,
+          323.0
+        ],
+        "page": 1
+      },
+      {
+        "text": "REEBOK MENS FLASHF   19,99",
+        "confidence": 0.99608,
+        "bbox": [
+          66.0,
+          314.0,
+          528.0,
+          346.0
+        ],
+        "page": 1
+      },
+      {
+        "text": "EUR",
+        "confidence": 0.99972,
+        "bbox": [
+          517.0,
+          324.0,
+          564.0,
+          346.0
+        ],
+        "page": 1
+      },
+      {
+        "text": "AMBERSHI AMBRSHN FULL SO   3,98 EUR",
+        "confidence": 0.9994,
+        "bbox": [
+          66.0,
+          340.0,
+          567.0,
+          372.0
+        ],
+        "page": 1
+      },
+      {
+        "text": "CONT CONTÉ PRS SANGUI   7,99 EUR",
+        "confidence": 0.977,
+        "bbox": [
+          65.0,
+          365.0,
+          567.0,
+          398.0
+        ],
+        "page": 1
+      },
+      {
+        "text": "TOTAL   62,41 EUR",
+        "confidence": 0.99715,
+        "bbox": [
+          66.0,
+          422.0,
+          569.0,
+          451.0
+        ],
+        "page": 1
+      },
+      {
+        "text": "DONT TVA 20%   10,40 EUR",
+        "confidence": 0.9988,
+        "bbox": [
+          66.0,
+          450.0,
+          571.0,
+          478.0
+        ],
+        "page": 1
+      },
+      {
+        "text": "SANS CONTACT   62,41 EUR",
+        "confidence": 0.99846,
+        "bbox": [
+          66.0,
+          503.0,
+          573.0,
+          531.0
+        ],
+        "page": 1
+      },
+      {
+        "text": "POINTS FIDELITE +68",
+        "confidence": 0.99375,
+        "bbox": [
+          66.0,
+          531.0,
+          302.0,
+          555.0
+        ],
+        "page": 1
+      },
+      {
+        "text": "CONSERVEZ VOTRE TICKET",
+        "confidence": 0.9835,
+        "bbox": [
+          190.0,
+          584.0,
+          457.0,
+          610.0
+        ],
+        "page": 1
+      }
+    ]
+  },
+  {
+    "id": "eval-000004",
+    "title": "When extra guidance helps",
+    "description": "The original prompt abstains; the focused prompt selects a country.",
+    "text": "BROWN CORNER SHOP\n3 ELM AVE\n------------------------------------------------\n03/18/2021                                 15:18\nRECEIPT 4-28508-806                       REG 02\n------------------------------------------------\nVSQ WOM                                    $5.99\nPKBM HAPPY 14TH                            $9.99\nA CHRFL GIVER LAVEND                       $0.99\n------------------------------------------------\nSUBTOTAL                                  $16.97\nTAX                                        $1.23\nTOTAL                                     $18.20\n \nVISA CREDIT                               $18.20\nLOYALTY PTS +23\n \nTHANK YOU FOR SHOPPING WITH US",
+    "image": null,
+    "source": "Synthetic reference transcription",
+    "expected": "US",
+    "results": [
+      {
+        "country": null,
+        "candidate": "UNKNOWN",
+        "status": "review",
+        "review_reason": "automation_not_validated",
+        "probability": 0.58,
+        "margin": 0.17999999999999994,
+        "confidence": 0.52,
+        "probabilities": {
+          "IT": 0.0,
+          "ES": 0.0,
+          "OTHER": 0.0,
+          "FR": 0.0,
+          "US": 0.4,
+          "DE": 0.0,
+          "UNKNOWN": 0.58,
+          "CA": 0.0,
+          "GB": 0.02
+        },
+        "location_evidence_probability": null,
+        "variant": "baseline-v1",
+        "elapsed_s": 0.6648963000043295,
+        "usage": {
+          "input_tokens": 640,
+          "output_tokens": 80
+        }
+      },
+      {
+        "country": null,
+        "candidate": "US",
+        "status": "review",
+        "review_reason": "automation_not_validated",
+        "probability": 0.68,
+        "margin": 0.36000000000000004,
+        "confidence": 0.63,
+        "probabilities": {
+          "FR": 0.0,
+          "IT": 0.0,
+          "OTHER": 0.0,
+          "GB": 0.0,
+          "UNKNOWN": 0.32,
+          "ES": 0.0,
+          "DE": 0.0,
+          "CA": 0.0,
+          "US": 0.68
+        },
+        "location_evidence_probability": 0.43,
+        "variant": "focused-v2",
+        "elapsed_s": 0.6541743999987375,
+        "usage": {
+          "input_tokens": 993,
+          "output_tokens": 100
+        }
+      }
+    ]
+  },
+  {
+    "id": "control-shared-italian",
+    "title": "When language misleads",
+    "description": "An ambiguity control where the focused prompt overreaches.",
+    "text": "PASTA\nLATTE\nTOTALE 12,50 EUR",
+    "image": null,
+    "source": "Authored ambiguity control",
+    "expected": "UNKNOWN",
+    "results": [
+      {
+        "country": null,
+        "candidate": "UNKNOWN",
+        "status": "review",
+        "review_reason": "automation_not_validated",
+        "probability": 0.73,
+        "margin": 0.45999999999999996,
+        "confidence": 0.69,
+        "probabilities": {
+          "OTHER": 0.0,
+          "ES": 0.0,
+          "UNKNOWN": 0.73,
+          "US": 0.0,
+          "CA": 0.0,
+          "FR": 0.0,
+          "DE": 0.0,
+          "GB": 0.0,
+          "IT": 0.27
+        },
+        "location_evidence_probability": null,
+        "variant": "baseline-v1",
+        "elapsed_s": 0.644306300000153,
+        "usage": {
+          "input_tokens": 491,
+          "output_tokens": 80
+        }
+      },
+      {
+        "country": null,
+        "candidate": "IT",
+        "status": "review",
+        "review_reason": "automation_not_validated",
+        "probability": 0.61,
+        "margin": 0.21999999999999997,
+        "confidence": 0.56,
+        "probabilities": {
+          "IT": 0.61,
+          "OTHER": 0.0,
+          "GB": 0.0,
+          "DE": 0.0,
+          "FR": 0.0,
+          "US": 0.0,
+          "ES": 0.0,
+          "UNKNOWN": 0.39,
+          "CA": 0.0
+        },
+        "location_evidence_probability": 0.09,
+        "variant": "focused-v2",
+        "elapsed_s": 0.7468384999999671,
+        "usage": {
+          "input_tokens": 844,
+          "output_tokens": 100
+        }
+      }
+    ]
+  }
+]

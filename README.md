@@ -24,6 +24,21 @@ Jev](docs/ARCHITECTURE.md).
 
 ## Run
 
+### Browser playground
+
+From a clone of this repository:
+
+```powershell
+python -m jev_tickets.web
+```
+
+Open **http://127.0.0.1:8000** to inspect a receipt, click its OCR rectangles and
+compare the two prompts using saved results. No API key or OCR installation is
+needed for the demo. See [browser setup and Docker deployment](docs/WEB.md) for
+live text/image processing and a small deployable container.
+
+### Command line
+
 Python 3.12 or later. Clone the repository, then run the commands from its root:
 
 ```powershell
